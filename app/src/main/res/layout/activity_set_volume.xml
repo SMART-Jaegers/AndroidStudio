@@ -1,0 +1,101 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="#9176FF">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icons8_left_100" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="23">
+
+        <TextView
+            android:id="@+id/fill_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+            android:text="FILL IN"
+            android:fontFamily="sans-serif-light"
+            android:textSize="23sp"
+            android:textColor="#9A9494"/>
+
+        <TextView
+            android:id="@+id/volume_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fill_text_view"
+            android:layout_centerHorizontal="true"
+            android:text="GASOLINE VOLUME"
+            android:fontFamily="sans-serif-light"
+            android:textSize="23sp"
+            android:textColor="#9A9494"/>
+
+        <LinearLayout
+            android:id="@+id/choice_linear_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true">
+
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/more_down"/>
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/more_down"/>
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/more_down" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/checkFuel_button"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/choice_linear_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Check Fuel"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:background="@drawable/chech_fuel"/>
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
