@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">something</string>
+    <string name="refueling">Refueling</string>
+    <string name="curent_use">Curent use</string>
+    <string name="quality_score">Quality score</string>
+    <string name="usage_statistic">Usage statistic</string>
+    <string name="choose_the_gas_station">Choose the gas station</string>
+
+</resources>
