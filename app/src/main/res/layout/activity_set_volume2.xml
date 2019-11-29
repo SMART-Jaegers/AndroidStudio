@@ -31,12 +31,12 @@
             android:id="@+id/fill_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
             android:layout_centerHorizontal="true"
-            android:text="FILL IN"
+            android:layout_marginTop="50dp"
             android:fontFamily="sans-serif-light"
-            android:textSize="23sp"
-            android:textColor="#9A9494"/>
+            android:text="FILL IN"
+            android:textColor="#9A9494"
+            android:textSize="23sp" />
 
         <TextView
             android:id="@+id/volume_text_view"
@@ -44,10 +44,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/fill_text_view"
             android:layout_centerHorizontal="true"
-            android:text="GASOLINE VOLUME"
             android:fontFamily="sans-serif-light"
-            android:textSize="23sp"
-            android:textColor="#9A9494"/>
+            android:text="GASOLINE VOLUME"
+            android:textColor="#9A9494"
+            android:textSize="23sp" />
 
         <LinearLayout
             android:id="@+id/choice_linear_layout"
@@ -61,15 +61,15 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/more_down"/>
+                android:src="@drawable/more_down" />
 
             <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:scaleType="centerCrop"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:src="@drawable/more_down"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/more_down" />
 
             <ImageView
                 android:layout_width="45dp"
@@ -95,7 +95,6 @@
 
 
     </RelativeLayout>
-
 
 
 </LinearLayout>

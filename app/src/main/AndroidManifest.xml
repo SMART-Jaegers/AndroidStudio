@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SetVolume"></activity>
-        <activity android:name=".StationOkko"></activity>
-        <activity android:name=".ChooseTheGasSation" />
+        <activity android:name=".SetVolume"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".StationOkko"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ChooseTheGasSation"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
@@ -21,7 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GoodFuelOnOkkoA95Euro" />
+        <activity android:name=".GoodFuelOnOkkoA95Euro"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"
