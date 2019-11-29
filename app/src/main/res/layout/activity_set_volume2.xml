@@ -86,12 +86,12 @@
             android:layout_below="@+id/choice_linear_layout"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
+            android:background="@drawable/chech_fuel"
             android:fontFamily="sans-serif-light"
             android:text="Check Fuel"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
-            android:background="@drawable/chech_fuel"/>
+            android:textSize="25sp" />
 
 
     </RelativeLayout>

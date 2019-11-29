@@ -38,11 +38,13 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/refuling"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:layout_weight="5"
-        android:background="#9176FF">
+        android:background="#9176FF"
+        android:onClick="refueling">
 
         <TextView
             android:layout_width="wrap_content"
@@ -120,11 +122,13 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/quality"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:layout_weight="5"
-        android:background="#FFFFFF">
+        android:background="#FFFFFF"
+        android:onClick="choosethegasstation">
 
         <TextView
             android:layout_width="wrap_content"
