@@ -8,15 +8,18 @@
     tools:context=".MainActivity">
 
     <RelativeLayout
+        android:id="@+id/w"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF">
 
         <ImageView
+            android:id="@+id/btnback"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="4dp"
+            android:onClick="backtomain"
             android:scaleType="centerCrop"
             android:src="@drawable/icons8_left_100__2_" />
 

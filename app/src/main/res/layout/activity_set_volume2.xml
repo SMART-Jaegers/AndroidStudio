@@ -34,7 +34,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:fontFamily="sans-serif-light"
-            android:text="FILL IN"
+            android:text="@string/fill_in"
             android:textColor="#9A9494"
             android:textSize="23sp" />
 
@@ -45,7 +45,7 @@
             android:layout_below="@+id/fill_text_view"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-light"
-            android:text="GASOLINE VOLUME"
+            android:text="@string/gasoline_volume"
             android:textColor="#9A9494"
             android:textSize="23sp" />
 
@@ -88,7 +88,7 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/chech_fuel"
             android:fontFamily="sans-serif-light"
-            android:text="Check Fuel"
+            android:text="@string/check_fuel"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="25sp" />

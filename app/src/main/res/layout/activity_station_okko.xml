@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".StationOkko">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:text="Choose the fuel from"
+                android:text="@string/choose_the_fuel_from"
                 android:textColor="#FFFFFF"
                 android:textSize="25dp"
                 app:fontFamily="@font/maven_pro" />
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/choose_text_view"
                 android:layout_centerHorizontal="true"
-                android:text="OKKO"
+                android:text="@string/okko"
                 android:textColor="#FFFFFF"
                 android:textSize="25dp"
                 android:textStyle="bold"
@@ -96,7 +96,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="46dp"
             android:fontFamily="sans-serif"
-            android:text="pulls-95"
+            android:text="@string/pulls_95"
             android:textColor="#FFFFFF"
             android:textSize="45dp"
             app:fontFamily="sans-serif-medium" />
@@ -118,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="46dp"
-            android:text="А-95 ЄВРО"
+            android:text="@string/_95"
             android:textColor="#FFFFFF"
             android:textSize="45dp"
             app:fontFamily="sans-serif-medium" />
@@ -139,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="46dp"
-            android:text="А-92 ЄВРО"
+            android:text="@string/_92"
             android:textColor="#FFFFFF"
             android:textSize="45dp"
             app:fontFamily="sans-serif-medium" />
@@ -160,7 +160,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="46dp"
-            android:text="ГАЗ"
+            android:text="@string/gas"
             android:textColor="#FFFFFF"
             android:textSize="45dp"
             app:fontFamily="sans-serif-medium" />

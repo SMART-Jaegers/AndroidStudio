@@ -10,6 +10,14 @@
     <string name="this_is_density_of_your_fuel">This is density of your fuel</string>
     <string name="go_home">Go home</string>
     <string name="a_95_euro">A-95 EURO</string>
+    <string name="fill_in">FILL IN</string>
+    <string name="gasoline_volume">GASOLINE VOLUME</string>
+    <string name="check_fuel">Check Fuel</string>
     <string name="okko">OKKO</string>
+    <string name="choose_the_fuel_from">Choose the fuel from</string>
+    <string name="pulls_95">pulls-95</string>
+    <string name="_95">А-95 ЄВРО</string>
+    <string name="_92">А-92 ЄВРО</string>
+    <string name="gas">ГАЗ</string>
 
 </resources>

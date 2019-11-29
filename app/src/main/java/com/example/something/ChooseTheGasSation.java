@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import org.jetbrains.annotations.NotNull;
+
 public class ChooseTheGasSation extends AppCompatActivity {
 
     @Override
@@ -13,7 +15,7 @@ public class ChooseTheGasSation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_the_gas_station);
     }
-    public void stationOkko(View v) {
+    public void stationOkko(@NotNull View v) {
         switch (v.getId()) {
             case R.id.okko:
                 Intent intent = new Intent(this, StationOkko.class);
@@ -23,4 +25,16 @@ public class ChooseTheGasSation extends AppCompatActivity {
                 break;
         }
     }
+    public void backtomain(View v) {
+        switch (v.getId()) {
+            case R.id.btnback:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
+
+    }
+
 }
