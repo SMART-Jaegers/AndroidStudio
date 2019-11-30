@@ -6,35 +6,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class SetVolume extends AppCompatActivity {
+public class VolumeCompare extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_set_volume2);
+        setContentView(R.layout.activity_volume_compare);
     }
     public void backtomain(View v) {
         switch (v.getId()) {
-            case R.id.btnback:
+            case R.id.btnhome:
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
             default:
                 break;
         }
-
-
-    }
-    public void gotovolumecompare(View v) {
-        switch (v.getId()) {
-            case R.id.btncheckFuel:
-                Intent intent = new Intent(this, VolumeCompare.class);
-                startActivity(intent);
-                break;
-            default:
-                break;
-        }
-
 
     }
 }

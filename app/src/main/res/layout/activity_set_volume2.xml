@@ -1,10 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".SetVolume">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -51,49 +50,30 @@
             android:textColor="#9A9494"
             android:textSize="23sp" />
 
-        <LinearLayout
-            android:id="@+id/choice_linear_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_centerVertical="true">
-
-
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/more_down" />
-
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/more_down" />
-
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/more_down" />
-
-        </LinearLayout>
-
         <Button
-            android:id="@+id/checkFuel_button"
+            android:id="@+id/btncheckFuel"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/choice_linear_layout"
+            android:layout_below="@+id/editText"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:background="@drawable/chech_fuel"
             android:fontFamily="sans-serif-light"
+            android:onClick="gotovolumecompare"
             android:text="@string/check_fuel"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ems="10"
+            android:filterTouchesWhenObscured="true"
+            android:hint="@string/enter_volume"
+            android:inputType="number" />
 
 
     </RelativeLayout>

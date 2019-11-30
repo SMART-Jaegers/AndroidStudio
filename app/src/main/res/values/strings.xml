@@ -19,5 +19,11 @@
     <string name="_95">А-95 ЄВРО</string>
     <string name="_92">А-92 ЄВРО</string>
     <string name="gas">ГАЗ</string>
+    <string name="you_loose_ml">You loose ml</string>
+    <string name="percent">%</string>
+    <string name="expected_volume">Expected volume</string>
+    <string name="ml">ml</string>
+    <string name="real_volume">Real volume</string>
+    <string name="enter_volume">Enter Volume</string>
 
 </resources>
