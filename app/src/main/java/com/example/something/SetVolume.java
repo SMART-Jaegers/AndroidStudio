@@ -13,5 +13,15 @@ public class SetVolume extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_volume2);
     }
+    public void backtomain(View v) {
+        switch (v.getId()) {
+            case R.id.btnback:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
 
+    }
 }

@@ -18,11 +18,12 @@
             android:layout_centerVertical="true">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/btnback"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
+                android:onClick="backtookko"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/icons8_left_100" />
         </RelativeLayout>
@@ -218,10 +219,11 @@
             android:layout_centerHorizontal="false">
 
             <Button
-                android:id="@+id/button_go_home_with_good_fuel"
+                android:id="@+id/btnhome"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:background="@drawable/violet_button"
+                android:onClick="backtomain"
                 android:text="@string/go_home"
                 android:textAllCaps="true"
                 android:textColor="#FFFFFF"
