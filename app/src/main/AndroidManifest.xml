@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChosevVolume"></activity>
-        <activity android:name=".VolumeCompare" />
+        <activity android:name=".BadFuelOnOkkoA95Euro"></activity>
         <activity
             android:name=".SetVolume"
             android:screenOrientation="portrait" />
@@ -32,6 +31,7 @@
         <activity
             android:name=".GoodFuelOnOkkoA95Euro"
             android:screenOrientation="portrait" />
+        <activity android:name=".VolumeCompare" />
 
         <meta-data
             android:name="preloaded_fonts"

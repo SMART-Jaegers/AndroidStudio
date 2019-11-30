@@ -22,8 +22,10 @@
     <string name="you_loose_ml">You loose ml</string>
     <string name="percent">%</string>
     <string name="expected_volume">Expected volume</string>
-    <string name="ml">ml</string>
+    <string name="ml">0.0 liters</string>
     <string name="real_volume">Real volume</string>
     <string name="enter_volume">Enter Volume</string>
+    <string name="_700">700</string>
+    <string name="_800">800</string>
 
 </resources>

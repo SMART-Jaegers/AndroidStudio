@@ -63,13 +63,15 @@ tools:context=".VolumeCompare">
             android:textSize="20sp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/expectedvolume"
+            android:layout_width="102dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="16dp"
             android:fontFamily="sans-serif-light"
             android:text="@string/ml"
+            android:textAlignment="textEnd"
             android:textColor="#6D49FF"
             android:textSize="20sp" />
 
@@ -93,13 +95,14 @@ tools:context=".VolumeCompare">
             android:textSize="20sp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="134dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="16dp"
             android:fontFamily="sans-serif-light"
             android:text="@string/ml"
+            android:textAlignment="textEnd"
             android:textColor="#6D49FF"
             android:textSize="20sp" />
 
