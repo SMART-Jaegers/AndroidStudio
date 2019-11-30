@@ -13,10 +13,12 @@
         android:background="#9176FF">
 
         <ImageView
+            android:id="@+id/btnback"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="8dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:onClick="backtomain"
             android:scaleType="centerCrop"
             android:src="@drawable/icons8_left_100" />
 

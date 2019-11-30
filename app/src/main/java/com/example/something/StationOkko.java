@@ -26,4 +26,16 @@ public class StationOkko extends AppCompatActivity {
 
         }
     }
+
+    public void backtostations(@NotNull View v) {
+        switch (v.getId()) {
+            case R.id.btnback:
+                Intent intent = new Intent(this, ChooseTheGasSation.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
+
+    }
 }

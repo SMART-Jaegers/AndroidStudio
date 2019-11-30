@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     public void choosethegasstation(@NotNull View view) {
         switch (view.getId()) {
             case R.id.quality:
-                Intent intent = new Intent(this, ChooseTheGasSation.class);
+                Intent intent =new  Intent(this, ChooseTheGasSation.class);
                 startActivity(intent);
                 break;
             default:
