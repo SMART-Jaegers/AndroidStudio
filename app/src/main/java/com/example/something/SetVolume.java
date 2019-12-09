@@ -18,10 +18,12 @@ import com.squareup.okhttp.Response;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
+import org.json.*;
 
 public class SetVolume extends AppCompatActivity {
     EditText numberEditText;
     String nothing;
+    String temp1;
     TextView textRPi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,17 @@ public class SetVolume extends AppCompatActivity {
                     @Override
                     protected void onPostExecute(Object o){
                         textRPi.setText(o.toString());
+
+                        JSONObject obj = null;
+                        try {
+                            obj = new JSONObject((String) o);
+
+                         temp1 = obj.getString("temp1");
+                        String temp2 = obj.getString("temp2");
+                        textRPi.setText("\n"+temp1+temp2);
+                    }   catch (JSONException e) {
+                        e.printStackTrace();
+                        }
                     }
                 }.execute();
             }
@@ -79,7 +92,7 @@ public class SetVolume extends AppCompatActivity {
             case R.id.btncheckfuel:
                 Intent intent = new Intent(this, VolumeCompare.class);
                 intent.putExtra("volume", numberEditText.getText().toString());
-                intent.putExtra("realvolume", nothing);
+                intent.putExtra("realvolume", temp1);
                 startActivity(intent);
                 break;
             default:
