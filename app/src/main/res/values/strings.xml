@@ -28,5 +28,8 @@
     <string name="_700">700</string>
     <string name="_800">800</string>
     <string name="textview">TextView</string>
+    <string name="_36_liters">36 liters</string>
+    <string name="is_equal_to_real_volume">is equal to real volume</string>
+    <string name="expected_volume_is">Expected volume is</string>
 
 </resources>

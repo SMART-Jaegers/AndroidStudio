@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F7F5FE"
-    tools:context=".MainActivity">
+    tools:context=".VolumeCompareGood">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="24dp"
                 android:fontFamily="sans-serif-light"
-                android:text="Expected volume is"
+                android:text="@string/expected_volume_is"
                 android:textColor="#4C4553"
                 android:textSize="20sp" />
 
@@ -57,7 +57,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="62dp"
                 android:fontFamily="sans-serif-light"
-                android:text="is equal to real volume"
+                android:text="@string/is_equal_to_real_volume"
                 android:textColor="#4C4553"
                 android:textSize="20sp" />
 
@@ -67,22 +67,24 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="110dp"
                 android:fontFamily="sans-serif-light"
-                android:text="36 liters"
+                android:text="@string/_36_liters"
                 android:textColor="#6D49FF"
                 android:textSize="25sp" />
 
         </RelativeLayout>
 
         <Button
+            android:id="@+id/btnhome"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="320dp"
+            android:background="@drawable/go_home"
             android:fontFamily="sans-serif-light"
+            android:onClick="backtomain"
             android:text="go home"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:background="@drawable/go_home"/>
+            android:textSize="20sp" />
 
     </RelativeLayout>
 

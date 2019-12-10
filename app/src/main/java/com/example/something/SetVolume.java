@@ -37,6 +37,8 @@ public class SetVolume extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+
+
                 AsyncTask asyncTask = new AsyncTask() {
                     @Override
                     protected Object doInBackground(Object[] objects) {
@@ -71,7 +73,10 @@ public class SetVolume extends AppCompatActivity {
                         }
                     }
                 }.execute();
+
+
             }
+
         } );
 
     }
@@ -93,6 +98,9 @@ public class SetVolume extends AppCompatActivity {
                 Intent intent = new Intent(this, VolumeCompare.class);
                 intent.putExtra("volume", numberEditText.getText().toString());
                 intent.putExtra("realvolume", temp1);
+                if (Double. parseDouble(temp1)==Double. parseDouble(numberEditText.getText().toString())){
+                    intent = new Intent(this, VolumeCompareGood.class);
+                }
                 startActivity(intent);
                 break;
             default:
