@@ -26,6 +26,7 @@ public class SetVolume extends AppCompatActivity {
     String nothing;
     String temp1="10";
     TextView textRPi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +68,7 @@ public class SetVolume extends AppCompatActivity {
                             obj = new JSONObject((String) o);
 
                          temp1 = obj.getString("temp1");
+
                         String temp2 = obj.getString("temp2");
                         textRPi.setText("\n"+temp1+temp2);
                     }   catch (JSONException e) {
@@ -85,6 +87,7 @@ public class SetVolume extends AppCompatActivity {
     public void backtomain(@NotNull View v) {
         switch (v.getId()) {
             case R.id.btnback:
+
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
@@ -96,7 +99,10 @@ public class SetVolume extends AppCompatActivity {
     public void gotovolumecompare(@NotNull View v) {
         switch (v.getId()) {
             case R.id.btncheckfuel:
+                Intent intent1 = new Intent(this, StationOkko.class);
+                intent1.putExtra("force", temp1);
                 Intent intent = new Intent(this, VolumeCompare.class);
+
                 intent.putExtra("volume", numberEditText.getText().toString());
                 intent.putExtra("realvolume", temp1);
                 if (Double. parseDouble(temp1)>=Double. parseDouble(numberEditText.getText().toString())){
