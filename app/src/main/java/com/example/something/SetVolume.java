@@ -99,8 +99,6 @@ public class SetVolume extends AppCompatActivity {
     public void gotovolumecompare(@NotNull View v) {
         switch (v.getId()) {
             case R.id.btncheckfuel:
-                Intent intent1 = new Intent(this, StationOkko.class);
-                intent1.putExtra("force", temp1);
                 Intent intent = new Intent(this, VolumeCompare.class);
 
                 intent.putExtra("volume", numberEditText.getText().toString());

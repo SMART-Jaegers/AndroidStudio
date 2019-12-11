@@ -30,7 +30,7 @@ TextView textvolume, textresult, percent;
         percentt=10000-percentt*10000;
         int i = (int) Math.round(percentt);
         percentt =(double)i / 100;
-        textvolume.setText(volume+"liters");
+        textvolume.setText(volume+" liters");
         textresult.setText(realvolume + " liters");
         percent.setText( Double.toString(percentt)+"%" );
     }
