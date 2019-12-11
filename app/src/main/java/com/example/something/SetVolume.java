@@ -16,14 +16,15 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
-import org.json.*;
 
 public class SetVolume extends AppCompatActivity {
     EditText numberEditText;
     String nothing;
-    String temp1;
+    String temp1="10";
     TextView textRPi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,8 +99,9 @@ public class SetVolume extends AppCompatActivity {
                 Intent intent = new Intent(this, VolumeCompare.class);
                 intent.putExtra("volume", numberEditText.getText().toString());
                 intent.putExtra("realvolume", temp1);
-                if (Double. parseDouble(temp1)==Double. parseDouble(numberEditText.getText().toString())){
+                if (Double. parseDouble(temp1)>=Double. parseDouble(numberEditText.getText().toString())){
                     intent = new Intent(this, VolumeCompareGood.class);
+                    intent.putExtra("volume", numberEditText.getText().toString());
                 }
                 startActivity(intent);
                 break;
