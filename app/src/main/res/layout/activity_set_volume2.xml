@@ -79,15 +79,6 @@
             android:textColorHint="#34000000"
             android:textSize="22sp" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
-            android:text="@string/textview"
-            android:textColor="#1E0A0A" />
-
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"

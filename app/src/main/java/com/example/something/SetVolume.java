@@ -7,7 +7,6 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,8 +23,8 @@ import java.io.IOException;
 public class SetVolume extends AppCompatActivity {
     EditText numberEditText;
     String nothing;
-    String temp1="10";
-    TextView textRPi;
+    String volume="10";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class SetVolume extends AppCompatActivity {
         setContentView(R.layout.activity_set_volume2);
         numberEditText = (EditText) findViewById(R.id.editText);
         numberEditText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-        textRPi = (TextView)findViewById(R.id.textView);
+
 
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener(){
@@ -49,7 +48,7 @@ public class SetVolume extends AppCompatActivity {
                                 .url("http://192.168.43.87:5000")
                                 .build();
 
-                                Response response = null;
+                        Response response = null;
                         try{
                             response = client.newCall(request).execute();
                             return response.body().string();
@@ -61,18 +60,13 @@ public class SetVolume extends AppCompatActivity {
                     }
                     @Override
                     protected void onPostExecute(Object o){
-                        textRPi.setText(o.toString());
-
                         JSONObject obj = null;
                         try {
                             obj = new JSONObject((String) o);
 
-                         temp1 = obj.getString("temp1");
-
-                        String temp2 = obj.getString("temp2");
-                        textRPi.setText("\n"+temp1+temp2);
-                    }   catch (JSONException e) {
-                        e.printStackTrace();
+                            volume = obj.getString("volume");
+                        }   catch (JSONException e) {
+                            e.printStackTrace();
                         }
                     }
                 }.execute();
@@ -102,8 +96,8 @@ public class SetVolume extends AppCompatActivity {
                 Intent intent = new Intent(this, VolumeCompare.class);
 
                 intent.putExtra("volume", numberEditText.getText().toString());
-                intent.putExtra("realvolume", temp1);
-                if (Double. parseDouble(temp1)>=Double. parseDouble(numberEditText.getText().toString())){
+                intent.putExtra("realvolume", volume);
+                if (Double. parseDouble(volume)>=Double. parseDouble(numberEditText.getText().toString())){
                     intent = new Intent(this, VolumeCompareGood.class);
                     intent.putExtra("volume", numberEditText.getText().toString());
                 }

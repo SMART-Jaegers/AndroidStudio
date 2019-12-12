@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,20 +19,18 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 public class StationOkko extends AppCompatActivity {
-    TextView textvolume;
-    String temp2="3";
-    String temp1="0.5";
+    String weight="1";
+    String volume="1";
+    String temperature="1";
+    RelativeLayout button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_station_okko);
-        textvolume = (TextView) findViewById(R.id.textView3);
-
-    }
-
-    public void checkfuel(@NotNull View view) {
-        switch (view.getId()) {
-            case R.id.a95:
+        button= (RelativeLayout) findViewById(R.id.a95);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
                 AsyncTask asyncTask = new AsyncTask() {
                     @Override
                     protected Object doInBackground(Object[] objects) {
@@ -53,35 +51,51 @@ public class StationOkko extends AppCompatActivity {
                     }
                     @Override
                     protected void onPostExecute(Object o){
-
                         JSONObject obj = null;
                         try {
                             obj = new JSONObject((String) o);
 
+                            weight = obj.getString("weight");
+                            temperature = obj.getString("temperature");
+                            volume = obj.getString("volume");
+                            if (Double.parseDouble(weight)/Double.parseDouble(volume)<0.8) {
+                                Intent intent = new Intent(StationOkko.this,GoodFuelOnOkkoA95Euro.class);
+                                intent.putExtra("weight", weight);
+                                intent.putExtra("temperature", weight);
+                                intent.putExtra("volume", volume);
+                                startActivity(intent);}
+                            else {Intent intent = new Intent(StationOkko.this,BadFuelOnOkkoA95Euro.class);
+                                intent.putExtra("weight", weight);
+                                intent.putExtra("temperature", temperature);
+                                intent.putExtra("volume", volume);
+                                startActivity(intent);}
 
-                            temp2 = obj.getString("temp2");
-                            temp1 = obj.getString("temp1");
-                            textvolume.setText(temp2);
                         }   catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
                 }.execute();
 
-                if (Double.parseDouble(temp2)/Double.parseDouble(temp1)<8) {Intent intent = new Intent(this,GoodFuelOnOkkoA95Euro.class);
-                    intent.putExtra("force", temp2);
-                    intent.putExtra("volume", temp1);
+
+            }
+
+        } );
+
+    }
+
+
+  /*  public void checkfuel(@NotNull View view) {
+                if (Double.parseDouble(weight)/Double.parseDouble(volume)<0.8) {
+                    Intent intent = new Intent(this,GoodFuelOnOkkoA95Euro.class);
+                    intent.putExtra("weight", weight);
+                    intent.putExtra("volume", volume);
                 startActivity(intent);}
                 else {Intent intent = new Intent(this,BadFuelOnOkkoA95Euro.class);
-                    intent.putExtra("force", temp2);
-                    intent.putExtra("volume", temp1);
+                    intent.putExtra("weight", weight);
+                    intent.putExtra("volume", volume);
                     startActivity(intent);}
-                break;
-            default:
-                break;
 
-        }
-    }
+    }*/
 
     public void backtostations(@NotNull View v) {
         switch (v.getId()) {
