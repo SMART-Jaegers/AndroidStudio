@@ -138,7 +138,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="140dp"
             android:text="TextView"
-            android:textColor="#9176FF"
+            android:textColor="#32D853"
             android:textSize="25sp" />
     </RelativeLayout>
 
