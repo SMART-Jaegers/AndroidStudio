@@ -137,7 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="140dp"
-            android:text="TextView"
+            android:text="@string/textview"
             android:textColor="#32D853"
             android:textSize="25sp" />
     </RelativeLayout>

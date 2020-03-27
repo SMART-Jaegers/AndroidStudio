@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#9176FF"
     android:orientation="vertical"
-    tools:context=".ChooseTheGasSation">
+    tools:context=".ChooseTheGasStation">
 
     <RelativeLayout
         android:id="@+id/w"
@@ -19,7 +19,7 @@
             android:layout_height="50dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="3dp"
-            android:onClick="backtomain"
+            android:onClick="backToMain"
             android:scaleType="centerCrop"
             android:src="@drawable/icons8_left_100__2_" />
 

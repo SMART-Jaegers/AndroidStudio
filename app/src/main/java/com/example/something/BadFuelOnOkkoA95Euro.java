@@ -17,32 +17,23 @@ public class BadFuelOnOkkoA95Euro extends AppCompatActivity {
         String weight= intent.getStringExtra("weight");
         String temperature= intent.getStringExtra("temperature");
         String volume= intent.getStringExtra("volume");
-        TextView textforce = (TextView) findViewById(R.id.textView5);
+        TextView textForce = (TextView) findViewById(R.id.textView5);
         Double density=(Double.parseDouble(weight)/Double.parseDouble(volume))/(1+Double.parseDouble(temperature)*0.001);
         density=density*1000;
         int i = (int) Math.round(density);
-        textforce.setText( Integer.toString(i));
+        textForce.setText( Integer.toString(i));
     }
     public void backToOkko(View v) {
-        switch (v.getId()) {
-            case R.id.btnback:
-                Intent intent = new Intent(this, StationOkko.class);
-                startActivity(intent);
-                break;
-            default:
-                break;
+        if (v.getId()==R.id.btnback) {
+            Intent intent = new Intent(this, StationOkko.class);
+            startActivity(intent);
         }
 
     }
     public void backToMain(View v) {
-        switch (v.getId()) {
-            case R.id.btnhome:
+        if (v.getId()==R.id.btnhome) {
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
-                break;
-            default:
-                break;
         }
-
     }
 }

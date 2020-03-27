@@ -7,26 +7,25 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.jetbrains.annotations.NotNull;
+
 public class VolumeCompareGood extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volume_compare_good);
-        TextView textvolume= (TextView) findViewById(R.id.volumegood);
+        TextView textvolume = (TextView) findViewById(R.id.volumegood);
         Intent intent = getIntent();
-        String volume= intent.getStringExtra("volume");
-        textvolume.setText(volume+" liters");
+        String volume = intent.getStringExtra("volume");
+        textvolume.setText(String.format("%s liters", volume));
 
     }
-    public void backtomain(View v) {
-        switch (v.getId()) {
-            case R.id.btnhome:
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                break;
-            default:
-                break;
+
+    public void backToMain(@NotNull View view) {
+        if (view.getId() == R.id.btnhome) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
 
     }

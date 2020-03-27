@@ -22,7 +22,7 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="3dp"
-                android:onClick="backtostations"
+                android:onClick="backToStations"
                 android:scaleType="centerCrop"
                 android:src="@drawable/icons8_left_100__2_" />
 

@@ -23,7 +23,7 @@
             android:name=".StationOkko"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ChooseTheGasSation"
+            android:name=".ChooseTheGasStation"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"

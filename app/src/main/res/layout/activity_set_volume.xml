@@ -16,7 +16,7 @@
             android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="8dp"
-            android:onClick="backtomain"
+            android:onClick="backToMain"
             android:scaleType="centerCrop"
             android:src="@drawable/icons8_left_100" />
 
@@ -59,7 +59,7 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/chech_fuel"
             android:fontFamily="sans-serif-light"
-            android:onClick="gotovolumecompare"
+            android:onClick="goToVolumeCompare"
             android:text="@string/check_fuel"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"

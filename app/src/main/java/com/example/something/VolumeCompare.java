@@ -8,7 +8,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class VolumeCompare extends AppCompatActivity {
-TextView textvolume, textresult, percent;
+    TextView textvolume, textresult, percent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,32 +17,30 @@ TextView textvolume, textresult, percent;
         textvolume = (TextView) findViewById(R.id.expectedvolume);
         percent = (TextView) findViewById(R.id.percent);
         textresult = (TextView) findViewById(R.id.volumeResult);
-        double percentt=3.4;
+        double percentt = 3.4;
         Intent intent = getIntent();
-        String volume= intent.getStringExtra("volume");
-        String realvolume= intent.getStringExtra("realvolume");
-        String s="32";
-        if (volume=="null") {
-            volume="0.0";
+        String volume = intent.getStringExtra("volume");
+        String realvolume = intent.getStringExtra("realvolume");
+        String s = "32";
+        if (volume == "null") {
+            volume = "0.0";
         }
 
 
-        percentt=Double.parseDouble(realvolume)/Double.parseDouble(volume);
-        percentt=10000-percentt*10000;
+        percentt = Double.parseDouble(realvolume) / Double.parseDouble(volume);
+        percentt = 10000 - percentt * 10000;
         int i = (int) Math.round(percentt);
-        percentt =(double)i / 100;
-        textvolume.setText(volume+" liters");
-        textresult.setText(realvolume + " liters");
-        percent.setText( Double.toString(percentt)+"%" );
+        percentt = (double) i / 100;
+        textvolume.setText(String.format("%s liters", volume));
+        textresult.setText(String.format("%s liters", realvolume));
+        percent.setText(String.format("%s%%", Double.toString(percentt)));
     }
-    public void backtomain(View v) {
-        switch (v.getId()) {
-            case R.id.btnhome:
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                break;
-            default:
-                break;
+
+
+    public void backToMain(View view) {
+        if (view.getId() == R.id.btnhome) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
 
     }
