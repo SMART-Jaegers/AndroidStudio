@@ -18,7 +18,7 @@ public class ConnectToRaspberry extends AsyncTask {
     protected Object doInBackground(Object[] objects) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url("http://192.168.43.87:5000")
+                .url("http://localhost:8080/data/1")
                 .build();
 
         Response response = null;
