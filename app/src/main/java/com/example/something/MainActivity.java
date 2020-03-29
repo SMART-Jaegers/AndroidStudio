@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, SetVolume.class);
             startActivity(intent);
         }
-
-
     }
 
     public void chooseTheGasStation(@NotNull View view) {

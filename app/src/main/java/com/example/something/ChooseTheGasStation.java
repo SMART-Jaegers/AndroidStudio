@@ -16,7 +16,7 @@ public class ChooseTheGasStation extends AppCompatActivity {
         setContentView(R.layout.activity_choose_the_gas_station);
     }
 
-    public void stationOkko(@NotNull View v) {
+    public void stationOkko(View v) {
         if (v.getId() == R.id.okko) {
             Intent intent = new Intent(this, StationOkko.class);
             startActivity(intent);

@@ -10,14 +10,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.jetbrains.annotations.NotNull;
 
 public class VolumeCompareGood extends AppCompatActivity {
+    TextView textVolume;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volume_compare_good);
-        TextView textVolume = (TextView) findViewById(R.id.volumegood);
+
+        textVolume = (TextView) findViewById(R.id.volumegood);
+
         Intent intent = getIntent();
-        String volume = intent.getStringExtra("volume");
+
+        String volume = intent.getStringExtra("expectedVolume");
+
         textVolume.setText(String.format("%s liters", volume));
 
     }
