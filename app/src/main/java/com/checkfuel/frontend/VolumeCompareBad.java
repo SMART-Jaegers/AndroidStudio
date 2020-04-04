@@ -20,19 +20,18 @@ public class VolumeCompareBad extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volume_compare_bad);
 
-        textVolume = (TextView) findViewById(R.id.expectedvolume);
-        textRate = (TextView) findViewById(R.id.percent);
-        textresult = (TextView) findViewById(R.id.volumeResult);
+        textVolume = findViewById(R.id.expectedvolume);
+        textRate = findViewById(R.id.percent);
+        textresult = findViewById(R.id.volumeResult);
 
         Intent intent = getIntent();
 
         String expectedVolume = intent.getStringExtra("expectedVolume");
         String realVolume = intent.getStringExtra("realVolume");
 
-        if (expectedVolume == "null") {
-            expectedVolume = "0.0";
-        }
 
+        assert realVolume != null;
+        assert expectedVolume != null;
         double rate = (1 - Double.parseDouble(realVolume) / Double.parseDouble(expectedVolume));
 
         textVolume.setText(String.format("%s liters", expectedVolume));

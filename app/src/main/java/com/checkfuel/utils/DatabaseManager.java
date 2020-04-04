@@ -11,6 +11,8 @@ public class DatabaseManager {
     public static void writePost(double temperature, double weight, double volumeFill, double volumeRemaining, double distance) {
         String key = CHECK_FUEL_REFERENCE.push().getKey();
         Post post = new Post(temperature, weight, volumeFill, volumeRemaining, distance);
+
+        assert key != null;
         CHECK_FUEL_REFERENCE.child(key).setValue(post);
     }
 }

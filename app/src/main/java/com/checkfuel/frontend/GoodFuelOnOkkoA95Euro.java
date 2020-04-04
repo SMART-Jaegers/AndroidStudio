@@ -25,9 +25,12 @@ public class GoodFuelOnOkkoA95Euro extends AppCompatActivity {
         String volume = intent.getStringExtra("volume");
         String temperature = intent.getStringExtra("temperature");
 
-        textForce = (TextView) findViewById(R.id.textView5);
+        textForce = findViewById(R.id.textView5);
 
-        Double density = (Double.parseDouble(weight) / Double.parseDouble(volume)) / (1 + Double.parseDouble(temperature) * 0.001);
+        assert weight != null;
+        assert volume != null;
+        assert temperature != null;
+        double density = (Double.parseDouble(weight) / Double.parseDouble(volume)) / (1 + Double.parseDouble(temperature) * 0.001);
         density = density * 1000;
 
         textForce.setText(new DecimalFormat("#").format(density));

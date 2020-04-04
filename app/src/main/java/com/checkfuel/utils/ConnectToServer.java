@@ -2,6 +2,7 @@ package com.checkfuel.utils;
 
 import android.os.AsyncTask;
 import android.util.JsonReader;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,7 +21,7 @@ public class ConnectToServer {
             @Override
             public void run() {
                 try {
-                    URL serverEndpoint = new URL("http://192.168.25.105:8080/data/1");
+                    URL serverEndpoint = new URL("http://192.168.43.109:8080/data/1");
                     HttpURLConnection myConnection = (HttpURLConnection) serverEndpoint.openConnection();
                     myConnection.setRequestProperty("User-Agent", "my-rest-app-v0.1");
                     if (myConnection.getResponseCode() == 200) {
@@ -31,7 +32,7 @@ public class ConnectToServer {
                         while (jsonReader.hasNext()) {
                             String key = jsonReader.nextName();
                             switch (key) {
-                                case "volume":                          //TODO find easiest way
+                                case "volume":
                                     volume = jsonReader.nextString();
                                     break;
                                 case "temperature":
