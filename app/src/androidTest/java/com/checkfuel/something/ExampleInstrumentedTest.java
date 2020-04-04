@@ -1,4 +1,4 @@
-package com.example.something;
+package com.checkfuel.something;
 
 import android.content.Context;
 

@@ -1,4 +1,4 @@
-package com.example.something;
+package com.checkfuel.frontend;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.checkfuel.something.R;
 
 import org.jetbrains.annotations.NotNull;
 

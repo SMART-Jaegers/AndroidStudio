@@ -1,65 +1,71 @@
-package com.example.something;
+package com.checkfuel.frontend;
 
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.JsonReader;
 import android.view.View;
-import android.widget.RelativeLayout;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
+import com.checkfuel.something.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.jetbrains.annotations.NotNull;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
+import java.net.HttpURLConnection;;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-public class StationOkko extends AppCompatActivity {
-    String weight;
-    String volume;
-    String temperature;
-
+public class SetVolume extends AppCompatActivity {
+    private EditText numberEditText;
+    private String volume;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_station_okko);
+        setContentView(R.layout.activity_set_volume);
+
+        numberEditText = (EditText) findViewById(R.id.editText);
+        numberEditText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
 
         connectToServer();
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+
+        myRef.setValue("Hello, World!");
     }
 
-    public void doCompare(View view) {
-        if (Double.parseDouble(weight) / Double.parseDouble(volume) < 0.8) {
-            Intent intent = new Intent(StationOkko.this, GoodFuelOnOkkoA95Euro.class);
-            intent.putExtra("weight", weight);
-            intent.putExtra("temperature", temperature);
-            intent.putExtra("volume", volume);
-            startActivity(intent);
-        } else {
-            Intent intent = new Intent(StationOkko.this, BadFuelOnOkkoA95Euro.class);
-            intent.putExtra("weight", weight);
-            intent.putExtra("temperature", temperature);
-            intent.putExtra("volume", volume);
-            startActivity(intent);
-        }
-    }
-
-    public void backToStations(@NotNull View view) {
+    public void backToMain(@NotNull View view) {
         if (view.getId() == R.id.btnback) {
-            Intent intent = new Intent(this, ChooseTheGasStation.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
+    }
 
+    public void goToVolumeCompare(@NotNull View view) {
+        if (view.getId() == R.id.btncheckfuel) {
+
+            Intent intent;
+
+            if (Double.parseDouble(volume) >= Double.parseDouble(numberEditText.getText().toString())) {
+                intent = new Intent(this, VolumeCompareGood.class);
+            } else {
+                intent = new Intent(this, VolumeCompareBad.class);
+            }
+
+            intent.putExtra("expectedVolume", numberEditText.getText().toString());
+            intent.putExtra("realVolume", volume);
+
+            startActivity(intent);
+        }
     }
 
     public void connectToServer() {
@@ -67,7 +73,7 @@ public class StationOkko extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    URL serverEndpoint = new URL("http://192.168.25.106:8080/data/1");
+                    URL serverEndpoint = new URL("http://192.168.25.105:8080/data/1");
                     HttpURLConnection myConnection = (HttpURLConnection) serverEndpoint.openConnection();
                     myConnection.setRequestProperty("User-Agent", "my-rest-app-v0.1");
                     if (myConnection.getResponseCode() == 200) {
@@ -77,12 +83,10 @@ public class StationOkko extends AppCompatActivity {
                         jsonReader.beginObject();
                         while (jsonReader.hasNext()) {
                             String key = jsonReader.nextName();
-                            if (key.equals("volume")) {                         //TODO find easiest way
+                            if (key.equals("volume")) {
                                 volume = jsonReader.nextString();
-                            } else if (key.equals("temperature")) {
-                                temperature = jsonReader.nextString();
-                            } else if (key.equals("weight")) {
-                                weight = jsonReader.nextString();
+
+                                break;
                             } else {
                                 jsonReader.skipValue();
                             }
@@ -99,4 +103,7 @@ public class StationOkko extends AppCompatActivity {
             }
         });
     }
+
 }
+
+

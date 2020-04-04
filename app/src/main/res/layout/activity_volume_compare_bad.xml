@@ -6,7 +6,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
 android:background="#F7F5FE"
-tools:context=".VolumeCompareBad">
+tools:context="com.checkfuel.frontend.VolumeCompareBad">
 
     <LinearLayout
         android:layout_width="match_parent"
