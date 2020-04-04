@@ -8,6 +8,7 @@ import android.view.View;
 
 
 import com.checkfuel.something.R;
+import com.checkfuel.utils.ConnectToServer;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ConnectToServer.connect();
     }
 
     public void refueling(@NotNull View view) {

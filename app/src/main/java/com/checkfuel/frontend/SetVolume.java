@@ -1,31 +1,29 @@
 package com.checkfuel.frontend;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.InputType;
-import android.util.JsonReader;
 import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.checkfuel.models.Post;
 import com.checkfuel.something.R;
+import com.checkfuel.utils.ConnectToServer;
+import com.checkfuel.utils.DatabaseManager;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
+;
 
 public class SetVolume extends AppCompatActivity {
     private EditText numberEditText;
     private String volume;
+    private Post post;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +33,7 @@ public class SetVolume extends AppCompatActivity {
         numberEditText = (EditText) findViewById(R.id.editText);
         numberEditText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
 
-        connectToServer();
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("Hello, World!");
+        DatabaseManager.writePost(0, 0, 0, 0, 0);
     }
 
     public void backToMain(@NotNull View view) {
@@ -51,6 +44,7 @@ public class SetVolume extends AppCompatActivity {
     }
 
     public void goToVolumeCompare(@NotNull View view) {
+        volume = ConnectToServer.getVolume();
         if (view.getId() == R.id.btncheckfuel) {
 
             Intent intent;
@@ -68,41 +62,6 @@ public class SetVolume extends AppCompatActivity {
         }
     }
 
-    public void connectToServer() {
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    URL serverEndpoint = new URL("http://192.168.25.105:8080/data/1");
-                    HttpURLConnection myConnection = (HttpURLConnection) serverEndpoint.openConnection();
-                    myConnection.setRequestProperty("User-Agent", "my-rest-app-v0.1");
-                    if (myConnection.getResponseCode() == 200) {
-                        InputStream responseBody = myConnection.getInputStream();
-                        InputStreamReader responseBodyReader = new InputStreamReader(responseBody, StandardCharsets.UTF_8);
-                        JsonReader jsonReader = new JsonReader(responseBodyReader);
-                        jsonReader.beginObject();
-                        while (jsonReader.hasNext()) {
-                            String key = jsonReader.nextName();
-                            if (key.equals("volume")) {
-                                volume = jsonReader.nextString();
-
-                                break;
-                            } else {
-                                jsonReader.skipValue();
-                            }
-                        }
-                        jsonReader.close();
-                        myConnection.disconnect();
-                    } else {
-                        //ToDO   myConnection.getResponseCode();
-                    }
-                } catch (IOException e) {
-                    //TODO message connection isn't install
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
 
 }
 
