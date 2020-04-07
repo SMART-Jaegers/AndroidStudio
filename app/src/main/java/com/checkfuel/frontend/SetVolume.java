@@ -26,7 +26,7 @@ public class SetVolume extends AppCompatActivity {
         numberEditText = findViewById(R.id.editText);
         numberEditText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
 
-        DatabaseManager.writePost(0, 0, 0, 0, 0);
+        DatabaseManager.writePost(20, 1000, 1000, 0, 10);
     }
 
 

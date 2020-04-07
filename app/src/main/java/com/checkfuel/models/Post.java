@@ -25,19 +25,39 @@ public class Post {
         return temperature;
     }
 
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
+    }
+
     public double getWeight() {
         return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
     public double getVolumeFill() {
         return volumeFill;
     }
 
+    public void setVolumeFill(double volumeFill) {
+        this.volumeFill = volumeFill;
+    }
+
     public double getVolumeRemaining() {
         return volumeRemaining;
     }
 
+    public void setVolumeRemaining(double volumeRemaining) {
+        this.volumeRemaining = volumeRemaining;
+    }
+
     public double getDistance() {
         return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
     }
 }

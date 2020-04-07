@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.checkfuel.something.R;
 import com.checkfuel.utils.ConnectToServer;
+import com.checkfuel.utils.DatabaseManager;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ConnectToServer.connect();
+        DatabaseManager.readPost();
     }
 
     public void refueling(@NotNull View view) {
