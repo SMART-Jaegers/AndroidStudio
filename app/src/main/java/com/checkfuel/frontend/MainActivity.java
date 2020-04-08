@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         ConnectToServer.connect();
         DatabaseManager.readPost();
+        DatabaseManager.writePost(20, 1000, 1000, 0, 10);
     }
 
     public void refueling(@NotNull View view) {

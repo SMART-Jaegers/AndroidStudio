@@ -12,27 +12,17 @@ import com.checkfuel.something.R;
 import java.text.DecimalFormat;
 
 public class BadFuelOnOkkoA95Euro extends AppCompatActivity {
-    TextView textForce;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bad_fuel_on_okko_a95_euro);
 
+        TextView textDensity = findViewById(R.id.textView5);
         Intent intent = getIntent();
-
-        String weight = intent.getStringExtra("weight");
-        String temperature = intent.getStringExtra("temperature");
-        String volume = intent.getStringExtra("volume");
-
-        textForce = findViewById(R.id.textView5);
-
-        assert weight != null;
-        assert volume != null;
-        assert temperature != null;
-        double density = (Double.parseDouble(weight) / Double.parseDouble(volume)) / (1 + Double.parseDouble(temperature) * 0.001);
-        density *= 1000;
-        textForce.setText(new DecimalFormat("#").format(density));
+        double density = intent.getDoubleExtra("density", 0);
+        textDensity.setText(new DecimalFormat("#").format(density));
+        textDensity.setLeft(10);
     }
 
     public void backToOkko(View v) {
