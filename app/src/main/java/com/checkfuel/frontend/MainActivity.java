@@ -9,25 +9,24 @@ import android.view.View;
 
 import com.checkfuel.something.R;
 import com.checkfuel.utils.AuthenticationManager;
-import com.checkfuel.utils.DatabaseManager;
 
 import org.jetbrains.annotations.NotNull;
 
 public class MainActivity extends AppCompatActivity {
-    private AuthenticationManager authentification;
+    private AuthenticationManager authentication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        authentification = new AuthenticationManager();
+        authentication = new AuthenticationManager();
 
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        authentification.checkSignIn();
+        authentication.checkSignIn();
     }
 
     public void refueling(@NotNull View view) {
