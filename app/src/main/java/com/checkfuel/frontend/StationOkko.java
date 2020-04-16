@@ -2,6 +2,7 @@ package com.checkfuel.frontend;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
 
@@ -14,44 +15,37 @@ import com.checkfuel.utils.DatabaseManager;
 import org.jetbrains.annotations.NotNull;
 
 public class StationOkko extends AppCompatActivity {
-    String weight;
-    String volume;
-    String temperature;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_station_okko);
-
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Post post = DatabaseManager.getPost();
-        weight = String.valueOf(post.getWeight());
-        volume = String.valueOf(post.getVolumeFill());
-        temperature = String.valueOf(post.getTemperature());
-        Toast.makeText(this, temperature, Toast.LENGTH_SHORT).show();
-
     }
 
     public void doCompare(View view) {
+        Post post = DatabaseManager.getPost();
 
-        if (Double.parseDouble(weight) / Double.parseDouble(volume) < 0.8) {
-            Intent intent = new Intent(StationOkko.this, GoodFuelOnOkkoA95Euro.class);
-            intent.putExtra("weight", weight);
-            intent.putExtra("temperature", temperature);
-            intent.putExtra("volume", volume);
-            startActivity(intent);
-        } else {
-            Intent intent = new Intent(StationOkko.this, BadFuelOnOkkoA95Euro.class);
-            intent.putExtra("weight", weight);
-            intent.putExtra("temperature", temperature);
-            intent.putExtra("volume", volume);
-            startActivity(intent);
+        if (post == null) {
+            Toast toast = Toast.makeText(this, "Failed to connect to database, \n please check the internet connection or sign in in your user account", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+            return;
         }
+
+        double weight = post.getWeight();
+        double realVolume = post.getVolumeFill();
+        double temperature = post.getTemperature();
+        double density = 1000 * (weight / realVolume) / (1 + temperature * 0.001);
+
+        Intent intent = new Intent();
+
+        if (density <= 800) {
+            intent.setClass(StationOkko.this, GoodFuelOnOkkoA95Euro.class);
+        } else {
+            intent.setClass(StationOkko.this, BadFuelOnOkkoA95Euro.class);
+        }
+        intent.putExtra("density", density);
+        startActivity(intent);
     }
 
     public void backToStations(@NotNull View view) {

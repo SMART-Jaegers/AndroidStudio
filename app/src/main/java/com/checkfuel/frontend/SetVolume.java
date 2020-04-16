@@ -3,12 +3,14 @@ package com.checkfuel.frontend;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.checkfuel.models.Post;
 import com.checkfuel.something.R;
 import com.checkfuel.utils.ConnectToServer;
 import com.checkfuel.utils.DatabaseManager;
@@ -25,31 +27,32 @@ public class SetVolume extends AppCompatActivity {
 
         numberEditText = findViewById(R.id.editText);
         numberEditText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-
-        DatabaseManager.writePost(20, 1000, 1000, 0, 10);
     }
 
 
     public void goToVolumeCompare(@NotNull View view) {
-        String volume = ConnectToServer.getVolume();
-        if (volume.equals("")) {
-            Toast.makeText(this, "invalid connection, please connect later", Toast.LENGTH_LONG).show();
+        Post post = DatabaseManager.getPost();
 
-        } else {
-            if (view.getId() == R.id.btncheckfuel) {
-                Intent intent;
+        if (post == null) {
+            Toast toast = Toast.makeText(this, "Failed to connect to database, \n please check the internet connection or sign in in your user account", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+            return;
+        }
+        double volumeFill = post.getVolumeFill();
+        double volumeExpected = Double.parseDouble(numberEditText.getText().toString());
+        if (view.getId() == R.id.btncheckfuel) {
+            Intent intent = new Intent();
 
-                if (Double.parseDouble(volume) >= Double.parseDouble(numberEditText.getText().toString())) {
-                    intent = new Intent(this, VolumeCompareGood.class);
-                } else {
-                    intent = new Intent(this, VolumeCompareBad.class);
-                }
-
-                intent.putExtra("expectedVolume", numberEditText.getText().toString());
-                intent.putExtra("realVolume", volume);
-
-                startActivity(intent);
+            if (volumeFill >= volumeExpected) {
+                intent.setClass(this, VolumeCompareGood.class);
+            } else {
+                intent.setClass(this, VolumeCompareBad.class);
             }
+
+            intent.putExtra("expectedVolume", volumeExpected);
+            intent.putExtra("realVolume", volumeFill);
+            startActivity(intent);
         }
     }
 

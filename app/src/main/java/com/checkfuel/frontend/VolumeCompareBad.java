@@ -12,7 +12,7 @@ import com.checkfuel.something.R;
 import java.text.DecimalFormat;
 
 public class VolumeCompareBad extends AppCompatActivity {
-    TextView textVolume, textresult, textRate;
+    TextView textExpectedVolume, textRealVolume, textRate;
 
 
     @Override
@@ -20,22 +20,18 @@ public class VolumeCompareBad extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volume_compare_bad);
 
-        textVolume = findViewById(R.id.expectedvolume);
+        textExpectedVolume = findViewById(R.id.expectedvolume);
         textRate = findViewById(R.id.percent);
-        textresult = findViewById(R.id.volumeResult);
+        textRealVolume = findViewById(R.id.volumeResult);
 
         Intent intent = getIntent();
 
-        String expectedVolume = intent.getStringExtra("expectedVolume");
-        String realVolume = intent.getStringExtra("realVolume");
+        double expectedVolume = intent.getDoubleExtra("expectedVolume", 1);
+        double realVolume = intent.getDoubleExtra("realVolume", 0);
+        double rate = (1 - realVolume / expectedVolume);
 
-
-        assert realVolume != null;
-        assert expectedVolume != null;
-        double rate = (1 - Double.parseDouble(realVolume) / Double.parseDouble(expectedVolume));
-
-        textVolume.setText(String.format("%s liters", expectedVolume));
-        textresult.setText(String.format("%s liters", realVolume));
+        textExpectedVolume.setText(String.format("%s liters", expectedVolume));
+        textRealVolume.setText(String.format("%s liters", realVolume));
         textRate.setText(new DecimalFormat("#0.00%").format(rate));
     }
 

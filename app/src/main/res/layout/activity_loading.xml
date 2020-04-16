@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.checkfuel.frontend.Loading">
+
+    <ImageView
+        android:id="@+id/logo_image_view"
+        android:layout_width="108dp"
+        android:layout_height="160dp"
+        android:layout_above="@+id/check_fuel_text_view"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/logo_check_fuel" />
+
+    <TextView
+        android:id="@+id/check_fuel_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/checkfuel"
+        android:textColor="#9176FF"
+        android:textSize="36sp"
+        app:fontFamily="@font/oleo_script" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/check_fuel_text_view"
+        android:layout_centerHorizontal="true"
+        android:text="@string/loading"
+        android:textColor="#C77BFF"
+        android:textSize="14sp"
+        app:fontFamily="sans-serif-light" />
+
+</RelativeLayout>

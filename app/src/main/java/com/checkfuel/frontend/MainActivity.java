@@ -8,21 +8,25 @@ import android.view.View;
 
 
 import com.checkfuel.something.R;
-import com.checkfuel.utils.ConnectToServer;
-import com.checkfuel.utils.DatabaseManager;
+import com.checkfuel.utils.AuthenticationManager;
 
 import org.jetbrains.annotations.NotNull;
 
 public class MainActivity extends AppCompatActivity {
-
+    private AuthenticationManager authentication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        authentication = new AuthenticationManager();
 
-        ConnectToServer.connect();
-        DatabaseManager.readPost();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        authentication.checkSignIn();
     }
 
     public void refueling(@NotNull View view) {

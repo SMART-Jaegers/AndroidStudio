@@ -48,7 +48,7 @@ public class ConnectToServer {
                         jsonReader.close();
                         myConnection.disconnect();
                     } else {
-                        //ToDO   myConnection.getResponseCode();
+                        //ToDO myConnection.getResponseCode();
                     }
                 } catch (IOException e) {
                     //TODO message connection isn't install
