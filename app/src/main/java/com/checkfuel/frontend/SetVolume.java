@@ -3,6 +3,7 @@ package com.checkfuel.frontend;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -31,6 +32,13 @@ public class SetVolume extends AppCompatActivity {
 
     public void goToVolumeCompare(@NotNull View view) {
         Post post = DatabaseManager.getPost();
+
+        if (post == null) {
+            Toast toast = Toast.makeText(this, "Failed to connect to database, \n please check the internet connection or sign in in your user account", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+            return;
+        }
         double volumeFill = post.getVolumeFill();
         double volumeExpected = Double.parseDouble(numberEditText.getText().toString());
         if (view.getId() == R.id.btncheckfuel) {
@@ -41,7 +49,7 @@ public class SetVolume extends AppCompatActivity {
             } else {
                 intent.setClass(this, VolumeCompareBad.class);
             }
-            
+
             intent.putExtra("expectedVolume", volumeExpected);
             intent.putExtra("realVolume", volumeFill);
             startActivity(intent);

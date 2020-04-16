@@ -2,7 +2,9 @@ package com.checkfuel.frontend;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,6 +24,14 @@ public class StationOkko extends AppCompatActivity {
 
     public void doCompare(View view) {
         Post post = DatabaseManager.getPost();
+
+        if (post == null) {
+            Toast toast = Toast.makeText(this, "Failed to connect to database, \n please check the internet connection or sign in in your user account", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+            return;
+        }
+
         double weight = post.getWeight();
         double realVolume = post.getVolumeFill();
         double temperature = post.getTemperature();
