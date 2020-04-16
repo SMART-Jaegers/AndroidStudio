@@ -7,24 +7,34 @@
     android:orientation="vertical"
     tools:context="com.checkfuel.frontend.VolumeCompareGood">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp" />
+        android:layout_height="wrap_content"
+        android:background="#F7F5FE">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/good_fuel"
+            android:visibility="visible"
+            app:srcCompat="@drawable/good_fuel_plus" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_height="68dp"
         android:background="#E5F9E8">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="0.0%"
+            android:text="@string/you_had_successful_refueling"
             android:textColor="#2ECF43"
-            android:textSize="45sp"
-            app:fontFamily="sans-serif-light" />
+            android:textSize="26sp"
+            app:fontFamily="@font/raleway_light" />
 
     </RelativeLayout>
 
@@ -34,52 +44,24 @@
         android:layout_weight="12">
 
 
-        <RelativeLayout
-            android:layout_width="294dp"
-            android:layout_height="169dp"
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="70dp"
-            android:background="@drawable/expected_equal_to_real">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="24dp"
-                android:fontFamily="sans-serif-light"
-                android:text="@string/expected_volume_is"
-                android:textColor="#4C4553"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="62dp"
-                android:fontFamily="sans-serif-light"
-                android:text="@string/is_equal_to_real_volume"
-                android:textColor="#4C4553"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/volumegood"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="110dp"
-                android:fontFamily="sans-serif-light"
-                android:text="@string/_36_liters"
-                android:textColor="#6D49FF"
-                android:textSize="25sp" />
-
-        </RelativeLayout>
+            android:layout_marginTop="120dp"
+            android:fontFamily="@font/raleway_light"
+            android:text="@string/have_a_good_trip"
+            android:textColor="#A1A1A1"
+            android:textSize="30sp" />
 
         <Button
             android:id="@+id/btnhome"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="320dp"
+            android:layout_margin="260dp"
+            android:layout_marginBottom="260dp"
             android:background="@drawable/go_home"
             android:fontFamily="sans-serif-light"
             android:onClick="backToMain"
