@@ -18,7 +18,7 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="8dp"
-            android:onClick="backToOkko"
+            android:onClick="backToGasStation"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/icons8_left_100" />
 
@@ -37,7 +37,7 @@
             android:layout_centerHorizontal="false">
 
             <TextView
-                android:id="@+id/okko_text_view_in_good_fuel"
+                android:id="@+id/nameStation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -50,7 +50,7 @@
                 app:fontFamily="@font/maven_pro" />
 
             <TextView
-                android:id="@+id/a_95_euro_okko_in_good_fuel"
+                android:id="@+id/fuelType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -133,12 +133,10 @@
         android:background="#FFFFFF">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/Density"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="40dp"
-            android:text="TextView"
+            android:layout_alignParentEnd="false"
             android:textColor="#D81818"
             android:textSize="25sp" />
     </RelativeLayout>
@@ -177,7 +175,7 @@
         android:background="#FFFFFF">
 
         <TextView
-            android:id="@+id/min_density_in_good_fuel"
+            android:id="@+id/minDensity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
@@ -188,7 +186,7 @@
             app:fontFamily="@font/maven_pro" />
 
         <TextView
-            android:id="@+id/max_density_in_good_fuel"
+            android:id="@+id/maxDensity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"

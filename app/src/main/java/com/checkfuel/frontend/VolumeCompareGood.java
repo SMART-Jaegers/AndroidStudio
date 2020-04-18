@@ -17,11 +17,6 @@ public class VolumeCompareGood extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volume_compare_good);
-
-        TextView textExpectedVolume = findViewById(R.id.volumegood);
-        Intent intent = getIntent();
-        double expectedVolume = intent.getDoubleExtra("expectedVolume", 0);
-        textExpectedVolume.setText(String.format("%s liters", expectedVolume));
     }
 
     public void backToMain(@NotNull View view) {

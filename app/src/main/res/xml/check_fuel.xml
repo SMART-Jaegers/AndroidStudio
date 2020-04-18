@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gasStations>
+    <Okko
+        petrol1="A95 euro"
+        petrol2=" 95 plus"
+        petrol3=" A92 euro"
+        petrol4=" DT plus"
+        petrol5="Dt euro gas">
+        <density
+            density1max="800"
+            density1min="700"
+            density2max="800"
+            density2min="700"
+            density3max="800"
+            density3min="700"
+            density4max="800"
+            density4min="700"
+            density5max="800"
+            density5min="700" />
+    </Okko>
+    <Shell
+        petrol1="A92"
+        petrol2="A95"
+        petrol3="95 V-POWER"
+        petrol4="DT"
+        petrol5="DT V-POWER">
+        <density
+            density1max="800"
+            density1min="700"
+            density2max="800"
+            density2min="700"
+            density3max="800"
+            density3min="700"
+            density4max="800"
+            density4min="700"
+            density5max="800"
+            density5min="700" />
+    </Shell>
+    <UkrNafta
+        petrol1="95 energy"
+        petrol2="95"
+        petrol3="92 energy"
+        petrol4="DP energy">
+        <density
+            density1max="800"
+            density1min="700"
+            density2max="800"
+            density2min="700"
+            density3max="800"
+            density3min="700"
+            density4max="800"
+            density4min="700"
+            density5max="800"
+            density5min="700" />
+    </UkrNafta>
+    <Socar
+        petrol1="DIESEL NANO Extro"
+        petrol2="NANO ДП"
+        petrol3="NANO 95"
+        petrol4="NANO 98"
+        petrol5="A-95"
+        petrol6="A-92">
+        <density
+            density1max="800"
+            density1min="700"
+            density2max="800"
+            density2min="700"
+            density3max="800"
+            density3min="700"
+            density4max="800"
+            density4min="700"
+            density5max="800"
+            density5min="700" />
+    </Socar>
+    <UPG
+        petrol2="95"
+        petrol3="92"
+        petrol4="Gas"
+        petrol5="Euro diesel"
+        petrol6="A-100">
+        <density
+            density1max="800"
+            density1min="700"
+            density2max="800"
+            density2min="700"
+            density3max="800"
+            density3min="700"
+            density4max="800"
+            density4min="700"
+            density5max="800"
+            density5min="700" />
+    </UPG>
+    <Wog>
+        <density
+            density1max="800"
+            density1min="700"
+            density2max="800"
+            density2min="700"
+            density3max="800"
+            density3min="700"
+            density4max="800"
+            density4min="700"
+            density5max="800"
+            density5min="700" />
+    </Wog>
+
+</gasStations>

@@ -19,15 +19,29 @@ public class GoodFuelOnOkkoA95Euro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_good_fuel_on_okko_a95_euro);
 
-        TextView textDensity = findViewById(R.id.textView5);
+        TextView textDensity = findViewById(R.id.Density);
+        TextView textMinDensity = findViewById(R.id.minDensity);
+        TextView textMaxDensity = findViewById(R.id.maxDensity);
+        TextView textFuelType = findViewById(R.id.fuelType);
+        TextView textNameStation = findViewById(R.id.nameStation);
+
         Intent intent = getIntent();
         double density = intent.getDoubleExtra("density", 0);
+        int minDensity = intent.getIntExtra("minDensity", 0);
+        int maxDensity = intent.getIntExtra("maxDensity", 0);
+        String nameStation = intent.getStringExtra("nameStation");
+        String fuelType = intent.getStringExtra("fuelType");
+
         textDensity.setText(new DecimalFormat("#").format(density));
+        textMinDensity.setText(new DecimalFormat("#").format(minDensity));
+        textMaxDensity.setText(new DecimalFormat("#").format(maxDensity));
+        textNameStation.setText(nameStation);
+        textFuelType.setText(fuelType);
     }
 
-    public void backToOkko(View view) {
+    public void backToGasStation(View view) {
         if (view.getId() == R.id.btnback) {
-            Intent intent = new Intent(this, StationOkko.class);
+            Intent intent = new Intent(this, GasStation.class);
             startActivity(intent);
         }
 

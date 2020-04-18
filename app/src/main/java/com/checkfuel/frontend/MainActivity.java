@@ -12,6 +12,7 @@ import com.checkfuel.utils.AuthenticationManager;
 
 import org.jetbrains.annotations.NotNull;
 
+
 public class MainActivity extends AppCompatActivity {
     private AuthenticationManager authentication;
 
@@ -20,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         authentication = new AuthenticationManager();
-
     }
 
     @Override
@@ -29,19 +29,16 @@ public class MainActivity extends AppCompatActivity {
         authentication.checkSignIn();
     }
 
+
     public void refueling(@NotNull View view) {
-        if (view.getId() == R.id.refuling) {
-            Intent intent = new Intent(this, SetVolume.class);
-            startActivity(intent);
-        }
+        Intent intent = new Intent(this, SetVolume.class);
+        startActivity(intent);
     }
 
     public void chooseTheGasStation(@NotNull View view) {
-        if (view.getId() == R.id.quality) {
-            Intent intent = new Intent(this, ChooseTheGasStation.class);
-            startActivity(intent);
-        }
+        Intent intent = new Intent(this, ChooseTheGasStation.class);
+        startActivity(intent);
     }
-
-
 }
+
+
