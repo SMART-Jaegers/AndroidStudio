@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.checkfuel.models.Post;
 import com.checkfuel.something.R;
-import com.checkfuel.utils.ConnectToServer;
 import com.checkfuel.utils.DatabaseManager;
 
 import org.jetbrains.annotations.NotNull;
@@ -28,7 +27,6 @@ public class SetVolume extends AppCompatActivity {
         numberEditText = findViewById(R.id.editText);
         numberEditText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
     }
-
 
     public void goToVolumeCompare(@NotNull View view) {
         Post post = DatabaseManager.getPost();

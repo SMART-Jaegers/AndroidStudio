@@ -19,21 +19,18 @@ import java.util.ArrayList;
 
 public class ChooseTheGasStation extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MYTAG------------------";
-    private ImageView okko, wog;
-    private FrameLayout socar, upg, ukrNafta;
-    private LinearLayout shell;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_the_gas_station);
 
-        okko = findViewById(R.id.okko);
-        wog = findViewById(R.id.wog);
-        ukrNafta = findViewById(R.id.ukrNafta);
-        shell = findViewById(R.id.shell);
-        socar = findViewById(R.id.socar);
-        upg = findViewById(R.id.upg);
+        ImageView okko = findViewById(R.id.okko);
+        ImageView wog = findViewById(R.id.wog);
+        FrameLayout ukrNafta = findViewById(R.id.ukrNafta);
+        LinearLayout shell = findViewById(R.id.shell);
+        FrameLayout socar = findViewById(R.id.socar);
+        FrameLayout upg = findViewById(R.id.upg);
 
         okko.setOnClickListener(this);
         wog.setOnClickListener(this);

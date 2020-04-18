@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         authentication.checkSignIn();
     }
 
-
     public void refueling(@NotNull View view) {
         Intent intent = new Intent(this, SetVolume.class);
         startActivity(intent);

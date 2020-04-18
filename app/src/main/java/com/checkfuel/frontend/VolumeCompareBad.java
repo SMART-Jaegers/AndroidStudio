@@ -14,7 +14,6 @@ import java.text.DecimalFormat;
 public class VolumeCompareBad extends AppCompatActivity {
     TextView textExpectedVolume, textRealVolume, textRate;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +33,6 @@ public class VolumeCompareBad extends AppCompatActivity {
         textRealVolume.setText(String.format("%s liters", realVolume));
         textRate.setText(new DecimalFormat("#0.00%").format(rate));
     }
-
 
     public void backToMain(View view) {
         if (view.getId() == R.id.btnhome) {

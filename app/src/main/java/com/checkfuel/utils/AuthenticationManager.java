@@ -2,7 +2,6 @@ package com.checkfuel.utils;
 
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -36,7 +35,7 @@ public class AuthenticationManager {
     }
 
     public void signIn(String email, String password) {
-        if (!validateForm(email, password)) {
+        if (notValidateForm(email, password)) {
             Log.d(TAG, "signInWithEmail:failure incorrect password or email");
             return;
         }
@@ -55,7 +54,7 @@ public class AuthenticationManager {
     }
 
     public void createUser(String email, String password) {
-        if (!validateForm(email, password)) {
+        if (notValidateForm(email, password)) {
             Log.d(TAG, "createUserWithEmail:failure incorrect password or email");
             return;
         }
@@ -73,7 +72,7 @@ public class AuthenticationManager {
                 });
     }
 
-    private boolean validateForm(String email, String password) {
+    private boolean notValidateForm(String email, String password) {
         boolean valid = true;
 
         if (TextUtils.isEmpty(email)) {
@@ -82,7 +81,7 @@ public class AuthenticationManager {
         if (TextUtils.isEmpty(password)) {
             valid = false;
         }
-        return valid;
+        return !valid;
     }
 
 }

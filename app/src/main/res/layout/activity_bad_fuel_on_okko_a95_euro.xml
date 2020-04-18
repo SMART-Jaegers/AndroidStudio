@@ -18,6 +18,7 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="8dp"
+            android:contentDescription="@string/go_back"
             android:onClick="backToGasStation"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/icons8_left_100" />
@@ -26,42 +27,35 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#FFFFFF">
+        android:layout_height="80dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical">
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/nameStation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_centerHorizontal="false">
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:text="@string/okko"
+            android:textColor="#9176FF"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/maven_pro" />
 
-            <TextView
-                android:id="@+id/nameStation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="20dp"
-                android:text="@string/okko"
-                android:textColor="#9176FF"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                app:fontFamily="@font/maven_pro" />
-
-            <TextView
-                android:id="@+id/fuelType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="15dp"
-                android:text="@string/a_95_euro"
-                android:textColor="#9176FF"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                app:fontFamily="@font/maven_pro" />
-
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/fuelType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:text="@string/a_95_euro"
+            android:textColor="#9176FF"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/maven_pro"
+            tools:ignore="RelativeOverlap" />
 
     </RelativeLayout>
 
@@ -76,13 +70,9 @@
             android:layout_width="210dp"
             android:layout_height="180dp"
             android:layout_centerHorizontal="true"
+            android:contentDescription="@string/bad_result"
             app:srcCompat="@drawable/bad_fuel" />
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_centerHorizontal="false"/>
 
     </RelativeLayout>
 
@@ -92,40 +82,35 @@
         android:layout_weight="2"
         android:background="#FFFFFF">
 
-        <RelativeLayout
+
+        <TextView
+            android:id="@+id/the_density_of_this_fuel_in_good_fuel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_centerHorizontal="false">
+            android:layout_centerHorizontal="true"
+            android:paddingTop="40dp"
+            android:paddingBottom="5dp"
+            android:text="@string/the_density_of_this_fuel"
+            android:textColor="#9176FF"
+            android:textSize="25sp"
+            android:textStyle="normal"
+            app:fontFamily="@font/maven_pro" />
 
-            <TextView
-                android:id="@+id/the_density_of_this_fuel_in_good_fuel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:paddingBottom="5dp"
-                android:text="@string/the_density_of_this_fuel"
-                android:textColor="#9176FF"
-                android:textSize="25sp"
-                android:textStyle="normal"
-                app:fontFamily="@font/maven_pro" />
-
-            <TextView
-                android:id="@+id/should_be_within_this_range_in_good_fuel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/the_density_of_this_fuel_in_good_fuel"
-                android:layout_centerHorizontal="true"
-                android:paddingTop="5dp"
-                android:text="@string/should_be_within_this_range"
-                android:textColor="#9176FF"
-                android:textSize="25sp"
-                android:textStyle="normal"
-                app:fontFamily="@font/maven_pro" />
-
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/should_be_within_this_range_in_good_fuel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/the_density_of_this_fuel_in_good_fuel"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="5dp"
+            android:text="@string/should_be_within_this_range"
+            android:textColor="#9176FF"
+            android:textSize="25sp"
+            android:textStyle="normal"
+            app:fontFamily="@font/maven_pro" />
 
     </RelativeLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -178,8 +163,8 @@
             android:id="@+id/minDensity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:text="700"
+            android:layout_marginStart="100dp"
+            android:text=""
             android:textColor="#9176FF"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -190,12 +175,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="100dp"
-            android:text="800"
+            android:layout_marginEnd="100dp"
+            android:text=""
             android:textColor="#9176FF"
             android:textSize="25sp"
             android:textStyle="bold"
-            app:fontFamily="@font/maven_pro" />
+            app:fontFamily="@font/maven_pro"
+            tools:ignore="RelativeOverlap" />
 
     </RelativeLayout>
 
@@ -205,26 +191,19 @@
         android:layout_weight="1"
         android:background="#FFFFFF">
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/green_this_is_density_of_your_fuel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_centerHorizontal="false">
-
-            <TextView
-                android:id="@+id/green_this_is_density_of_your_fuel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/this_is_density_of_your_fuel"
-                android:textColor="#D81818"
-                android:textSize="25sp"
-                android:textStyle="normal"
-                app:fontFamily="@font/maven_pro" />
-
-        </RelativeLayout>
+            android:text="@string/this_is_density_of_your_fuel"
+            android:textColor="#D81818"
+            android:textSize="25sp"
+            android:textStyle="normal"
+            app:fontFamily="@font/maven_pro" />
 
     </RelativeLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -232,27 +211,24 @@
         android:layout_weight="1.5"
         android:background="#FFFFFF">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_centerHorizontal="false">
 
-            <Button
-                android:id="@+id/btnhome"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:background="@drawable/violet_button"
-                android:onClick="backToMain"
-                android:text="@string/go_home"
-                android:textAllCaps="true"
-                android:textColor="#FFFFFF"
-                android:textSize="25sp"
-                android:textStyle="normal"
-                app:fontFamily="@font/maven_pro" />
-
-        </RelativeLayout>
+        <Button
+            android:id="@+id/btnhome"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/violet_button"
+            android:onClick="backToMain"
+            android:text="@string/go_home"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="normal"
+            app:fontFamily="@font/maven_pro" />
 
     </RelativeLayout>
+
+
 
 </LinearLayout>
