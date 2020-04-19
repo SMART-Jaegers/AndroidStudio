@@ -19,10 +19,9 @@ public class VolumeCompareGood extends AppCompatActivity {
     }
 
     public void backToMain(@NotNull View view) {
-        if (view.getId() == R.id.btnhome) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
 }

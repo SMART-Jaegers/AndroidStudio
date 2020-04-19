@@ -55,10 +55,7 @@ public class SetVolume extends AppCompatActivity {
     }
 
     public void backToMain(@NotNull View view) {
-        if (view.getId() == R.id.btnback) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
+        finish();
     }
 
 }

@@ -17,11 +17,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
-        <activity android:name="com.checkfuel.frontend.GasStation"></activity>
+        <activity android:name="com.checkfuel.frontend.ChooseFuelType"></activity>
         <activity android:name="com.checkfuel.frontend.Loading" />
         <activity android:name="com.checkfuel.frontend.VolumeCompareGood" />
         <activity
-            android:name="com.checkfuel.frontend.BadFuelOnOkkoA95Euro"
+            android:name="com.checkfuel.frontend.BadFuel"
             android:screenOrientation="unspecified" />
         <activity
             android:name="com.checkfuel.frontend.SetVolume"
@@ -30,7 +30,7 @@
             android:name="com.checkfuel.frontend.StationOkko"
             android:screenOrientation="unspecified" />
         <activity
-            android:name="com.checkfuel.frontend.ChooseTheGasStation"
+            android:name="com.checkfuel.frontend.ChooseGasStation"
             android:screenOrientation="unspecified" />
         <activity
             android:name="com.checkfuel.frontend.MainActivity"
@@ -42,7 +42,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.checkfuel.frontend.GoodFuelOnOkkoA95Euro"
+            android:name="com.checkfuel.frontend.GoodFuel"
             android:screenOrientation="unspecified" />
         <activity
             android:name="com.checkfuel.frontend.VolumeCompareBad"

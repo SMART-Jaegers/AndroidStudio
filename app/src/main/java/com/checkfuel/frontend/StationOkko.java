@@ -40,9 +40,9 @@ public class StationOkko extends AppCompatActivity {
         Intent intent = new Intent();
 
         if (density <= 800) {
-            intent.setClass(StationOkko.this, GoodFuelOnOkkoA95Euro.class);
+            intent.setClass(StationOkko.this, GoodFuel.class);
         } else {
-            intent.setClass(StationOkko.this, BadFuelOnOkkoA95Euro.class);
+            intent.setClass(StationOkko.this, BadFuel.class);
         }
         intent.putExtra("density", density);
         startActivity(intent);
@@ -50,7 +50,7 @@ public class StationOkko extends AppCompatActivity {
 
     public void backToStations(@NotNull View view) {
         if (view.getId() == R.id.btnback) {
-            Intent intent = new Intent(this, ChooseTheGasStation.class);
+            Intent intent = new Intent(this, ChooseGasStation.class);
             startActivity(intent);
         }
 

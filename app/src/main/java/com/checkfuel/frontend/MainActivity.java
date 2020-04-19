@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-
 import com.checkfuel.something.R;
 import com.checkfuel.utils.AuthenticationManager;
+import com.checkfuel.utils.TextReader;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -20,12 +20,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         authentication = new AuthenticationManager();
     }
 
     @Override
     public void onStart() {
         super.onStart();
+
         authentication.checkSignIn();
     }
 
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void chooseTheGasStation(@NotNull View view) {
-        Intent intent = new Intent(this, ChooseTheGasStation.class);
+        Intent intent = new Intent(this, ChooseGasStation.class);
         startActivity(intent);
     }
 }

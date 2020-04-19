@@ -11,12 +11,13 @@ import com.checkfuel.something.R;
 
 import java.text.DecimalFormat;
 
-public class BadFuelOnOkkoA95Euro extends AppCompatActivity {
+public class GoodFuel extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bad_fuel_on_okko_a95_euro);
+        setContentView(R.layout.activity_good_fuel);
 
         TextView textDensity = findViewById(R.id.Density);
         TextView textMinDensity = findViewById(R.id.minDensity);
@@ -36,25 +37,16 @@ public class BadFuelOnOkkoA95Euro extends AppCompatActivity {
         textMaxDensity.setText(new DecimalFormat("#").format(maxDensity));
         textNameStation.setText(nameStation);
         textFuelType.setText(fuelType);
-        if (density < maxDensity) {
-            textDensity.setPadding(100, 0, 0, 0);
-        } else {
-            textDensity.setPadding(850, 0, 0, 0);
-        }
     }
 
-    public void backToGasStation(View v) {
-        if (v.getId() == R.id.btnback) {
-            Intent intent = new Intent(this, GasStation.class);
-            startActivity(intent);
-        }
-
+    public void backToGasStation(View view) {
+       finish();
     }
 
-    public void backToMain(View v) {
-        if (v.getId() == R.id.btnhome) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
+    public void backToMain(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
+
 }

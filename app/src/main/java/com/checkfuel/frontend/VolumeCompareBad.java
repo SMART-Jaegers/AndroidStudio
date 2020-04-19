@@ -35,11 +35,9 @@ public class VolumeCompareBad extends AppCompatActivity {
     }
 
     public void backToMain(View view) {
-        if (view.getId() == R.id.btnhome) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
-
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
 }
