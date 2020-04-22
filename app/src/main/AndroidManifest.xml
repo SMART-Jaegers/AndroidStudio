@@ -17,7 +17,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
-        <activity android:name="com.checkfuel.frontend.ChooseFuelType"></activity>
+        <activity android:name="com.checkfuel.frontend.NoWifi"></activity>
+        <activity android:name="com.checkfuel.frontend.ChooseFuelType" />
         <activity android:name="com.checkfuel.frontend.Loading" />
         <activity android:name="com.checkfuel.frontend.VolumeCompareGood" />
         <activity
@@ -25,9 +26,6 @@
             android:screenOrientation="unspecified" />
         <activity
             android:name="com.checkfuel.frontend.SetVolume"
-            android:screenOrientation="unspecified" />
-        <activity
-            android:name="com.checkfuel.frontend.StationOkko"
             android:screenOrientation="unspecified" />
         <activity
             android:name="com.checkfuel.frontend.ChooseGasStation"

@@ -11,9 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.checkfuel.something.R;
-import com.checkfuel.utils.TextReader;
-
-import java.util.ArrayList;
 
 public class ChooseGasStation extends AppCompatActivity implements View.OnClickListener {
 
