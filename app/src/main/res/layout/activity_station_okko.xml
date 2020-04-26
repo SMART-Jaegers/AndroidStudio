@@ -21,7 +21,7 @@
                 android:id="@+id/btnback"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="3dp"
                 android:onClick="backToStations"
                 android:scaleType="centerCrop"
@@ -61,7 +61,7 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/choose_the_fuel_from"
                 android:textColor="#FFFFFF"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 app:fontFamily="@font/maven_pro" />
 
             <TextView
@@ -71,7 +71,7 @@
                 android:layout_centerHorizontal="true"
                 android:text="@string/okko"
                 android:textColor="#FFFFFF"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 app:fontFamily="@font/maven_pro" />
 
@@ -95,11 +95,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="46dp"
+            android:layout_marginStart="46dp"
             android:fontFamily="sans-serif"
             android:text="@string/pulls_95"
             android:textColor="#FFFFFF"
-            android:textSize="45dp"
+            android:textSize="45sp"
             app:fontFamily="sans-serif-medium" />
 
     </RelativeLayout>
@@ -118,10 +118,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="46dp"
+            android:layout_marginStart="46dp"
             android:text="@string/_95"
             android:textColor="#FFFFFF"
-            android:textSize="45dp"
+            android:textSize="45sp"
             app:fontFamily="sans-serif-medium" />
 
     </RelativeLayout>
@@ -139,10 +139,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="46dp"
+            android:layout_marginStart="46dp"
             android:text="@string/_92"
             android:textColor="#FFFFFF"
-            android:textSize="45dp"
+            android:textSize="45sp"
             app:fontFamily="sans-serif-medium" />
 
     </RelativeLayout>
@@ -160,10 +160,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="46dp"
+            android:layout_marginStart="46dp"
             android:text="@string/gas"
             android:textColor="#FFFFFF"
-            android:textSize="45dp"
+            android:textSize="45sp"
             app:fontFamily="sans-serif-medium" />
 
     </RelativeLayout>

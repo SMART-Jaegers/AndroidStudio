@@ -46,5 +46,6 @@
     <string name="good_fuel">good fuel</string>
     <string name="go_back">go back</string>
     <string name="bad_result">bad result</string>
+    <string name="settings">Settings</string>
 
 </resources>
