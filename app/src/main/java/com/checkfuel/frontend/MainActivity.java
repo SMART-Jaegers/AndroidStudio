@@ -30,9 +30,10 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
 
-        authentication.checkSignIn();
+        authentication.entryToDatabase();
 
         confirmFireMissiles();
+        authentication.signIn("tarasfqx@gmail.com", "werwerwer");
     }
 
     public void confirmFireMissiles() {
