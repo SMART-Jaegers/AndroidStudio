@@ -1,6 +1,8 @@
 package com.checkfuel.frontend;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,7 +30,15 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
 
-        authentication.checkSignIn();
+        authentication.entryToDatabase();
+
+        confirmFireMissiles();
+        authentication.signIn("tarasfqx@gmail.com", "werwerwer");
+    }
+
+    public void confirmFireMissiles() {
+        DialogFragment newFragment = new NoWifi();
+        newFragment.show(getSupportFragmentManager(), "missiles");
     }
 
     public void refueling(@NotNull View view) {
@@ -40,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ChooseGasStation.class);
         startActivity(intent);
     }
+
 }
 
 

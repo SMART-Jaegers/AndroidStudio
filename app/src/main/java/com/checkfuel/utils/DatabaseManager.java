@@ -2,7 +2,7 @@ package com.checkfuel.utils;
 
 import android.util.Log;
 
-import com.checkfuel.models.Post;
+import com.checkfuel.models.Refill;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -15,12 +15,12 @@ public class DatabaseManager {
     private final static String TAG = "MYTAG------------------";
     private static DatabaseReference CHECK_FUEL_REFERENCE = FirebaseDatabase.getInstance().getReference("data");
     private static FirebaseAuth mAuth;
-    private static Post post = null;
+    private static Refill refill = null;
     private static FirebaseUser user = mAuth.getInstance().getCurrentUser();
 
     public static void writePost(double temperature, double weight, double volumeFill, double volumeRemaining, double distance) {
-        Post post = new Post(temperature, weight, volumeFill, volumeRemaining, distance);
-        CHECK_FUEL_REFERENCE.child(user.getUid()).setValue(post);
+        Refill refill = new Refill();//TODO add data and fix code
+        CHECK_FUEL_REFERENCE.child(user.getUid()).setValue(refill);
     }
 
     public static void readPost() {
@@ -29,7 +29,7 @@ public class DatabaseManager {
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                post = dataSnapshot.getValue(Post.class);
+                refill = dataSnapshot.getValue(Refill.class);
 
                 Log.i(TAG, "loadPost:Ok");
             }
@@ -44,7 +44,7 @@ public class DatabaseManager {
         CHECK_FUEL_REFERENCE.child(user.getUid()).addValueEventListener(postListener);
     }
 
-    public static Post getPost() {
-        return post;
+    public static Refill getRefill() {
+        return refill;
     }
 }

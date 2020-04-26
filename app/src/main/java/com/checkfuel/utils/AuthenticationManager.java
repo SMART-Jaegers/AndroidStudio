@@ -1,5 +1,6 @@
 package com.checkfuel.utils;
 
+import android.app.Activity;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -13,8 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.concurrent.Executor;
 
-public class AuthenticationManager {
-
+public class AuthenticationManager extends Activity {
     private final static String TAG = "MYTAG------------------";
 
     private FirebaseAuth mAuth;
@@ -23,16 +23,16 @@ public class AuthenticationManager {
         mAuth = FirebaseAuth.getInstance();
     }
 
-    public void checkSignIn() {
+    public void entryToDatabase() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser == null) {
             //TODO create intent to sign in/up
             return;
         }
         //ToDo realise access to this methods
-        DatabaseManager.readPost();
-        DatabaseManager.writePost(20, 1000, 1000, 0, 10);
+
     }
+
 
     public void signIn(String email, String password) {
         if (notValidateForm(email, password)) {
@@ -41,7 +41,7 @@ public class AuthenticationManager {
         }
 
         mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener((Executor) this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
@@ -60,7 +60,7 @@ public class AuthenticationManager {
         }
 
         mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener((Executor) this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {

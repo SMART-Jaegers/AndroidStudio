@@ -53,7 +53,7 @@
     </UkrNafta>
     <Socar
         petrol1="DIESEL NANO Extro"
-        petrol2="NANO ДП"
+        petrol2="NANO DP"
         petrol3="NANO 95"
         petrol4="NANO 98"
         petrol5="A-95"
@@ -73,11 +73,11 @@
             density6min="700" />
     </Socar>
     <UPG
-        petrol2="95"
-        petrol3="92"
-        petrol4="Gas"
-        petrol5="Euro diesel"
-        petrol6="A-100">
+        petrol1="95"
+        petrol2="92"
+        petrol3="Gas"
+        petrol4="Euro diesel"
+        petrol5="A-100">
         <density
             density1max="800"
             density1min="700"

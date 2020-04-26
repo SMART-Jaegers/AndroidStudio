@@ -7,11 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.checkfuel.models.Post;
 import com.checkfuel.something.R;
-import com.checkfuel.utils.DatabaseManager;
 import com.checkfuel.utils.TextReader;
 
 import org.jetbrains.annotations.NotNull;
@@ -146,26 +143,18 @@ public class ChooseFuelType extends AppCompatActivity implements View.OnClickLis
     }
 
     private void doCompare() {
-        Post post = DatabaseManager.getPost();
-        double weight = 1;
-        double realVolume = 1;
-        double temperature = 0; //TODO hardcode, create exeption when can't connect
-        if (post != null) {
-            weight = post.getWeight();
-            realVolume = post.getVolumeFill();
-            temperature = post.getTemperature();
-        } else {
-            Toast.makeText(this, "Failed connect to database", Toast.LENGTH_SHORT).show();
-        }
+
+        double weight = 0.5;
+        double realVolume = 1;//TODO (hardcode), take date with bluetooth and create exeption when can't connect
+        double temperature = 0;
 
         double density = calculateDensity(weight, realVolume, temperature);
         goToQualityResult.putExtra("density", density);
 
         if (density <= maxDensity && density >= minDensity) {
-            goToQualityResult.setClass(ChooseFuelType.this, GoodFuel.class);
-            //TODO check: Do will working only this
+            goToQualityResult.setClass(this, GoodFuel.class);
         } else {
-            goToQualityResult.setClass(ChooseFuelType.this, BadFuel.class);
+            goToQualityResult.setClass(this, BadFuel.class);
         }
 
         startActivity(goToQualityResult);
