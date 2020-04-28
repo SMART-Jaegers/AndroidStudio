@@ -12,11 +12,6 @@
         android:layout_height="56dp"
         android:background="#FFFFFF">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_centerVertical="true">
-
             <ImageView
                 android:id="@+id/btnback"
                 android:layout_width="50dp"
@@ -25,18 +20,18 @@
                 android:layout_marginTop="3dp"
                 android:onClick="backToStations"
                 android:scaleType="centerCrop"
-                android:src="@drawable/icons8_left_100__2_" />
+                android:src="@drawable/icons8_left_100__2_"
+                android:contentDescription="@string/go_back" />
 
             <ImageView
                 android:layout_width="46dp"
                 android:layout_height="46dp"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/icons8_settings_96" />
-
-        </RelativeLayout>
+                android:src="@drawable/icons8_settings_96"
+                android:contentDescription="@string/settings" />
 
 
     </RelativeLayout>
@@ -51,7 +46,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_centerHorizontal="false">
+            android:layout_centerHorizontal="false"
+            tools:ignore="UselessParent">
 
             <TextView
                 android:id="@+id/choose_text_view"

@@ -10,7 +10,8 @@ tools:context="com.checkfuel.frontend.VolumeCompareBad">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp" />
+        android:layout_height="56dp"
+        tools:ignore="UselessLeaf" />
 
 <RelativeLayout
     android:layout_width="match_parent"
@@ -47,20 +48,21 @@ tools:context="com.checkfuel.frontend.VolumeCompareBad">
 
     <RelativeLayout
         android:layout_width="294dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="90dp"
+        android:layout_height="64dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
         android:background="@drawable/expected">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginStart="19dp"
+            android:layout_marginStart="20dp"
             android:fontFamily="sans-serif-light"
             android:text="@string/expected_volume"
             android:textColor="#4C4553"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="RelativeOverlap" />
 
         <TextView
             android:id="@+id/expectedvolume"
@@ -79,16 +81,16 @@ tools:context="com.checkfuel.frontend.VolumeCompareBad">
 
     <RelativeLayout
         android:layout_width="294dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="180dp"
+        android:layout_height="64dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
         android:background="@drawable/expected">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginStart="19dp"
+            android:layout_marginStart="20dp"
             android:fontFamily="sans-serif-light"
             android:text="@string/real_volume"
             android:textColor="#4C4553"

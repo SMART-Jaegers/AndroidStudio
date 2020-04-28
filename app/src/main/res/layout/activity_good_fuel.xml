@@ -20,7 +20,8 @@
             android:layout_marginTop="3dp"
             android:onClick="backToGasStation"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/icons8_left_100" />
+            app:srcCompat="@drawable/icons8_left_100"
+            android:contentDescription="@string/go_back" />
 
     </RelativeLayout>
 
@@ -60,7 +61,8 @@
                 android:textColor="#9176FF"
                 android:textSize="25sp"
                 android:textStyle="bold"
-                app:fontFamily="@font/maven_pro" />
+                app:fontFamily="@font/maven_pro"
+                tools:ignore="RelativeOverlap" />
 
         </RelativeLayout>
 
@@ -216,7 +218,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_centerHorizontal="false">
+            android:layout_centerHorizontal="false"
+            tools:ignore="UselessParent">
 
             <Button
                 android:id="@+id/btnhome"
