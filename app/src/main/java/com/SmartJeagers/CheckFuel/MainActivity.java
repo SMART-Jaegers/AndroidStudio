@@ -1,16 +1,14 @@
-package com.checkfuel.frontend;
+package com.SmartJeagers.CheckFuel;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.checkfuel.something.R;
-import com.checkfuel.utils.AuthenticationManager;
-import com.checkfuel.utils.TextReader;
+import com.SmartJeagers.CheckFuel.utils.AuthenticationManager;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -22,18 +20,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        authentication = new AuthenticationManager();
     }
 
     @Override
     public void onStart() {
         super.onStart();
-
-        authentication.entryToDatabase();
-
         confirmFireMissiles();
-        authentication.signIn("tarasfqx@gmail.com", "werwerwer");
     }
 
     public void confirmFireMissiles() {
@@ -51,6 +43,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToUserProfile(View view) {
+        AuthenticationManager authentication = new AuthenticationManager();
+        if (!authentication.entryToDatabase()) {
+            Intent intent = new Intent(this, SignUp.class);
+            startActivity(intent);
+            return;
+        }
+        //TODO realise transit to userProfile
+
+    }
+
 }
-
-

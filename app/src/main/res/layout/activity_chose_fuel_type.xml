@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.checkfuel.frontend.ChooseFuelType">
+    tools:context="com.SmartJeagers.CheckFuel.ChooseFuelType">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -31,9 +31,10 @@
                 android:layout_marginEnd="20dp"
                 android:background="@null"
                 android:ems="10"
+                android:hapticFeedbackEnabled="false"
+                android:hint="@string/password"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:text="@string/password"
                 android:textColor="#B1B1B4"
                 tools:ignore="LabelFor" />
 
@@ -72,9 +73,9 @@
                 android:layout_marginEnd="20dp"
                 android:background="@null"
                 android:ems="10"
+                android:hint="@string/email"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
-                android:text="@string/email"
                 android:textColor="#B1B1B4"
                 tools:ignore="LabelFor" />
 
@@ -141,6 +142,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="600dp"
             android:background="@drawable/violet_button"
+            android:onClick="SignIn"
             android:text="@string/sign_in"
             android:textAllCaps="true"
             android:textColor="#FFFFFF"

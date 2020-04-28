@@ -17,24 +17,25 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
-        <activity android:name="com.SmartJeagers.CheckFuel.sign_in"></activity>
-        <activity android:name="com.SmartJeagers.CheckFuel.logging" />
-        <activity android:name="com.checkfuel.frontend.NoBluetoothActivity" />
-        <activity android:name="com.checkfuel.frontend.NoWifi" />
-        <activity android:name="com.checkfuel.frontend.ChooseFuelType" />
-        <activity android:name="com.checkfuel.frontend.Loading" />
-        <activity android:name="com.checkfuel.frontend.VolumeCompareGood" />
+        <activity android:name="com.SmartJeagers.CheckFuel.SignUp" />
+        <activity android:name="com.SmartJeagers.CheckFuel.SignIn" />
+        <activity android:name="com.SmartJeagers.CheckFuel.NoBluetoothActivity" />
+        <activity android:name="com.SmartJeagers.CheckFuel.NoWifi" />
+        <activity android:name="com.SmartJeagers.CheckFuel.ChooseFuelType" />
+        <activity android:name="com.SmartJeagers.CheckFuel.Loading" />
+        <activity android:name="com.SmartJeagers.CheckFuel.VolumeCompareGood" />
+
         <activity
-            android:name="com.checkfuel.frontend.BadFuel"
+            android:name="com.SmartJeagers.CheckFuel.BadFuel"
             android:screenOrientation="unspecified" />
         <activity
-            android:name="com.checkfuel.frontend.SetVolume"
+            android:name="com.SmartJeagers.CheckFuel.SetVolume"
             android:screenOrientation="unspecified" />
         <activity
-            android:name="com.checkfuel.frontend.ChooseGasStation"
+            android:name="com.SmartJeagers.CheckFuel.ChooseGasStation"
             android:screenOrientation="unspecified" />
         <activity
-            android:name="com.checkfuel.frontend.MainActivity"
+            android:name="com.SmartJeagers.CheckFuel.MainActivity"
             android:screenOrientation="unspecified">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,10 +44,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.checkfuel.frontend.GoodFuel"
+            android:name="com.SmartJeagers.CheckFuel.GoodFuel"
             android:screenOrientation="unspecified" />
         <activity
-            android:name="com.checkfuel.frontend.VolumeCompareBad"
+            android:name="com.SmartJeagers.CheckFuel.VolumeCompareBad"
             android:screenOrientation="unspecified" />
 
         <meta-data

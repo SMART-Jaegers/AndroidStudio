@@ -1,4 +1,4 @@
-package com.checkfuel.utils;
+package com.SmartJeagers.CheckFuel.utils;
 
 import android.content.Context;
 import android.util.Log;

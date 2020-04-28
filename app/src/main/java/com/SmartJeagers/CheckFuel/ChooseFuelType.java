@@ -1,4 +1,4 @@
-package com.checkfuel.frontend;
+package com.SmartJeagers.CheckFuel;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.checkfuel.something.R;
-import com.checkfuel.utils.TextReader;
+import com.SmartJeagers.CheckFuel.utils.TextReader;
 
 import org.jetbrains.annotations.NotNull;
 

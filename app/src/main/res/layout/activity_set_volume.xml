@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.checkfuel.frontend.SetVolume">
+    tools:context="com.SmartJeagers.CheckFuel.SetVolume">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -71,6 +71,8 @@
             android:layout_width="185dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:background="#FFFFFF"
+            android:cursorVisible="true"
             android:ems="10"
             android:filterTouchesWhenObscured="true"
             android:hint="@string/enter_volume"

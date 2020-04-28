@@ -1,4 +1,4 @@
-package com.checkfuel.frontend;
+package com.SmartJeagers.CheckFuel;
 
 import androidx.appcompat.app.AppCompatActivity;
 

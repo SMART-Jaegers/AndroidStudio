@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#9176FF"
     android:orientation="vertical"
-    tools:context="com.checkfuel.frontend.MainActivity">
+    tools:context="com.SmartJeagers.CheckFuel.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,6 +25,7 @@
             android:src="@drawable/icons8_settings_96" />
 
         <ImageView
+            android:id="@+id/userAccount"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_alignParentTop="false"
@@ -32,6 +33,7 @@
             android:layout_alignParentBottom="false"
             android:layout_centerVertical="true"
             android:layout_marginEnd="0dp"
+            android:onClick="goToUserProfile"
             android:scaleType="fitCenter"
             android:src="@drawable/icons8_male_user_96" />
     </RelativeLayout>
