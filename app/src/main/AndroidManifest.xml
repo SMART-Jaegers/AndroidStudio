@@ -17,7 +17,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
-        <activity android:name="com.checkfuel.frontend.NoBluetoothActivity"></activity>
+        <activity android:name="com.SmartJeagers.CheckFuel.logging"></activity>
+        <activity android:name="com.checkfuel.frontend.NoBluetoothActivity" />
         <activity android:name="com.checkfuel.frontend.NoWifi" />
         <activity android:name="com.checkfuel.frontend.ChooseFuelType" />
         <activity android:name="com.checkfuel.frontend.Loading" />
