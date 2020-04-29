@@ -59,5 +59,12 @@
     <string name="sign_in">sign in</string>
     <string name="please_login">Please login</string>
     <string name="remember_password">Remember password</string>
+    <string name="turn_on">turn on</string>
+    <string name="ignore">ignore</string>
+    <string name="nothing">nothing</string>
+    <string name="wi_fi_connection">Wi-Fi Connection</string>
+    <string name="there_s_no">There\'s no</string>
+    <string name="no_wi_fi_connection_sign">No Wi-Fi connection sign</string>
+
 
 </resources>
