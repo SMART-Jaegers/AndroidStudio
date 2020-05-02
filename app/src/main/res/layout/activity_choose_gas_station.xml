@@ -6,7 +6,7 @@
     android:background="#9176FF"
     android:onClick="stationOkko"
     android:orientation="vertical"
-    tools:context="com.checkfuel.frontend.ChooseGasStation">
+    tools:context="com.SmartJeagers.CheckFuel.ChooseGasStation">
 
     <RelativeLayout
         android:id="@+id/w"

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.checkfuel.frontend.BadFuel">
+    tools:context="com.SmartJeagers.CheckFuel.BadFuel">
 
     <RelativeLayout
         android:layout_width="match_parent"

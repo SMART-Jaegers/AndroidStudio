@@ -1,8 +1,8 @@
-package com.checkfuel.utils;
+package com.SmartJeagers.CheckFuel.utils;
 
 import android.util.Log;
 
-import com.checkfuel.models.Refill;
+import com.SmartJeagers.CheckFuel.models.Refill;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

@@ -1,4 +1,4 @@
-package com.checkfuel.frontend;
+package com.SmartJeagers.CheckFuel;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,13 +11,12 @@ import com.checkfuel.something.R;
 
 import java.text.DecimalFormat;
 
-public class GoodFuel extends AppCompatActivity {
-
+public class BadFuel extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_good_fuel);
+        setContentView(R.layout.activity_bad_fuel);
 
         TextView textDensity = findViewById(R.id.Density);
         TextView textMinDensity = findViewById(R.id.minDensity);
@@ -37,13 +36,19 @@ public class GoodFuel extends AppCompatActivity {
         textMaxDensity.setText(new DecimalFormat("#").format(maxDensity));
         textNameStation.setText(nameStation);
         textFuelType.setText(fuelType);
+
+        if (density < maxDensity) {
+            textDensity.setPadding(100, 0, 0, 0);
+        } else {
+            textDensity.setPadding(850, 0, 0, 0);
+        }
     }
 
-    public void backToGasStation(View view) {
-       finish();
+    public void backToGasStation(View v) {
+        finish();
     }
 
-    public void backToMain(View view) {
+    public void backToMain(View v) {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);

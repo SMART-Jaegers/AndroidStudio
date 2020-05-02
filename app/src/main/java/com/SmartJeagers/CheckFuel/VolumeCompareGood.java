@@ -1,4 +1,4 @@
-package com.checkfuel.frontend;
+package com.SmartJeagers.CheckFuel;
 
 import android.content.Intent;
 import android.os.Bundle;

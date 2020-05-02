@@ -1,4 +1,4 @@
-package com.checkfuel.models;
+package com.SmartJeagers.CheckFuel.models;
 
 import com.google.firebase.database.IgnoreExtraProperties;
 
