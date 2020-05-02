@@ -7,17 +7,18 @@ public class Refill {
     private double volumeFillReal;
     private double volumeFillExpected;
     private double density;
-    private boolean qualityOfFuel;
     private String nameStation;
     private String typeFuel;
+    private String date;
 
-    public Refill(double volumeFillReal, double volumeFillExpected, double density, boolean qualityOfFuel, String nameStation, String typeFuel) {
+    public Refill(double volumeFillReal, double volumeFillExpected, double density,
+                  boolean qualityOfFuel, String nameStation, String typeFuel, String date) {
         this.volumeFillReal = volumeFillReal;
         this.volumeFillExpected = volumeFillExpected;
         this.density = density;
-        this.qualityOfFuel = qualityOfFuel;
         this.nameStation = nameStation;
         this.typeFuel = typeFuel;
+        this.date = date;
     }
 
     public Refill() {
@@ -47,14 +48,6 @@ public class Refill {
         this.density = density;
     }
 
-    public boolean isQualityOfFuel() {
-        return qualityOfFuel;
-    }
-
-    public void setQualityOfFuel(boolean qualityOfFuel) {
-        this.qualityOfFuel = qualityOfFuel;
-    }
-
     public String getNameStation() {
         return nameStation;
     }
@@ -69,6 +62,14 @@ public class Refill {
 
     public void setTypeFuel(String typeFuel) {
         this.typeFuel = typeFuel;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
 
