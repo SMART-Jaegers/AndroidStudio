@@ -1,7 +1,6 @@
 package com.SmartJeagers.CheckFuel;
 
 import android.os.Bundle;
-import android.text.InputType;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -34,7 +33,7 @@ public class SignUp extends AppCompatActivity {
         editPasswordConfirm.setTransformationMethod(PasswordTransformationMethod.getInstance());
     }
 
-    public void SignUp(View view) {
+    public void signUp(View view) {
         String userName = editUserName.getText().toString();
         String email = editEmail.getText().toString();
         String password = editPassword.getText().toString();

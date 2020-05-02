@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.SmartJeagers.CheckFuel.utils.DatabaseManaferForProblem;
+import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForRefill;
+import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForUser;
 import com.checkfuel.something.R;
 import com.SmartJeagers.CheckFuel.utils.AuthenticationManager;
 
@@ -20,12 +23,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DatabaseManagerForRefill.readRefill();
     }
 
     @Override
     public void onStart() {
         super.onStart();
         confirmFireMissiles();
+
     }
 
     public void confirmFireMissiles() {
@@ -50,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return;
         }
+        DatabaseManagerForRefill.getRefils();
+        DatabaseManagerForUser.writeUser("wer", "wer", "wer");
+        DatabaseManaferForProblem.writeProblem(1);
+
         //TODO realise transit to userProfile
 
     }
