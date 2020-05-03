@@ -10,14 +10,17 @@
         android:id="@+id/textLiter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="76dp"
         android:text="40L"
         android:textColor="#8E93B5"
         android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="5dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/lineUnderLiters"
@@ -75,15 +78,18 @@
         app:layout_constraintBottom_toTopOf="@+id/line"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/purple_OKKO" />
+        tools:srcCompat="@drawable/purple_OKKO" />
 
     <View
         android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="619dp"
         android:background="#B2B2B2"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="111dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLiter" />
 
     <ImageView
         android:id="@+id/goCurrentUse"

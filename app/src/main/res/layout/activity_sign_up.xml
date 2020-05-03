@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".logging">
+    tools:context="com.SmartJeagers.CheckFuel.SignUp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -42,8 +42,8 @@
                 android:layout_height="24dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/gray_key"
-                android:contentDescription="@string/key" />
+                android:contentDescription="@string/key"
+                android:src="@drawable/gray_key" />
 
             <ImageView
                 android:id="@+id/imageViewKeyPurpleConfirm"
@@ -124,8 +124,8 @@
                 android:layout_height="24dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/gray_message"
-                android:contentDescription="@string/email" />
+                android:contentDescription="@string/email"
+                android:src="@drawable/gray_message" />
 
             <ImageView
                 android:id="@+id/imageViewMessagePurple"
@@ -166,8 +166,8 @@
                 android:layout_height="24dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/gray_user"
-                android:contentDescription="@string/person" />
+                android:contentDescription="@string/person"
+                android:src="@drawable/gray_user" />
 
             <ImageView
                 android:id="@+id/imageViewUserPurple"
