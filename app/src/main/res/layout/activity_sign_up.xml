@@ -33,7 +33,6 @@
                 android:hint="@string/password"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:password="true"
                 android:textColor="#B1B1B4"
                 tools:ignore="LabelFor" />
 
@@ -43,8 +42,8 @@
                 android:layout_height="24dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:contentDescription="@string/key"
-                android:src="@drawable/gray_key" />
+                android:src="@drawable/gray_key"
+                android:contentDescription="@string/key" />
 
             <ImageView
                 android:id="@+id/imageViewKeyPurpleConfirm"
@@ -75,7 +74,6 @@
                 android:hint="@string/password"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:password="true"
                 android:textColor="#B1B1B4"
                 tools:ignore="LabelFor" />
 
@@ -126,8 +124,8 @@
                 android:layout_height="24dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:contentDescription="@string/email"
-                android:src="@drawable/gray_message" />
+                android:src="@drawable/gray_message"
+                android:contentDescription="@string/email" />
 
             <ImageView
                 android:id="@+id/imageViewMessagePurple"
@@ -168,8 +166,8 @@
                 android:layout_height="24dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:contentDescription="@string/person"
-                android:src="@drawable/gray_user" />
+                android:src="@drawable/gray_user"
+                android:contentDescription="@string/person" />
 
             <ImageView
                 android:id="@+id/imageViewUserPurple"
