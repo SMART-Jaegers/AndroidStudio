@@ -19,7 +19,7 @@
         tools:targetApi="n">
         <activity android:name="com.SmartJeagers.CheckFuel.SignUp" />
         <activity android:name="com.SmartJeagers.CheckFuel.SignIn" />
-        <activity android:name="com.SmartJeagers.CheckFuel.NoBluetoothActivity" />
+        <activity android:name="com.SmartJeagers.CheckFuel.NoBluetooth" />
         <activity android:name="com.SmartJeagers.CheckFuel.NoWifi" />
         <activity android:name="com.SmartJeagers.CheckFuel.ChooseFuelType" />
         <activity android:name="com.SmartJeagers.CheckFuel.Loading" />

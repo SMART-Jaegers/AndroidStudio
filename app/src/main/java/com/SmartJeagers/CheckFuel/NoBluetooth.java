@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 
 import com.checkfuel.something.R;
 
-public class NoBluetoothActivity extends DialogFragment {
+public class NoBluetooth extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
