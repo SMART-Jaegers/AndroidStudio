@@ -94,7 +94,8 @@ tools:context="com.SmartJeagers.CheckFuel.VolumeCompareBad">
             android:fontFamily="sans-serif-light"
             android:text="@string/real_volume"
             android:textColor="#4C4553"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="RelativeOverlap" />
 
         <TextView
             android:id="@+id/volumeResult"

@@ -18,22 +18,23 @@
             android:id="@+id/btnback"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="3dp"
             android:onClick="backToMain"
             android:scaleType="centerCrop"
-            android:src="@drawable/icons8_left_100__2_" />
+            android:src="@drawable/icons8_left_100__2_"
+            android:contentDescription="@string/go_back" />
 
         <ImageView
             android:layout_width="46dp"
             android:layout_height="46dp"
-
             android:layout_alignParentEnd="false"
             android:layout_alignParentRight="true"
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/icons8_settings_96" />
+            android:src="@drawable/icons8_settings_96"
+            android:contentDescription="@string/settings" />
 
     </RelativeLayout>
 
@@ -68,7 +69,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
-                android:src="@drawable/okko" />
+                android:src="@drawable/okko"
+                android:contentDescription="@string/gas_station_okko" />
 
             <View
 
@@ -82,7 +84,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
-                android:src="@drawable/wog" />
+                android:src="@drawable/wog"
+                android:contentDescription="@string/gas_station_wog" />
         </TableRow>
 
         <View
@@ -106,7 +109,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ukrnafta" />
+                    android:src="@drawable/ukrnafta"
+                    android:contentDescription="@string/gas_station_ukrnafta" />
             </FrameLayout>
 
             <View
@@ -124,20 +128,13 @@
 
                 <ImageView
                     android:layout_width="176dp"
-                    android:layout_height="164dp"
-
+                    android:layout_height="0dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/logo_shell" />
+                    android:src="@drawable/shell_with_text"
+                    android:contentDescription="@string/gas_station_shell"/>
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="126dp"
-                    android:layout_height="13dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/shell" />
             </LinearLayout>
 
         </TableRow>
@@ -161,10 +158,10 @@
                 <ImageView
                     android:layout_width="178dp"
                     android:layout_height="wrap_content"
-
                     android:layout_gravity="center"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/logo_socar" />
+                    android:src="@drawable/logo_socar"
+                    android:contentDescription="@string/gas_station_socar" />
             </FrameLayout>
 
             <View
@@ -181,10 +178,10 @@
 
                 <ImageView
                     android:layout_width="149dp"
-
                     android:layout_height="244dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/logo_upg1" />
+                    android:src="@drawable/logo_upg1"
+                    android:contentDescription="@string/gas_station_upg" />
             </FrameLayout>
 
         </TableRow>
