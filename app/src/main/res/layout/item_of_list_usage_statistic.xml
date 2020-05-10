@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
     <TextView
@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="76dp"
-        android:text="40L"
         android:textColor="#8E93B5"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/line"
@@ -37,14 +36,12 @@
         android:id="@+id/textKilometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="156Km"
         android:textColor="#8E93B5"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/line"
+        app:layout_constraintBottom_toTopOf="@+id/lineUnderKilometers"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/lineUnderLiters"/>
 
     <View
         android:id="@+id/lineUnderKilometers"
@@ -54,15 +51,13 @@
         app:layout_constraintBottom_toTopOf="@+id/textDate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textKilometer" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="01.01.2020"
+        android:paddingBottom="12dp"
         android:textColor="#8E93B5"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,21 +70,11 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/line"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/purple_OKKO" />
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="619dp"
-        android:background="#B2B2B2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLiter" />
+        tools:srcCompat="@drawable/purple_okko" />
 
     <ImageView
         android:id="@+id/goCurrentUse"
@@ -97,11 +82,22 @@
         android:layout_height="28dp"
         android:layout_marginEnd="8dp"
         android:rotation="270"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.506"
         app:srcCompat="@drawable/gray_orientation" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#5C5B5B"
+        app:layout_constraintBottom_toBottomOf="@id/textDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLiter" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

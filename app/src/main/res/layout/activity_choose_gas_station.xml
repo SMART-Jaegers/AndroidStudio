@@ -14,7 +14,7 @@
         android:background="#FFFFFF">
 
         <ImageView
-            android:id="@+id/btnback"
+            android:id="@+id/exitFromUsageStatistic"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="8dp"

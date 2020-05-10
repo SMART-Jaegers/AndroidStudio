@@ -12,7 +12,7 @@ public class Refill {
     private String date;
 
     public Refill(double volumeFillReal, double volumeFillExpected, double density,
-                  boolean qualityOfFuel, String nameStation, String typeFuel, String date) {
+                  String nameStation, String typeFuel, String date) {
         this.volumeFillReal = volumeFillReal;
         this.volumeFillExpected = volumeFillExpected;
         this.density = density;

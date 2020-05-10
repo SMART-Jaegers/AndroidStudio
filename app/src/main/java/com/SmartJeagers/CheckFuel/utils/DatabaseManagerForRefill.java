@@ -24,9 +24,8 @@ public class DatabaseManagerForRefill {
 
 
     public static void writeRefill(double volumeFillReal, double volumeFillExpected, double density,
-                                   boolean qualityOfFuel, String nameStation,
-                                   String typeFuel, String date) {
-        Refill refill = new Refill(volumeFillReal, volumeFillExpected, density, qualityOfFuel,
+                                   String nameStation, String typeFuel, String date) {
+        Refill refill = new Refill(volumeFillReal, volumeFillExpected, density,
                 nameStation, typeFuel, date);
         CHECK_FUEL_REFERENCE.child(user.getUid()).child("Refill").push().setValue(refill);
     }
@@ -52,7 +51,14 @@ public class DatabaseManagerForRefill {
     }
 
     public static List<Refill> getRefils() {
+        for (int i = 0; i < refils.size(); i++) {
+            Log.i("-----Refills-----", String.valueOf(refils.get(i)));
+        }
+        Log.i("-----Refills-----", "read refill is ok");
+        Log.i("-----Refills-----", String.valueOf(refils.size()));
+
         return refils;
     }
+
 }
 

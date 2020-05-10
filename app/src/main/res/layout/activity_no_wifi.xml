@@ -9,7 +9,6 @@
     android:background="@drawable/layout_background"
     android:orientation="vertical"
     app:cardBackgroundColor="@android:color/transparent"
-
     tools:context="com.SmartJeagers.CheckFuel.NoWifi">
 
     <Button
@@ -67,25 +66,13 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="@string/there_s_no"
+        android:textAlignment="center"
         android:textColor="#FFFFFFFF"
         android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:text="@string/wi_fi_connection"
-        android:textColor="#FFFFFFFF"
-        android:textSize="13sp"
-        android:textStyle="normal"
-        android:visibility="visible"
-        tools:visibility="visible" />
 
 </RelativeLayout>

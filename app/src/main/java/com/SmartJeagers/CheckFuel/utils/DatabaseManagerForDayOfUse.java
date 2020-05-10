@@ -31,6 +31,7 @@ public class DatabaseManagerForDayOfUse {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot keyNode : dataSnapshot.getChildren()) {
+                    daysOfUse.clear();
                     DayOfUse dayOfUse = keyNode.getValue(DayOfUse.class);
                     daysOfUse.add(dayOfUse);
                 }

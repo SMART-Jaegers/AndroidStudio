@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        confirmFireMissiles();
+
 
     }
 
@@ -38,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void refueling(@NotNull View view) {
         Intent intent = new Intent(this, SetVolume.class);
+        startActivity(intent);
+    }
+
+
+    public void goToUsageStatistic(@NotNull View view) {
+        Intent intent = new Intent(this, UsageStatistic.class);
         startActivity(intent);
     }
 
@@ -55,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         }
         DatabaseManagerForRefill.getRefils();
         //TODO realise transit to userProfile
-
     }
 
 }
