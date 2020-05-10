@@ -7,9 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.SmartJeagers.CheckFuel.utils.DatabaseManaferForProblem;
 import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForRefill;
-import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForUser;
 import com.checkfuel.something.R;
 import com.SmartJeagers.CheckFuel.utils.AuthenticationManager;
 
@@ -29,17 +27,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        confirmFireMissiles();
+
 
     }
 
     public void confirmFireMissiles() {
         DialogFragment newFragment = new NoWifi();
-        newFragment.show(getSupportFragmentManager(), "missiles");
+        newFragment.show(getSupportFragmentManager(), "noWifi");
     }
 
     public void refueling(@NotNull View view) {
         Intent intent = new Intent(this, SetVolume.class);
+        startActivity(intent);
+    }
+
+
+    public void goToUsageStatistic(@NotNull View view) {
+        Intent intent = new Intent(this, UsageStatistic.class);
         startActivity(intent);
     }
 
@@ -56,11 +60,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         DatabaseManagerForRefill.getRefils();
-        DatabaseManagerForUser.writeUser("wer", "wer", "wer");
-        DatabaseManaferForProblem.writeProblem(1);
-
         //TODO realise transit to userProfile
-
     }
 
 }

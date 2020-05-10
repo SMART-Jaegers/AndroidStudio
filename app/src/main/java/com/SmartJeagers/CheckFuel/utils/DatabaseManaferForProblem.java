@@ -33,6 +33,7 @@ public class DatabaseManaferForProblem {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot keyNode : dataSnapshot.getChildren()) {
+                    problems.clear();
                     Problem problem = keyNode.getValue(Problem.class);
                     problems.add(problem);
                 }

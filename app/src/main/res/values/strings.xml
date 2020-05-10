@@ -65,6 +65,14 @@
     <string name="wi_fi_connection">Wi-Fi Connection</string>
     <string name="there_s_no">There\'s no</string>
     <string name="no_wi_fi_connection_sign">No Wi-Fi connection sign</string>
-
+    <string name="title_activity_test">test</string>
+    <string name="action_settings">Settings</string>
+    <string name="gas_station_okko">Gas station Okko</string>
+    <string name="gas_station_wog">Gas station Wog</string>
+    <string name="gas_station_ukrnafta">Gas station Ukrnafta</string>
+    <string name="gas_station_shell">Gas station Shell</string>
+    <string name="gas_station_socar">Gas station Socar</string>
+    <string name="gas_station_upg">Gas station UPG</string>
+    <string name="options">Options</string>
 
 </resources>

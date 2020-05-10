@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:layout_weight="5"
-        android:background="#9176FF"
+        android:background="#003F51B5"
         android:onClick="refueling">
 
         <TextView
@@ -97,10 +97,12 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/usageStatistic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="5"
-        android:background="#9176FF">
+        android:background="#9176FF"
+        android:onClick="goToUsageStatistic">
 
         <TextView
             android:layout_width="wrap_content"

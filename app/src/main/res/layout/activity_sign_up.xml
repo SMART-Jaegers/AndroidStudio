@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".logging">
+    tools:context="com.SmartJeagers.CheckFuel.SignUp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -33,7 +33,6 @@
                 android:hint="@string/password"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:password="true"
                 android:textColor="#B1B1B4"
                 tools:ignore="LabelFor" />
 
@@ -75,7 +74,6 @@
                 android:hint="@string/password"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:password="true"
                 android:textColor="#B1B1B4"
                 tools:ignore="LabelFor" />
 

@@ -1,33 +1,58 @@
 package com.SmartJeagers.CheckFuel;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.checkfuel.something.R;
 
-public class NoWifi extends DialogFragment {
+public class NoWifi extends DialogFragment implements View.OnClickListener {
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.activity_no_wifi, null);
+
+        view.findViewById(R.id.turnOnWifi).setOnClickListener(this);
+        view.findViewById(R.id.ignore).setOnClickListener(this);
+        return view;
+    }
 
     @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        LayoutInflater inflater = getActivity().getLayoutInflater();
-        builder.setView(inflater.inflate(R.layout.activity_no_wifi, null));
-//                .setPositiveButton(R.string.signin, new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int id) {
-//                        // sign in the user ...
-//                    }
-//                })
-//                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int id) {
-//                        LoginDialogFragment.this.getDialog().cancel();
-//                    }
-//           });
-        return builder.create();
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.turnOnWifi:
+                Log.i("---------------", "turn on");
+                //TODO turn on Wifi
+                dismiss();
+                break;
+            case R.id.ignore:
+                Log.i("---------------", "ignore");
+                dismiss();
+                break;
+        }
     }
+
+
+    @Override
+    public void onDismiss(@NonNull DialogInterface dialog) {
+        super.onDismiss(dialog);
+    }
+
+    @Override
+    public void onCancel(@NonNull DialogInterface dialog) {
+        super.onCancel(dialog);
+    }
+
 }
