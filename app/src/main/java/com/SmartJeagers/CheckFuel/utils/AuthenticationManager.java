@@ -26,11 +26,12 @@ public class AuthenticationManager extends Activity {
 
     public boolean entryToDatabase() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        Log.d(TAG, currentUser.getEmail());
+
         if (currentUser == null) {
             return false;
         }
         //ToDo realise access to this methods
+        Log.d(TAG, currentUser.getEmail());
         return true;
     }
 

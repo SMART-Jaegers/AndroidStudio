@@ -1,14 +1,16 @@
 package com.SmartJeagers.CheckFuel.models;
 
+import android.util.Log;
+
 public class DayOfUse {
     private double kmPerDay;
     private double VolumePerDay;
-    private String day;
+    private String date;
 
-    public DayOfUse(double kmPerDay, double volumePerDay, String day) {
+    public DayOfUse(double kmPerDay, double volumePerDay, String date) {
         this.kmPerDay = kmPerDay;
         VolumePerDay = volumePerDay;
-        this.day = day;
+        this.date = date;
     }
 
     public DayOfUse() {
@@ -30,11 +32,11 @@ public class DayOfUse {
         VolumePerDay = volumePerDay;
     }
 
-    public String getDay() {
-        return day;
+    public String getDate() {
+        return date;
     }
 
-    public void setDay(String day) {
-        this.day = day;
+    public void setDate(String date) {
+        this.date = date;
     }
 }

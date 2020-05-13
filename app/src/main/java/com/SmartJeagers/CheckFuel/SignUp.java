@@ -1,5 +1,6 @@
 package com.SmartJeagers.CheckFuel;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.SmartJeagers.CheckFuel.utils.AuthenticationManager;
+import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForUser;
 import com.checkfuel.something.R;
 
 public class SignUp extends AppCompatActivity {
@@ -44,6 +46,12 @@ public class SignUp extends AppCompatActivity {
 
         AuthenticationManager authentication = new AuthenticationManager();
         authentication.createUser(email, password);
+
+        DatabaseManagerForUser.writeUser(email, userName, password);
+
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     public boolean notValidForm(String userName, String email, String password, String passwordConfirm) {
