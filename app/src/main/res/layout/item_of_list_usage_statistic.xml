@@ -74,7 +74,8 @@
         app:layout_constraintBottom_toTopOf="@+id/line"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/purple_okko" />
+        tools:srcCompat="@drawable/purple_okko"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/goCurrentUse"
@@ -87,7 +88,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.506"
-        app:srcCompat="@drawable/gray_orientation" />
+        app:srcCompat="@drawable/gray_orientation"
+        android:contentDescription="@string/todo" />
 
     <View
         android:id="@+id/line"
