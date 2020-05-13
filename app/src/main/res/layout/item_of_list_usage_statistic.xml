@@ -75,6 +75,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/purple_okko"
+
         android:contentDescription="@string/gas_station_okko" />
 
     <View
@@ -100,6 +101,18 @@
         app:layout_constraintVertical_bias="0.506"
         app:srcCompat="@drawable/gray_orientation"
         android:contentDescription="@string/right_arrow" />
+        
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#5C5B5B"
+        app:layout_constraintBottom_toBottomOf="@id/textDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLiter" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
