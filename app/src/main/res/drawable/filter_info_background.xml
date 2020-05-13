@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+app:cardBackgroundColor="@android:color/transparent"
+tools:ignore="ExtraText">
+<solid android:color="#FFFFFF" />
+<stroke
+    android:width="3dp"
+    android:color="#FFFFFF" />
+/>
+    <corners android:radius="50dp"/>
+<padding
+    android:bottom="0dp"
+    android:left="0dp"
+    android:right="0dp"
+    android:top="0dp"
+    tools:ignore="ExtraText" />
+</shape>

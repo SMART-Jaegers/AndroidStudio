@@ -22,7 +22,8 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="4dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/icons8_settings_96" />
+            android:src="@drawable/icons8_settings_96"
+            android:contentDescription="@string/settings" />
 
         <ImageView
             android:id="@+id/userAccount"
@@ -35,7 +36,8 @@
             android:layout_marginEnd="0dp"
             android:onClick="goToUserProfile"
             android:scaleType="fitCenter"
-            android:src="@drawable/icons8_male_user_96" />
+            android:src="@drawable/icons8_male_user_96"
+            android:contentDescription="@string/user" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -55,17 +57,19 @@
             android:text="@string/refueling"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:typeface="monospace" />
+            android:typeface="monospace"
+            tools:ignore="RelativeOverlap" />
 
         <ImageView
             android:layout_width="83dp"
             android:layout_height="83dp"
             android:layout_alignParentTop="false"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:layout_marginRight="6dp"
+            android:layout_marginEnd="6dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ico1" />
+            android:src="@drawable/ico1"
+            android:contentDescription="@string/refill_station_icon" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -77,21 +81,23 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="18dp"
             android:text="@string/curent_use"
             android:textColor="#9277FF"
-            android:textSize="33sp" />
+            android:textSize="33sp"
+            tools:ignore="RelativeOverlap" />
 
         <ImageView
             android:layout_width="83dp"
             android:layout_height="83dp"
             android:layout_alignParentTop="false"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="6dp"
+            android:layout_marginEnd="6dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/icons8_car_96" />
+            android:src="@drawable/icons8_car_96"
+            android:contentDescription="@string/car_icon" />
 
 
     </RelativeLayout>
@@ -107,21 +113,23 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="18dp"
             android:text="@string/usage_statistic"
             android:textColor="#FFFFFF"
-            android:textSize="33sp" />
+            android:textSize="33sp"
+            tools:ignore="RelativeOverlap" />
 
         <ImageView
             android:layout_width="83dp"
             android:layout_height="83dp"
             android:layout_alignParentTop="false"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="6dp"
+            android:layout_marginEnd="6dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ico2" />
+            android:src="@drawable/ico2"
+            android:contentDescription="@string/statistic_icon" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -136,21 +144,23 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="18dp"
             android:text="@string/quality_score"
             android:textColor="#9277FF"
-            android:textSize="33sp" />
+            android:textSize="33sp"
+            tools:ignore="RelativeOverlap" />
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="false"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="6dp"
-            app:srcCompat="@drawable/icons8_quality_96" />
+            android:layout_marginEnd="6dp"
+            app:srcCompat="@drawable/icons8_quality_96"
+            android:contentDescription="@string/quality_score_icon" />
     </RelativeLayout>
 
 </LinearLayout>
