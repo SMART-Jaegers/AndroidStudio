@@ -74,5 +74,12 @@
     <string name="gas_station_socar">Gas station Socar</string>
     <string name="gas_station_upg">Gas station UPG</string>
     <string name="options">Options</string>
+    <string name="right_arrow">Right arrow</string>
+    <string name="bluetooth_connection">bluetooth connection</string>
+    <string name="user">user</string>
+    <string name="refill_station_icon">Refill station icon</string>
+    <string name="car_icon">Car icon</string>
+    <string name="quality_score_icon">Quality score icon</string>
+    <string name="statistic_icon">Statistic icon</string>
 
 </resources>
