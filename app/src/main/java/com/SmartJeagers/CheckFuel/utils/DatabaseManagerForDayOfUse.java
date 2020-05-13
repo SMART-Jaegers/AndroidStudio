@@ -30,8 +30,8 @@ public class DatabaseManagerForDayOfUse {
         ValueEventListener RefillListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                daysOfUse.clear();
                 for (DataSnapshot keyNode : dataSnapshot.getChildren()) {
-                    daysOfUse.clear();
                     DayOfUse dayOfUse = keyNode.getValue(DayOfUse.class);
                     daysOfUse.add(dayOfUse);
                 }

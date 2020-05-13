@@ -7,8 +7,10 @@ import android.view.View;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.SmartJeagers.CheckFuel.models.DayOfUse;
 import com.SmartJeagers.CheckFuel.models.Refill;
-import com.SmartJeagers.CheckFuel.utils.StatisticRefillManager;
+import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForDayOfUse;
+import com.SmartJeagers.CheckFuel.utils.HistoryManager;
 import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForRefill;
 import com.checkfuel.something.R;
 
@@ -22,9 +24,11 @@ public class UsageStatistic extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usage_statistic);
 
-        recyclerView = findViewById(R.id.statisticView);
         List<Refill> refills = DatabaseManagerForRefill.getRefils();
-        new StatisticRefillManager().setConfig(recyclerView, UsageStatistic.this, refills);
+        List<DayOfUse> daysOfUse = DatabaseManagerForDayOfUse.getDaysOfUse();
+
+        recyclerView = findViewById(R.id.statisticView);
+        HistoryManager.setConfig(recyclerView, UsageStatistic.this, refills, daysOfUse);
     }
 
     public void backToMain(View view) {
