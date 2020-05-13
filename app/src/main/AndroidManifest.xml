@@ -28,16 +28,16 @@
         <activity android:name="com.SmartJeagers.CheckFuel.UsageStatistic" />
         <activity
             android:name="com.SmartJeagers.CheckFuel.BadFuel"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="locked" />
         <activity
             android:name="com.SmartJeagers.CheckFuel.SetVolume"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="locked" />
         <activity
             android:name="com.SmartJeagers.CheckFuel.ChooseGasStation"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="locked" />
         <activity
             android:name="com.SmartJeagers.CheckFuel.MainActivity"
-            android:screenOrientation="unspecified">
+            android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,10 +46,10 @@
         </activity>
         <activity
             android:name="com.SmartJeagers.CheckFuel.GoodFuel"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="locked" />
         <activity
             android:name="com.SmartJeagers.CheckFuel.VolumeCompareBad"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="locked" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -97,5 +97,9 @@
     <string name="add_device">Add device</string>
     <string name="test_fuel_with_your_car">Test fuel with your car</string>
     <string name="warning">Warning</string>
+    <string name="more">More</string>
+    <string name="logout">Logout</string>
+    <string name="english">English</string>
+    <string name="light">Light</string>
 
 </resources>
