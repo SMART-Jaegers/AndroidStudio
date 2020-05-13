@@ -1,15 +1,18 @@
 package com.SmartJeagers.CheckFuel.models;
 
 import android.content.Context;
-import android.util.Log;
+import android.os.Build;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -71,4 +74,5 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryItemView> {
         return refills.size();
     }
 
+    
 }
