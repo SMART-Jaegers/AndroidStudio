@@ -1,19 +1,18 @@
 package com.SmartJeagers.CheckFuel.models;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.util.Log;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class HistoryAdapter extends RecyclerView.Adapter<HistoryItemView> {
+public class HistoryAdapter extends RecyclerView.Adapter<ItemViewOfUsageStatistic> {
     private List<Refill> refills;
     private List<DayOfUse> daysOfUse;
     private Context context;
@@ -26,36 +25,37 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryItemView> {
 
     @NonNull
     @Override
-    public HistoryItemView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new HistoryItemView(parent, context);
+    public ItemViewOfUsageStatistic onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new ItemViewOfUsageStatistic(parent, context);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HistoryItemView holder, int position) {
-        int index = refills.size() - (position + 1);//нумерація з першого
-
+    public void onBindViewHolder(@NonNull ItemViewOfUsageStatistic holder, int position) {
+        int index = refills.size() - (position + 1);//going from end to start
         SimpleDateFormat pattern = new SimpleDateFormat("yyyy-MM-dd");
+
+
         try {
-            Date dateOld = pattern.parse(refills.get(index).getDate());
+            Date dateOfRefill = pattern.parse(refills.get(index).getDate());
             double distance = 0;
             if (index == (refills.size() - 1)) {    //for first element
                 for (DayOfUse dayOfUse : daysOfUse) {
                     Date date = pattern.parse(dayOfUse.getDate());
 
-                    if (date.after(dateOld) || date.equals(dateOld)) {
+                    if (date.after(dateOfRefill) || date.equals(dateOfRefill)) {
                         distance += dayOfUse.getKmPerDay();
                     }
                 }
                 holder.bind(refills.get(index), distance);
                 return;
             }
-            Date dateNow = pattern.parse(refills.get(index + 1).getDate());
+            Date dateNextRefill = pattern.parse(refills.get(index + 1).getDate());
 
 
             for (DayOfUse dayOfUse : daysOfUse) {
                 Date date = pattern.parse(dayOfUse.getDate());
 
-                if ((date.before(dateNow)) && (date.after(dateOld) || date.equals(dateOld))) {
+                if ((date.before(dateNextRefill)) && (date.after(dateOfRefill) || date.equals(dateOfRefill))) {
                     distance += dayOfUse.getKmPerDay();
                 }
             }
@@ -70,5 +70,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryItemView> {
     public int getItemCount() {
         return refills.size();
     }
+
 
 }

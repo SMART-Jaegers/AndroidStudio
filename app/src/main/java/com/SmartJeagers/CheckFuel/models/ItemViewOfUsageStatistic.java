@@ -12,7 +12,7 @@ import com.checkfuel.something.R;
 
 import java.text.DecimalFormat;
 
-class HistoryItemView extends RecyclerView.ViewHolder {
+class ItemViewOfUsageStatistic extends RecyclerView.ViewHolder {
 
     private TextView textLiter;
     private TextView textKilometer;
@@ -20,7 +20,7 @@ class HistoryItemView extends RecyclerView.ViewHolder {
     private ImageView gasStation;
     private ImageView goToDetail;
 
-    public HistoryItemView(ViewGroup parent, Context context) {
+    public ItemViewOfUsageStatistic(ViewGroup parent, Context context) {
         super(LayoutInflater.from(context).inflate(R.layout.item_of_list_usage_statistic, parent, false));
 
         textLiter = itemView.findViewById(R.id.textLiter);
@@ -31,8 +31,8 @@ class HistoryItemView extends RecyclerView.ViewHolder {
     }
 
     public void bind(Refill refill, double distance) {
-        textLiter.setText(new DecimalFormat().format(refill.getVolumeFillReal()));
-        textKilometer.setText(new DecimalFormat().format(distance));
+        textLiter.setText(String.format("Volume of refill:%s", new DecimalFormat().format(refill.getVolumeFillReal())));
+        textKilometer.setText(String.format("Distance after refuelling:%s km", new DecimalFormat().format(distance)));
         textDate.setText(refill.getDate());
         gasStation.setImageResource(R.drawable.purple_okko);
         goToDetail.setImageResource(R.drawable.gray_orientation);

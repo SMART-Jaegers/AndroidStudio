@@ -30,7 +30,7 @@ public class DatabaseManagerForRefill {
         CHECK_FUEL_REFERENCE.child(user.getUid()).child("Refill").push().setValue(refill);
     }
 
-    public static void readRefill() {
+    public static boolean readRefill() {
         ValueEventListener RefillListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -49,6 +49,7 @@ public class DatabaseManagerForRefill {
         };
         CHECK_FUEL_REFERENCE.child(user.getUid()).child("Refill").addValueEventListener(RefillListener);
         Log.i(TAG, "loadPost:Ok");
+        return true;
     }
 
     public static List<Refill> getRefils() {
