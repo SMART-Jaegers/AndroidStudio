@@ -36,9 +36,9 @@ public class SignIn extends AppCompatActivity {
             return;
         }
         AuthenticationManager authentication = new AuthenticationManager();
-        authentication.createUser(email, password);
+        authentication.signIn(email, password);
 
-        Intent intent = new Intent(this, SetVolume.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }

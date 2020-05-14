@@ -45,9 +45,7 @@ public class SignUp extends AppCompatActivity {
         }
 
         AuthenticationManager authentication = new AuthenticationManager();
-        authentication.createUser(email, password);
-
-        DatabaseManagerForUser.writeUser(email, userName, password);
+        authentication.createUser(userName, email, password);
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
