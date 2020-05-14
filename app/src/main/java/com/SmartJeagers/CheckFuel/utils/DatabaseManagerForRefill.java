@@ -34,6 +34,7 @@ public class DatabaseManagerForRefill {
         ValueEventListener RefillListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                refils.clear();
                 for (DataSnapshot keyNode : dataSnapshot.getChildren()) {
                     Refill refill = keyNode.getValue(Refill.class);
                     refils.add(refill);

@@ -65,6 +65,25 @@
     <string name="wi_fi_connection">Wi-Fi Connection</string>
     <string name="there_s_no">There\'s no</string>
     <string name="no_wi_fi_connection_sign">No Wi-Fi connection sign</string>
+    <string name="remove_all_filters">Remove all filters</string>
+    <string name="filter_sign">Filter sign</string>
+    <string name="Filter_sign">TODO</string>
+    <string name="sort_sign">Sort_sign</string>
+    <string name="filter">Filter</string>
+    <string name="gas_station">Gas station</string>
+    <string name="typ_of_fuel">Typ of fuel</string>
+    <string name="volume">Volume</string>
+    <string name="density">Density</string>
+    <string name="norma">: в нормі</string>
+    <string name="by">by</string>
+    <string name="date">Date</string>
+    <string name="from_newest_to_last">(from newest to last)</string>
+    <string name="Dolyto">: Долито</string>
+    <string name="devanostopyat">: 95</string>
+    <string name="wog_shell">: WOG, Shell</string>
+    <string name="sort">Sort</string>
+    <string name="normalna">В нормі</string>
+    <string name="normalnaa">: В нормі</string>
     <string name="title_activity_test">test</string>
     <string name="action_settings">Settings</string>
     <string name="gas_station_okko">Gas station Okko</string>
@@ -101,5 +120,6 @@
     <string name="logout">Logout</string>
     <string name="english">English</string>
     <string name="light">Light</string>
+
 
 </resources>

@@ -1,5 +1,6 @@
 package com.SmartJeagers.CheckFuel;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
@@ -37,6 +38,9 @@ public class SignIn extends AppCompatActivity {
         AuthenticationManager authentication = new AuthenticationManager();
         authentication.createUser(email, password);
 
+        Intent intent = new Intent(this, SetVolume.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     public boolean notValidForm(String email, String password) {
