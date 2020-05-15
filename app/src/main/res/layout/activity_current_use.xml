@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CurrentUse">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#9176FF">
+
+        <ImageView
+            android:id="@+id/exitFromUsageStatistic"
+            android:layout_width="64dp"
+            android:layout_height="56dp"
+            android:contentDescription="@string/go_back"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/icons8_left_100" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentEnd="true"
+            android:foregroundGravity="right"
+            android:paddingStart="4dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="8dp"
+            android:src="@drawable/white_home"
+            android:contentDescription="@string/go_home" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/currentUse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/maven_pro"
+                android:text="@string/current_use"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/maven_pro"
+                android:text="@string/date" />
+
+            <View
+                android:id="@+id/lineVert"
+                android:layout_width="2dp"
+                android:layout_height="60dp"
+                android:background="#9176FF" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/gasStation"
+            android:layout_width="180dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="240dp"
+            android:contentDescription="@string/how_mach_you_have_fuel"
+            android:foregroundGravity="right"
+            android:paddingTop="16dp"
+            android:paddingBottom="32dp"
+            android:src="@drawable/gas_tank_purple" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="200dp"
+            android:background="#B2B2B2" />
+
+        <TextView
+            android:id="@+id/kmPerDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="160dp"
+            android:fontFamily="@font/maven_pro"
+            android:text="@string/km_for_this_day"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/liter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="100dp"
+            android:text="20L"
+            android:textColor="#9176FF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="352dp"
+            android:layout_marginTop="156dp"
+            android:text="7km"
+            android:textColor="#9176FF"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/random1"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/maven_pro"
+            android:text="@string/the_avarage_consumption_of_your_fuel_is"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/random2"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/maven_pro"
+            android:text="@string/we_assume_that_your_fuel_will_be_enough_for_another"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/litersPerKm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="32dp"
+            android:text="12.5 L/Km"
+            android:textColor="#9176FF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/kmwithThisFuel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="324dp"
+            android:layout_marginTop="92dp"
+            android:text="210 Km"
+            android:textColor="#9176FF"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

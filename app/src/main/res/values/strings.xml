@@ -101,5 +101,11 @@
     <string name="logout">Logout</string>
     <string name="english">English</string>
     <string name="light">Light</string>
+    <string name="date">Date</string>
+    <string name="current_use">Current Use</string>
+    <string name="the_avarage_consumption_of_your_fuel_is">The avarage consumption of your fuel is</string>
+    <string name="we_assume_that_your_fuel_will_be_enough_for_another">We assume that your fuel will be enough for another</string>
+    <string name="how_mach_you_have_fuel">How mach you have fuel</string>
+    <string name="km_for_this_day">Km for this day</string>
 
 </resources>
