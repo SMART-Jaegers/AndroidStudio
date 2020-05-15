@@ -14,11 +14,13 @@
 
         <ImageView
             android:id="@+id/exitFromUsageStatistic"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="3dp"
+            android:layout_width="64dp"
+            android:layout_height="56dp"
             android:contentDescription="@string/go_back"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
             android:onClick="backToStations"
             android:scaleType="centerCrop"
             android:src="@drawable/icons8_left_100__2_" />

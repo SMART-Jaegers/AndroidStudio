@@ -117,7 +117,7 @@
             android:id="@+id/km"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="352dp"
+            android:layout_marginStart="340dp"
             android:layout_marginTop="156dp"
             android:text="7km"
             android:textColor="#9176FF"
