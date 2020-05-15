@@ -26,14 +26,14 @@ public class AuthenticationManager extends Activity {
 
     public boolean entryToDatabase() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        Log.d(TAG, currentUser.getEmail());
+
         if (currentUser == null) {
             return false;
         }
         //ToDo realise access to this methods
+        Log.d(TAG, currentUser.getEmail());
         return true;
     }
-
 
     public void signIn(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
@@ -49,18 +49,23 @@ public class AuthenticationManager extends Activity {
                 });
     }
 
-    public void createUser(String email, String password) {
+    public void createUser(final String userName, final String email, final String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            DatabaseManagerForUser.writeUser(email, userName, password);
                             Log.d(TAG, "createUserWithEmail:success");
                         } else {
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                         }
                     }
                 });
+    }
+
+    public void signOut() {
+        mAuth.signOut();
     }
 
 }
