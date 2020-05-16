@@ -1,26 +1,82 @@
 package com.SmartJeagers.CheckFuel.models;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Build;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.SmartJeagers.CheckFuel.utils.UtilsManagerForStatistic;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 public class HistoryAdapter extends RecyclerView.Adapter<ItemViewOfUsageStatistic> {
-    private List<Refill> refills;
-    private List<DayOfUse> daysOfUse;
+    private static final SimpleDateFormat pattern = new SimpleDateFormat("yyyy-MM-dd");
+    private List<ItemStatistic> itemStatisticList;
     private Context context;
 
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public HistoryAdapter(List<Refill> refills, List<DayOfUse> daysOfUse, Context context) {
-        this.refills = refills;
+        this.itemStatisticList = createStatisticItems(refills, daysOfUse);
         this.context = context;
-        this.daysOfUse = daysOfUse;
+        UtilsManagerForStatistic.sortByVolume(itemStatisticList, SortType.DESCENDING);
+    }
+
+    private List<ItemStatistic> createStatisticItems(List<Refill> refills, List<DayOfUse> daysOfUse) {
+        List<ItemStatistic> itemStatisticList = new LinkedList<>();
+        Collections.reverse(refills);
+
+
+        try {
+            for (int position = 0; position < refills.size(); position++) {
+                Date dateOfRefill = pattern.parse(refills.get(position).getDate());
+
+                Date dateNextRefill = null;
+                if (position != 0) {
+                    dateNextRefill = pattern.parse(refills.get(position - 1).getDate());
+                }
+
+                double distance = calculateDistance(daysOfUse, dateOfRefill, dateNextRefill);
+                itemStatisticList.add(new ItemStatistic(refills.get(position), distance));
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return itemStatisticList;
+    }
+
+    private double calculateDistance(List<DayOfUse> daysOfUse, Date refillDate, Date nextRefillDate) {
+        double distance = 0;
+        try {
+            for (DayOfUse dayOfUse : daysOfUse) {
+                Date date = null;
+
+                date = pattern.parse(dayOfUse.getDate());
+                assert date != null;
+                if (nextRefillDate == null) {
+                    if ((date.after(refillDate) || date.equals(refillDate))) {
+                        distance += dayOfUse.getKmPerDay();
+                    }
+                } else {
+                    if ((date.before(nextRefillDate)) && (date.after(refillDate) || date.equals(refillDate))) {
+                        distance += dayOfUse.getKmPerDay();
+                    }
+                }
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return distance;
     }
 
     @NonNull
@@ -31,45 +87,12 @@ public class HistoryAdapter extends RecyclerView.Adapter<ItemViewOfUsageStatisti
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewOfUsageStatistic holder, int position) {
-        int index = refills.size() - (position + 1);//going from end to start
-        SimpleDateFormat pattern = new SimpleDateFormat("yyyy-MM-dd");
-
-
-        try {
-            Date dateOfRefill = pattern.parse(refills.get(index).getDate());
-            double distance = 0;
-            if (index == (refills.size() - 1)) {    //for first element
-                for (DayOfUse dayOfUse : daysOfUse) {
-                    Date date = pattern.parse(dayOfUse.getDate());
-
-                    if (date.after(dateOfRefill) || date.equals(dateOfRefill)) {
-                        distance += dayOfUse.getKmPerDay();
-                    }
-                }
-                holder.bind(refills.get(index), distance);
-                return;
-            }
-            Date dateNextRefill = pattern.parse(refills.get(index + 1).getDate());
-
-
-            for (DayOfUse dayOfUse : daysOfUse) {
-                Date date = pattern.parse(dayOfUse.getDate());
-
-                if ((date.before(dateNextRefill)) && (date.after(dateOfRefill) || date.equals(dateOfRefill))) {
-                    distance += dayOfUse.getKmPerDay();
-                }
-            }
-
-            holder.bind(refills.get(index), distance);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        holder.bind(itemStatisticList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return refills.size();
+        return itemStatisticList.size();
     }
-
 
 }

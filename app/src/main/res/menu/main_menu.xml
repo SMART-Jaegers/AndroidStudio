@@ -10,14 +10,6 @@
             android:id="@+id/changeUsername"
             android:icon="@drawable/purple_user"
             android:title="@string/change_my_username" />
-        <item
-            android:id="@+id/sign_in"
-            android:icon="@drawable/purple_communication"
-            android:title="@string/sign_in" />
-        <item
-            android:id="@+id/sign_up"
-            android:icon="@drawable/wifi_disconnection_white"
-            android:title="@string/sign_up" />
     </group>
 
     <item android:title="User Settings">

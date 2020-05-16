@@ -1,5 +1,7 @@
 package com.SmartJeagers.CheckFuel.models;
 
+import androidx.annotation.NonNull;
+
 import com.google.firebase.database.IgnoreExtraProperties;
 
 @IgnoreExtraProperties
@@ -71,6 +73,8 @@ public class Refill {
     public void setDate(String date) {
         this.date = date;
     }
+
+
 }
 
 
