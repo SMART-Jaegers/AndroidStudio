@@ -29,6 +29,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="360dp"
             android:layout_marginTop="3dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginEnd="8dp"
             android:contentDescription="@string/go_home"
             app:srcCompat="@drawable/white_home" />
@@ -43,10 +44,11 @@
             android:id="@+id/UkrNafta"
             android:layout_width="180dp"
             android:layout_height="190dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
             android:layout_marginStart="230dp"
             android:contentDescription="@string/go_back"
-            app:srcCompat="@drawable/logo_upg_gray" />
+            app:srcCompat="@drawable/ukrnafta_purple" />
 
         <TextView
             android:id="@+id/Date"
@@ -95,7 +97,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="521dp"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:background="#FFFFFF">
 
@@ -105,9 +107,9 @@
             android:id="@+id/Refueling"
             android:layout_width="wrap_content"
             android:layout_height="64dp"
-            android:layout_below="@id/days"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="210dp"
             android:text="@string/refueling_bold_text_for_gas_station_info"
             android:textColor="#9176FF"
             android:textSize="18sp"
@@ -118,11 +120,12 @@
 
 
             android:id="@+id/density"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="270dp"
             android:layout_marginTop="270dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
+            android:layout_marginEnd="10dp"
             android:text="@string/density_bold_text_for_gas_station_info"
             android:textColor="#32D853"
             android:textSize="18sp"
@@ -133,10 +136,12 @@
 
 
             android:id="@+id/days"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="320dp"
             android:layout_marginTop="150dp"
+            android:layout_marginEnd="10dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:text="@string/days_bold_text_for_gas_station_info"
@@ -149,10 +154,12 @@
 
 
             android:id="@+id/liters_all"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="350dp"
             android:layout_marginTop="90dp"
+            android:layout_marginEnd="10dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:text="@string/liters_all_bold_text_for_gas_station_info"
@@ -165,10 +172,12 @@
 
 
             android:id="@+id/liters"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="350dp"
             android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:text="@string/liters_bold_text_for_gas_station_info"
@@ -181,7 +190,7 @@
 
 
             android:id="@+id/Volume_consumed1"
-            android:layout_width="220dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
@@ -195,7 +204,7 @@
 
 
             android:id="@+id/Volume_consumed2"
-            android:layout_width="230dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="90dp"
@@ -209,7 +218,7 @@
 
 
             android:id="@+id/Volume_consumed3"
-            android:layout_width="230dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="150dp"
@@ -237,7 +246,7 @@
 
 
             android:id="@+id/Density"
-            android:layout_width="230dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="270dp"
