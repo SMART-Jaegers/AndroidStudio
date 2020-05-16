@@ -11,7 +11,7 @@
         android:background="#9176FF">
 
         <ImageView
-            android:id="@+id/exitFromUsageStatistic"
+            android:id="@+id/exitFromStationInfo"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerVertical="true"

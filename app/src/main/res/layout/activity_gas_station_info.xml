@@ -90,7 +90,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="#B2B2B2" />
+        android:background="#B3B3B8" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -133,7 +133,7 @@
         <TextView
 
 
-            android:id="@+id/Volume consumed days"
+            android:id="@+id/days"
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_marginStart="320dp"
@@ -149,7 +149,7 @@
         <TextView
 
 
-            android:id="@+id/Volume consumed liters"
+            android:id="@+id/liters_all"
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_marginStart="350dp"
@@ -165,7 +165,7 @@
         <TextView
 
 
-            android:id="@+id/Volume consumed liters all"
+            android:id="@+id/liters"
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_marginStart="350dp"
@@ -181,7 +181,7 @@
         <TextView
 
 
-            android:id="@+id/Volume consumed1"
+            android:id="@+id/Volume_consumed1"
             android:layout_width="220dp"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
@@ -195,7 +195,7 @@
         <TextView
 
 
-            android:id="@+id/Volume consumed2"
+            android:id="@+id/Volume_consumed2"
             android:layout_width="230dp"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
@@ -209,7 +209,7 @@
         <TextView
 
 
-            android:id="@+id/Volume consumed"
+            android:id="@+id/Volume_consumed3"
             android:layout_width="230dp"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
@@ -223,7 +223,7 @@
         <TextView
 
 
-            android:id="@+id/Refueling on this"
+            android:id="@+id/Refueling_on_this"
             android:layout_width="280dp"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
