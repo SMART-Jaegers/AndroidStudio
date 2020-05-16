@@ -13,12 +13,15 @@
         android:background="#FFFFFF">
 
         <ImageView
-            android:id="@+id/exitFromStationInfo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="3dp"
+
+            android:id="@+id/exitFromUsageStatistic"
+            android:layout_width="64dp"
+            android:layout_height="56dp"
             android:contentDescription="@string/go_back"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
             android:onClick="backToStations"
             android:scaleType="centerCrop"
             android:src="@drawable/icons8_left_100__2_" />
@@ -63,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/choose_text_view"
                 android:layout_centerHorizontal="true"
+                android:layout_marginBottom="8dp"
                 android:text="@string/okko"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
@@ -91,7 +95,9 @@
                     android:id="@+id/textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" />
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -106,7 +112,9 @@
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -121,7 +129,9 @@
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -136,7 +146,9 @@
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -151,7 +163,9 @@
                 <TextView
                     android:id="@+id/Density"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -166,7 +180,9 @@
                 <TextView
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
             </TableRow>
 
         </TableLayout>

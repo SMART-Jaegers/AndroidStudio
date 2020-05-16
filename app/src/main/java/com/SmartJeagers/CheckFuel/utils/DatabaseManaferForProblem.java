@@ -32,8 +32,8 @@ public class DatabaseManaferForProblem {
         ValueEventListener RefillListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                problems.clear();
                 for (DataSnapshot keyNode : dataSnapshot.getChildren()) {
-                    problems.clear();
                     Problem problem = keyNode.getValue(Problem.class);
                     problems.add(problem);
                 }

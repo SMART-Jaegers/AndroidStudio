@@ -1,5 +1,4 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,11 +13,13 @@
         android:background="#FFFFFF">
 
         <ImageView
-            android:id="@+id/exitFromStationInfo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="3dp"
+            android:id="@+id/exitFromUsageStatistic"
+            android:layout_width="64dp"
+            android:layout_height="56dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
             android:contentDescription="@string/go_back"
             android:onClick="backToMain"
             android:scaleType="centerCrop"
@@ -30,10 +31,11 @@
             android:layout_alignParentEnd="false"
             android:layout_alignParentRight="true"
             android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:contentDescription="@string/settings"
             android:scaleType="centerCrop"
-            android:src="@drawable/icons8_settings_96" />
+            android:src="@drawable/icons8_settings_96"
+            tools:ignore="RtlHardcoded" />
 
     </RelativeLayout>
 
