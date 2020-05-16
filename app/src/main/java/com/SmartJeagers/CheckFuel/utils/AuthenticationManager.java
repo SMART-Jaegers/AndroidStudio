@@ -31,15 +31,15 @@ public class AuthenticationManager extends Activity {
         return true;
     }
 
-    public void signIn(String email, String password) {
+    public void logIn(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Log.d(TAG, "signInWithEmail:success");
+                            Log.d(TAG, "logInWithEmail:success");
                         } else {
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Log.w(TAG, "logInWithEmail:failure", task.getException());
                         }
                     }
                 });
@@ -51,7 +51,9 @@ public class AuthenticationManager extends Activity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+
                             DatabaseManagerForUser.writeUser(email, userName, password);
+
                             Log.d(TAG, "createUserWithEmail:success");
                         } else {
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -63,5 +65,6 @@ public class AuthenticationManager extends Activity {
     public void signOut() {
         mAuth.signOut();
     }
+
 
 }

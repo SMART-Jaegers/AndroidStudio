@@ -12,7 +12,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.SmartJeagers.CheckFuel.utils.AuthenticationManager;
-import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForUser;
 import com.checkfuel.something.R;
 
 public class SignUp extends AppCompatActivity {
@@ -71,6 +70,12 @@ public class SignUp extends AppCompatActivity {
             valid = false;
         }
         return !valid;
+    }
+
+    public void goToLogIn(View view) {
+        Intent intent = new Intent(this, LogIn.class);
+        finish();
+        startActivity(intent);
     }
 
 }

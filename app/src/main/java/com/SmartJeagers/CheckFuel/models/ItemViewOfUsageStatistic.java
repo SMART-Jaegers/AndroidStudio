@@ -30,10 +30,10 @@ class ItemViewOfUsageStatistic extends RecyclerView.ViewHolder {
         goToDetail = itemView.findViewById(R.id.goCurrentUse);
     }
 
-    public void bind(Refill refill, double distance) {
-        textLiter.setText(String.format("Volume of refill:%s", new DecimalFormat().format(refill.getVolumeFillReal())));
-        textKilometer.setText(String.format("Distance after refuelling:%s km", new DecimalFormat().format(distance)));
-        textDate.setText(refill.getDate());
+    public void bind(ItemStatistic itemStatistic) {
+        textLiter.setText(String.format("Volume of refill:%s", new DecimalFormat().format(itemStatistic.getVolumeFillReal())));
+        textKilometer.setText(String.format("Distance after refuelling:%s km", new DecimalFormat().format(itemStatistic.getDistance())));
+        textDate.setText(itemStatistic.getDate());
         gasStation.setImageResource(R.drawable.purple_okko);
         goToDetail.setImageResource(R.drawable.gray_orientation);
     }

@@ -15,10 +15,5 @@ public class Loading extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
-        boolean goForward = true;
-        goForward = goForward & DatabaseManagerForRefill.readRefill();
-        goForward = goForward & DatabaseManagerForDayOfUse.readDayOfUse();
-        Intent intent = new Intent(this, UsageStatistic.class);
-        startActivity(intent);
     }
 }

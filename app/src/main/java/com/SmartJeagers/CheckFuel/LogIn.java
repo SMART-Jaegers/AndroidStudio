@@ -14,18 +14,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.SmartJeagers.CheckFuel.utils.AuthenticationManager;
 import com.checkfuel.something.R;
 
-public class SignIn extends AppCompatActivity {
+public class LogIn extends AppCompatActivity {
     EditText editEmail, editPassword;
     Button buttonSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.activity_log_in);
 
         editEmail = findViewById(R.id.editTextEmailSignIn);
         editPassword = findViewById(R.id.editTextPassword);
-        buttonSignIn = findViewById(R.id.btnsignin);
+        buttonSignIn = findViewById(R.id.button_log_in);
         editPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
     }
 
@@ -36,7 +36,7 @@ public class SignIn extends AppCompatActivity {
             return;
         }
         AuthenticationManager authentication = new AuthenticationManager();
-        authentication.signIn(email, password);
+        authentication.logIn(email, password);
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -55,5 +55,11 @@ public class SignIn extends AppCompatActivity {
             valid = false;
         }
         return !valid;
+    }
+
+    public void goToSignUp(View view) {
+        Intent intent = new Intent(this, SignUp.class);
+        finish();
+        startActivity(intent);
     }
 }
