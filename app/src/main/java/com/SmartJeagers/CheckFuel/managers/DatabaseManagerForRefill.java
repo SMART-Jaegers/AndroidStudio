@@ -1,4 +1,4 @@
-package com.SmartJeagers.CheckFuel.utils;
+package com.SmartJeagers.CheckFuel.managers;
 
 import android.util.Log;
 
@@ -12,7 +12,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 

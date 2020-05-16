@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.SmartJeagers.CheckFuel.utils.AuthenticationManager;
+import com.SmartJeagers.CheckFuel.managers.AuthenticationManager;
 import com.checkfuel.something.R;
 
 public class SignUp extends AppCompatActivity {
