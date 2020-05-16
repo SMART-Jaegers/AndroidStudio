@@ -1,14 +1,10 @@
 package com.SmartJeagers.CheckFuel.utils;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.text.TextUtils;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.SmartJeagers.CheckFuel.MainActivity;
-import com.SmartJeagers.CheckFuel.SignUp;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
