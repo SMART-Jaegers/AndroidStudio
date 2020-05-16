@@ -83,7 +83,6 @@
     <string name="quality_score_icon">Quality score icon</string>
     <string name="statistic_icon">Statistic icon</string>
     <string name="user_name">User name</string>
-    <string name="email">Email</string>
     <string name="user_avatar">User avatar</string>
     <string name="change_my_username">Change my username</string>
     <string name="change_my_password">Change my password</string>
@@ -93,7 +92,6 @@
     <string name="language">Language</string>
     <string name="theme">Theme</string>
     <string name="alert">Alert</string>
-    <string name="car_icon">Car icon</string>
     <string name="plus_icon">Plus icon</string>
     <string name="add_device">Add device</string>
     <string name="test_fuel_with_your_car">Test fuel with your car</string>
@@ -121,8 +119,6 @@
     <string name="liters_all_bold_text_for_gas_station_info"><b>45</b>L</string>
     <string name="liters_bold_text_for_gas_station_info"><b>45</b>L</string>
     <string name="volume_consumed">Volume consumed</string>
-    <string name="volume_consumed">Volume consumed</string>
-    <string name="volume_consumed">Volume consumed</string>
     <string name="refueling_on_this_gas_station">Refueling on this gas station</string>
     <string name="density">Density</string>
     <string name="current_use">Current Use</string>
@@ -130,5 +126,14 @@
     <string name="we_assume_that_your_fuel_will_be_enough_for_another">We assume that your fuel will be enough for another</string>
     <string name="how_mach_you_have_fuel">How mach you have fuel</string>
     <string name="km_for_this_day">Km for this day</string>
+    <string name="gas_station">Gas Station</string>
+    <string name="typ_of_fuel">type of Fuel</string>
+    <string name="volume">Volume</string>
+    <string name="by">By</string>
+    <string name="sort_sign">Sort Sign</string>
+    <string name="Filter_sign">Filter sign</string>
+    <string name="remove_all_filters">remove all filters</string>
+    <string name="filter">Filter</string>
+    <string name="log_out">log out</string>
 
 </resources>
