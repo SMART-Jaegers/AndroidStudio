@@ -39,7 +39,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="checkfuel">CheckFuel</string>
-    <string name="loading">Loading...</string>
+    <string name="loading">Loading…</string>
     <string name="todo">To do</string>
     <string name="logo">LOGO</string>
     <string name="you_had_successful_refueling">You had successful refueling</string>
