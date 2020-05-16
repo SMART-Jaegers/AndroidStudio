@@ -11,6 +11,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.SmartJeagers.CheckFuel.models.DayOfUse;
+import com.SmartJeagers.CheckFuel.models.OnGetResult;
 import com.SmartJeagers.CheckFuel.models.Refill;
 import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForDayOfUse;
 import com.SmartJeagers.CheckFuel.utils.HistoryManager;
@@ -27,19 +28,10 @@ public class UsageStatistic extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usage_statistic);
-        boolean goForward = false;
-        while (!goForward) {
-            goForward = DatabaseManagerForRefill.readRefill() & DatabaseManagerForDayOfUse.readDayOfUse();
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
 
-        }
-        List<Refill> refills = DatabaseManagerForRefill.getRefils();
+        List<Refill> refills = DatabaseManagerForRefill.getRefills();
         List<DayOfUse> daysOfUse = DatabaseManagerForDayOfUse.getDaysOfUse();
-        Collections.reverse(refills);
+
 
         if (refills.size() == 0) {
             Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
@@ -60,4 +52,10 @@ public class UsageStatistic extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
 }

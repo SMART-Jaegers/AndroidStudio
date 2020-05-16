@@ -2,6 +2,7 @@ package com.SmartJeagers.CheckFuel.utils;
 
 import android.util.Log;
 
+import com.SmartJeagers.CheckFuel.models.OnGetResult;
 import com.SmartJeagers.CheckFuel.models.Refill;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -12,6 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class DatabaseManagerForRefill {
@@ -20,7 +22,7 @@ public class DatabaseManagerForRefill {
 
     private static DatabaseReference CHECK_FUEL_REFERENCE = FirebaseDatabase.getInstance().getReference();
     private static FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    private static List<Refill> refils = new ArrayList<>();
+    private static List<Refill> refills = new LinkedList<>();
 
 
     public static void writeRefill(double volumeFillReal, double volumeFillExpected, double density,
@@ -30,36 +32,37 @@ public class DatabaseManagerForRefill {
         CHECK_FUEL_REFERENCE.child(user.getUid()).child("Refill").push().setValue(refill);
     }
 
-    public static boolean readRefill() {
+    public static void readRefill(final OnGetResult listener) {
+        listener.onStart();
         ValueEventListener RefillListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                refils.clear();
+                refills.clear();
                 for (DataSnapshot keyNode : dataSnapshot.getChildren()) {
                     Refill refill = keyNode.getValue(Refill.class);
-                    refils.add(refill);
+                    refills.add(refill);
                 }
+                listener.onSuccess();
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                //TODO something
+                listener.onFailure();
             }
         };
         CHECK_FUEL_REFERENCE.child(user.getUid()).child("Refill").addValueEventListener(RefillListener);
         Log.i(TAG, "loadPost:Ok");
-        return true;
     }
 
-    public static List<Refill> getRefils() {
-        for (int i = 0; i < refils.size(); i++) {
-            Log.i("-----Refills-----", String.valueOf(refils.get(i)));
+    public static List<Refill> getRefills() {
+        for (int i = 0; i < refills.size(); i++) {
+            Log.i("-----Refills-----", String.valueOf(refills.get(i)));
         }
         Log.i("-----Refills-----", "read refill is ok");
-        Log.i("-----Refills-----", String.valueOf(refils.size()));
+        Log.i("-----Refills-----", String.valueOf(refills.size()));
 
-        return refils;
+        return refills;
     }
 
 }

@@ -22,13 +22,13 @@
 
     <View
         android:id="@+id/lineUnderLiters"
-        android:layout_width="100dp"
+        android:layout_width="200dp"
         android:layout_height="1dp"
         android:background="#B2B2B2"
         app:layout_constraintBottom_toTopOf="@+id/textKilometer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/goCurrentUse"
+        app:layout_constraintStart_toEndOf="@id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textLiter" />
 
     <TextView
@@ -44,13 +44,12 @@
 
     <View
         android:id="@+id/lineUnderKilometers"
-        android:layout_width="100dp"
+        android:layout_width="200dp"
         android:layout_height="1dp"
         android:background="#B2B2B2"
         app:layout_constraintBottom_toTopOf="@+id/textDate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@id/goCurrentUse"
+        app:layout_constraintStart_toEndOf="@id/imageView" />
 
     <TextView
         android:id="@+id/textDate"
@@ -74,9 +73,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/purple_okko"
-        android:contentDescription="@string/gas_station_okko" />
+        android:contentDescription="@string/todo" />
 
-       <ImageView
+    <ImageView
         android:id="@+id/goCurrentUse"
         android:layout_width="28dp"
         android:layout_height="28dp"
@@ -88,19 +87,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
         app:srcCompat="@drawable/gray_orientation"
-        android:contentDescription="@string/right_arrow" />
-
+        android:contentDescription="@string/todo" />
 
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#B2B2B2"
+        android:layout_height="2dp"
+        android:background="#5C5B5B"
         app:layout_constraintBottom_toBottomOf="@id/textDate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textLiter" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

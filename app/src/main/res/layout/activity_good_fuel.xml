@@ -13,6 +13,7 @@
         android:background="#9176FF">
 
         <ImageView
+
             android:id="@+id/exitFromUsageStatistic"
             android:layout_width="64dp"
             android:layout_height="56dp"
@@ -198,7 +199,7 @@
         android:background="#FFFFFF">
 
         <TextView
-            android:id="@+id/green_this_is_density_of_your_fuel"
+            android:id="@+id/Refueling"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

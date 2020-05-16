@@ -2,6 +2,7 @@ package com.SmartJeagers.CheckFuel.utils;
 
 import android.util.Log;
 
+import com.SmartJeagers.CheckFuel.models.OnGetResult;
 import com.SmartJeagers.CheckFuel.models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,17 +23,19 @@ public class DatabaseManagerForUser {
         CHECK_FUEL_REFERENCE.child(user.getUid()).child("User").setValue(databaseUser);
     }
 
-    public static void readUser() {
+    public static void readUser(OnGetResult listener) {
+        listener.onStart();
         ValueEventListener RefillListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 databaseUser = dataSnapshot.getValue(User.class);
+                listener.onSuccess();
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                //TODO something
+                listener.onFailure();
             }
         };
 

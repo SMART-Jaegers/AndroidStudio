@@ -1,14 +1,10 @@
 package com.SmartJeagers.CheckFuel.utils;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.text.TextUtils;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.SmartJeagers.CheckFuel.MainActivity;
-import com.SmartJeagers.CheckFuel.SignUp;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -35,15 +31,15 @@ public class AuthenticationManager extends Activity {
         return true;
     }
 
-    public void signIn(String email, String password) {
+    public void logIn(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Log.d(TAG, "signInWithEmail:success");
+                            Log.d(TAG, "logInWithEmail:success");
                         } else {
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Log.w(TAG, "logInWithEmail:failure", task.getException());
                         }
                     }
                 });
@@ -55,7 +51,9 @@ public class AuthenticationManager extends Activity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+
                             DatabaseManagerForUser.writeUser(email, userName, password);
+
                             Log.d(TAG, "createUserWithEmail:success");
                         } else {
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -67,5 +65,6 @@ public class AuthenticationManager extends Activity {
     public void signOut() {
         mAuth.signOut();
     }
+
 
 }
