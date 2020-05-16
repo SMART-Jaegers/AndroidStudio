@@ -135,5 +135,14 @@
     <string name="remove_all_filters">remove all filters</string>
     <string name="filter">Filter</string>
     <string name="log_out">log out</string>
-
+    <string name="filter_date">Date</string>
+    <string name="filter_date_type_1">(from newest to last)</string>
+    <string name="filter_date_type_2">(from last to newest)</string>
+    <string name="filter_Volume">Volume</string>
+    <string name="filter_Volume_type_1">(from bigger to smaller)</string>
+    <string name="filter_Volume_type_2">(from smaller to bigger)</string>
+    <string name="filter_Efficiency">Efficiency</string>
+    <string name="filter_Efficiency_type_1">(from best to worst)</string>
+    <string name="filter_Efficiency_type_2">(from worst to best)</string>
+    <string name="sort_by">Sort By</string>
 </resources>
