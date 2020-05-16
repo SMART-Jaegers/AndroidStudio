@@ -86,6 +86,21 @@
     <string name="sort">Sort</string>
     <string name="normalna">В нормі</string>
     <string name="normalnaa">: В нормі</string>
+    <string name="italic_text_for_gas_station_info"><i>Italic text</i></string>
+    <string name="name_bold_text_for_gas_station_info"><b>АЗС Укрнафта</b></string>
+    <string name="date_underlined_text_for_gas_station_info"><u>25.02.2020</u></string>
+    <string name="adress_bold_text_for_gas_station_info"><b>Volodymyra Velykogo Street, 6,</b></string>
+    <string name="adress_more_bold_text_for_gas_station_info"><b>Lviv, Lviv Oblast, 79000</b></string>
+    <string name="density_bold_text_for_gas_station_info"><b>760</b>kg/m3</string>
+    <string name="refueling_bold_text_for_gas_station_info"><b>44.9</b>L/<b>45</b>L</string>
+    <string name="days_bold_text_for_gas_station_info"><b>20</b>days</string>
+    <string name="liters_all_bold_text_for_gas_station_info"><b>45</b>L</string>
+    <string name="liters_bold_text_for_gas_station_info"><b>45</b>L</string>
+    <string name="volume_consumed">Volume consumed</string>
+    <string name="volume_consumed">Volume consumed</string>
+    <string name="volume_consumed">Volume consumed</string>
+    <string name="refueling_on_this_gas_station">Refueling on this gas station</string>
+    <string name="density">Density</string>
 
 
 </resources>
