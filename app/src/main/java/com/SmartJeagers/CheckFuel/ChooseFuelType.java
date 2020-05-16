@@ -9,7 +9,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.checkfuel.something.R;
-import com.SmartJeagers.CheckFuel.utils.TextReader;
+import com.SmartJeagers.CheckFuel.managers.TextReader;
 
 import org.jetbrains.annotations.NotNull;
 

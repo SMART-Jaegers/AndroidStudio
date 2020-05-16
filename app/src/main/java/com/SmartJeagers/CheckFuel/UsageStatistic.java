@@ -1,30 +1,30 @@
 package com.SmartJeagers.CheckFuel;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.SmartJeagers.CheckFuel.models.DayOfUse;
-import com.SmartJeagers.CheckFuel.models.OnGetResult;
 import com.SmartJeagers.CheckFuel.models.Refill;
-import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForDayOfUse;
-import com.SmartJeagers.CheckFuel.utils.HistoryManager;
-import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForRefill;
+import com.SmartJeagers.CheckFuel.managers.DatabaseManagerForDayOfUse;
+import com.SmartJeagers.CheckFuel.managers.HistoryManager;
+import com.SmartJeagers.CheckFuel.managers.DatabaseManagerForRefill;
 import com.checkfuel.something.R;
 
-import java.util.Collections;
 import java.util.List;
 
 public class UsageStatistic extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usage_statistic);
@@ -58,4 +58,5 @@ public class UsageStatistic extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
+
 }

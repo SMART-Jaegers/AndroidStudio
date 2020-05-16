@@ -15,11 +15,11 @@ import android.widget.Toast;
 
 import com.SmartJeagers.CheckFuel.models.OnGetResult;
 import com.SmartJeagers.CheckFuel.models.User;
-import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForDayOfUse;
-import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForRefill;
-import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForUser;
+import com.SmartJeagers.CheckFuel.managers.DatabaseManagerForDayOfUse;
+import com.SmartJeagers.CheckFuel.managers.DatabaseManagerForRefill;
+import com.SmartJeagers.CheckFuel.managers.DatabaseManagerForUser;
 import com.checkfuel.something.R;
-import com.SmartJeagers.CheckFuel.utils.AuthenticationManager;
+import com.SmartJeagers.CheckFuel.managers.AuthenticationManager;
 import com.google.android.material.navigation.NavigationView;
 
 

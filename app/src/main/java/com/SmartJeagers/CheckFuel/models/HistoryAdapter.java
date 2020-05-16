@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.SmartJeagers.CheckFuel.utils.UtilsManagerForStatistic;
+import com.SmartJeagers.CheckFuel.managers.UtilsManagerForStatistic;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -27,6 +27,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<ItemViewOfUsageStatisti
     public HistoryAdapter(List<Refill> refills, List<DayOfUse> daysOfUse, Context context) {
         this.itemStatisticList = createStatisticItems(refills, daysOfUse);
         this.context = context;
+
         UtilsManagerForStatistic.sortByVolume(itemStatisticList, SortType.DESCENDING);
     }
 
@@ -87,7 +88,9 @@ public class HistoryAdapter extends RecyclerView.Adapter<ItemViewOfUsageStatisti
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewOfUsageStatistic holder, int position) {
+
         holder.bind(itemStatisticList.get(position));
+
     }
 
     @Override

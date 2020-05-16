@@ -2,11 +2,8 @@ package com.SmartJeagers.CheckFuel;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForDayOfUse;
-import com.SmartJeagers.CheckFuel.utils.DatabaseManagerForRefill;
 import com.checkfuel.something.R;
 
 public class Loading extends AppCompatActivity {
