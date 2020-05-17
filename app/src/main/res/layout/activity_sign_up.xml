@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.SmartJeagers.CheckFuel.SignUp">
+    tools:context="com.smartjaegers.checkfuel.SignUp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F5F5F5"
         android:orientation="vertical"
-        tools:context="com.SmartJeagers.CheckFuel.Loading"
+        tools:context="com.smartjaegers.checkfuel.Loading"
         tools:layout_editor_absoluteX="64dp"
         tools:layout_editor_absoluteY="29dp">
 

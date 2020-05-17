@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical"
-    tools:context="com.SmartJeagers.CheckFuel.GoodFuel">
+    tools:context=".GoodFuel">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,18 +21,18 @@
             android:contentDescription="@string/go_back"
             android:onClick="backToGasStation"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/icons8_left_100" />
+            android:src="@drawable/icons8_left_100" />
 
         <ImageView
             android:id="@+id/goHomeFromStationInfo"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="360dp"
             android:layout_marginTop="3dp"
-            android:layout_alignParentEnd="true"
             android:layout_marginEnd="8dp"
             android:contentDescription="@string/go_home"
-            app:srcCompat="@drawable/white_home" />
+            android:src="@drawable/white_home" />
 
     </RelativeLayout>
 
@@ -45,10 +45,10 @@
             android:layout_width="180dp"
             android:layout_height="190dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="10dp"
             android:layout_marginStart="230dp"
+            android:layout_marginEnd="10dp"
             android:contentDescription="@string/go_back"
-            app:srcCompat="@drawable/ukrnafta_purple" />
+            android:src="@drawable/purple_okko" />
 
         <TextView
             android:id="@+id/Date"
@@ -102,14 +102,12 @@
         android:background="#FFFFFF">
 
         <TextView
-
-
             android:id="@+id/Refueling"
             android:layout_width="wrap_content"
             android:layout_height="64dp"
-            android:layout_marginEnd="10dp"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="210dp"
+            android:layout_marginEnd="10dp"
             android:text="@string/refueling_bold_text_for_gas_station_info"
             android:textColor="#9176FF"
             android:textSize="18sp"
@@ -142,8 +140,6 @@
             android:layout_marginStart="320dp"
             android:layout_marginTop="150dp"
             android:layout_marginEnd="10dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
             android:text="@string/days_bold_text_for_gas_station_info"
             android:textColor="#9176FF"
             android:textSize="18sp"
@@ -160,8 +156,6 @@
             android:layout_marginStart="350dp"
             android:layout_marginTop="90dp"
             android:layout_marginEnd="10dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
             android:text="@string/liters_all_bold_text_for_gas_station_info"
             android:textColor="#9176FF"
             android:textSize="18sp"
@@ -178,8 +172,6 @@
             android:layout_marginStart="350dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="10dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
             android:text="@string/liters_bold_text_for_gas_station_info"
             android:textColor="#9176FF"
             android:textSize="18sp"
