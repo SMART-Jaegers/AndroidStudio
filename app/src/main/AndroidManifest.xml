@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.checkfuel.something">
+    package="com.smartjaegers.checkfuel">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -19,60 +19,60 @@
         tools:targetApi="n">
 
         <activity
-            android:name="com.SmartJeagers.CheckFuel.UserProfile"
+            android:name=".UserProfile"
             android:screenOrientation="locked" />
         <activity
-            android:name="com.SmartJeagers.CheckFuel.SignUp"
+            android:name=".SignUp"
             android:screenOrientation="locked" />
         <activity
-            android:name="com.SmartJeagers.CheckFuel.LogIn"
+            android:name=".LogIn"
             android:screenOrientation="locked" />
         <activity
-            android:name="com.SmartJeagers.CheckFuel.NoBluetooth"
+            android:name=".NoBluetooth"
             android:screenOrientation="locked" />
         <activity
-            android:name="com.SmartJeagers.CheckFuel.NoWifi"
+            android:name=".NoWifi"
             android:screenOrientation="locked" />
         <activity
-            android:name="com.SmartJeagers.CheckFuel.ChooseFuelType"
+            android:name=".ChooseFuelType"
             android:screenOrientation="locked" />
         <activity
-            android:name="com.SmartJeagers.CheckFuel.Loading"
+            android:name=".Loading"
             android:screenOrientation="locked" />
         <activity
-            android:name="com.SmartJeagers.CheckFuel.VolumeCompareGood"
+            android:name=".VolumeCompareGood"
             android:screenOrientation="locked" />
         <activity
-            android:name="com.SmartJeagers.CheckFuel.UsageStatistic"
+            android:name=".UsageStatistic"
             android:screenOrientation="locked" />
         <activity
-            android:name="com.SmartJeagers.CheckFuel.BadFuel"
+            android:name=".BadFuel"
             android:screenOrientation="locked" />
         <activity
-            android:name="com.SmartJeagers.CheckFuel.SetVolume"
+            android:name=".SetVolume"
             android:screenOrientation="locked" />
         <activity
-            android:name="com.SmartJeagers.CheckFuel.ChooseGasStation"
+            android:name=".ChooseGasStation"
             android:screenOrientation="locked" />
         <activity
-            android:name="com.SmartJeagers.CheckFuel.MainActivity"
+            android:name=".GoodFuel"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".VolumeCompareBad"
+            android:screenOrientation="locked" />
+        <activity android:name=".managers.AuthenticationManager" />
+
+        <activity
+            android:name=".GasStationInfo"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.SmartJeagers.CheckFuel.GoodFuel"
-            android:screenOrientation="locked" />
-        <activity
-            android:name="com.SmartJeagers.CheckFuel.VolumeCompareBad"
-            android:screenOrientation="locked" />
-        <activity android:name="com.SmartJeagers.CheckFuel.managers.AuthenticationManager" />
-        <activity
-            android:name="com.SmartJeagers.CheckFuel.GasStationInfo"
-            android:screenOrientation="locked" />
 
         <meta-data
             android:name="preloaded_fonts"
