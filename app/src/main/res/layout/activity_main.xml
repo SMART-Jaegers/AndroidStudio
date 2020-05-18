@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
+    app:itemTextColor="@color/colorGrey"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.SmartJeagers.CheckFuel.MainActivity"
+    tools:context="com.smartjaegers.checkfuel.MainActivity"
     tools:openDrawer="start">
 
     <com.google.android.material.navigation.NavigationView

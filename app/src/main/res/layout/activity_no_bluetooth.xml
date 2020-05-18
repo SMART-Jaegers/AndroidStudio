@@ -11,7 +11,7 @@
         app:cardBackgroundColor="@android:color/transparent"
 
 
-        tools:context="com.SmartJeagers.CheckFuel.NoWifi"
+        tools:context="com.smartjaegers.checkfuel.NoWifi"
         tools:ignore="MissingConstraints">
 
         <Button
