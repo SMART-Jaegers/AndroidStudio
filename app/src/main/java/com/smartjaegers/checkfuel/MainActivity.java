@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -21,7 +22,6 @@ import com.smartjaegers.checkfuel.managers.DatabaseManagerForUser;
 
 import com.smartjaegers.checkfuel.managers.AuthenticationManager;
 import com.google.android.material.navigation.NavigationView;
-import com.smartjaegers.checkfuel.R;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_wiew);
+        Menu menu = navigationView.getMenu();
+
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         if (authentication.entryToDatabase()) {
 

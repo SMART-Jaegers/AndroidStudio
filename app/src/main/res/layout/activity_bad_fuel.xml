@@ -194,7 +194,7 @@
         android:background="#FFFFFF">
 
         <TextView
-            android:id="@+id/Refueling"
+            android:id="@+id/volume_expected_vs_real"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

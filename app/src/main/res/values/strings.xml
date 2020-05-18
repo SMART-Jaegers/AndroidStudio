@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Check fuel</string>
     <string name="refueling">Refueling</string>
-    <string name="curent_use">Curent use</string>
+    <string name="curent_use">Current use</string>
     <string name="quality_score">Quality score</string>
     <string name="usage_statistic">Usage statistic</string>
     <string name="choose_the_gas_station">Choose the gas station</string>
@@ -111,8 +111,8 @@
     <string name="italic_text_for_gas_station_info"><i>Italic text</i></string>
     <string name="name_bold_text_for_gas_station_info"><b>АЗС Укрнафта</b></string>
     <string name="date_underlined_text_for_gas_station_info"><u>25.02.2020</u></string>
-    <string name="adress_bold_text_for_gas_station_info"><b>Volodymyra Velykogo Street, 6,</b></string>
-    <string name="adress_more_bold_text_for_gas_station_info"><b>Lviv, Lviv Oblast, 79000</b></string>
+    <string name="adress_bold_text_for_gas_station_info">Volodymyra Velykogo Street, 6,</string>
+    <string name="adress_more_bold_text_for_gas_station_info">Lviv, Lviv Oblast, 79000</string>
     <string name="density_bold_text_for_gas_station_info"><b>760</b>kg/m3</string>
     <string name="refueling_bold_text_for_gas_station_info"><b>44.9</b>L/<b>45</b>L</string>
     <string name="days_bold_text_for_gas_station_info"><b>20</b>days</string>
@@ -145,4 +145,9 @@
     <string name="filter_Efficiency_type_1">(from best to worst)</string>
     <string name="filter_Efficiency_type_2">(from worst to best)</string>
     <string name="sort_by">Sort By</string>
+    <string name="traveled_distance">Traveled distance</string>
+    <string name="days_in_use">Days in use</string>
+    <string name="refueling_day">Refueling day</string>
+    <string name="traveled_distance1">Traveled\ndistance</string>
+    <string name="volume_consumed1">Volume\nconsumed</string>
 </resources>

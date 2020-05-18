@@ -6,24 +6,35 @@
     android:layout_height="wrap_content">
 
     <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/refueling_day"
+        android:textColor="#878787"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/lineUnderKilometers"
+        app:layout_constraintTop_toBottomOf="@id/lineUnderKilometers"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
         android:id="@+id/textLiter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="76dp"
+        android:singleLine="true"
         android:textColor="#8E93B5"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/line"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/lineUnderLiters"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/lineUnderLiters"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="1dp"
+        android:layout_marginEnd="50dp"
         android:background="#B2B2B2"
         app:layout_constraintBottom_toTopOf="@+id/textKilometer"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,14 +49,14 @@
         android:textColor="#8E93B5"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/lineUnderKilometers"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/lineUnderLiters"/>
+        app:layout_constraintEnd_toEndOf="@id/lineUnderKilometers"
+        app:layout_constraintTop_toTopOf="@+id/lineUnderLiters" />
 
     <View
         android:id="@+id/lineUnderKilometers"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="1dp"
+        android:layout_marginEnd="50dp"
         android:background="#B2B2B2"
         app:layout_constraintBottom_toTopOf="@+id/textDate"
         app:layout_constraintEnd_toStartOf="@id/goCurrentUse"
@@ -58,9 +69,8 @@
         android:paddingBottom="12dp"
         android:textColor="#8E93B5"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/lineUnderKilometers"
         app:layout_constraintTop_toBottomOf="@+id/lineUnderKilometers" />
 
     <ImageView
@@ -94,12 +104,35 @@
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:background="#5C5B5B"
         app:layout_constraintBottom_toBottomOf="@id/textDate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textLiter" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/volume_consumed1"
+        android:textColor="#878787"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@id/lineUnderLiters"
+        app:layout_constraintStart_toStartOf="@id/lineUnderLiters"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="@string/traveled_distance1"
+        android:textColor="#878787"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@id/lineUnderKilometers"
+        app:layout_constraintStart_toStartOf="@id/lineUnderLiters"
+        app:layout_constraintTop_toBottomOf="@id/lineUnderLiters" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -46,6 +46,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/date_new_old"
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:background="#FFFFFF">
@@ -81,6 +82,7 @@
             android:background="#B3B3B8" />
 
         <RelativeLayout
+            android:id="@+id/date_old_new"
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:background="#FFFFFF">
@@ -116,9 +118,10 @@
             android:background="#B3B3B8" />
 
         <RelativeLayout
+            android:id="@+id/volume_descending"
             android:layout_width="match_parent"
             android:layout_height="85dp"
-            android:background="#E9E3FF">
+            android:background="#FFFFFF">
 
             <TextView
                 android:id="@+id/textView25"
@@ -151,6 +154,7 @@
             android:background="#B3B3B8" />
 
         <RelativeLayout
+            android:id="@+id/volume_ascending"
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:background="#FFFFFF">
@@ -186,6 +190,7 @@
             android:background="#B3B3B8" />
 
         <RelativeLayout
+            android:id="@+id/efficiency_descending"
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:background="#FFFFFF">
@@ -221,6 +226,7 @@
             android:background="#B3B3B8" />
 
         <RelativeLayout
+            android:id="@+id/efficiency_ascending"
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:background="#FFFFFF">
