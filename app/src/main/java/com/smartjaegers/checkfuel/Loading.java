@@ -13,4 +13,10 @@ public class Loading extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
     }
+
+    @Override
+    protected void onStop() {
+        finish();
+        super.onStop();
+    }
 }

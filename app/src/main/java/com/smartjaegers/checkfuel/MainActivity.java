@@ -27,16 +27,26 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-    private AuthenticationManager authentication = new AuthenticationManager();
+    private AuthenticationManager authentication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("-----MainActivity-----", "Start");
+        authentication = new AuthenticationManager();
+
+
+        Log.i("-----MainActivity-----", "Create");
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_wiew);
-        Menu menu = navigationView.getMenu();
 
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         if (authentication.entryToDatabase()) {
@@ -76,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         findViewById(R.id.quality).setOnClickListener(this);
 
     }
+
 
     @Override
     public void onClick(View v) {
