@@ -78,12 +78,12 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
+        android:contentDescription="@string/todo"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/line"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/purple_okko"
-        android:contentDescription="@string/todo" />
+        tools:srcCompat="@drawable/purple_okko" />
 
     <ImageView
         android:id="@+id/goCurrentUse"
@@ -95,11 +95,10 @@
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/line"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
 
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/gray_orientation"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/gray_orientation" />
 
     <View
         android:id="@+id/line"

@@ -12,6 +12,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -41,7 +42,9 @@ public class DatabaseManagerForRefill {
                     Refill refill = keyNode.getValue(Refill.class);
                     refills.add(refill);
                 }
+                Collections.reverse(refills);
                 listener.onSuccess();
+
             }
 
             @Override
@@ -56,7 +59,7 @@ public class DatabaseManagerForRefill {
 
     public static List<Refill> getRefills() {
         for (int i = 0; i < refills.size(); i++) {
-            Log.i("-----Refills-----", String.valueOf(refills.get(i)));
+            Log.i("-----Refills-----", String.valueOf(refills.get(i).getDate()));
         }
         Log.i("-----Refills-----", "read refill is ok");
         Log.i("-----Refills-----", String.valueOf(refills.size()));

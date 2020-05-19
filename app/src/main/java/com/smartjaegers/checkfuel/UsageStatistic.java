@@ -24,11 +24,19 @@ public class UsageStatistic extends AppCompatActivity {
     private RecyclerView recyclerView;
     private String nowSorting;
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usage_statistic);
 
+
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    @Override
+    protected void onStart() {
+        super.onStart();
         nowSorting = getIntent().getStringExtra("nowSorting");
         if (nowSorting==null){
             nowSorting="date_new_old";
@@ -44,7 +52,6 @@ public class UsageStatistic extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.statisticView);
         HistoryManager.setConfig(recyclerView, UsageStatistic.this, refills, daysOfUse, nowSorting);
-
     }
 
     public void goToMore(View view) {

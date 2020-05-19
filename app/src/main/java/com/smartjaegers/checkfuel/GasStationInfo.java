@@ -45,7 +45,9 @@ public class GasStationInfo extends Activity {
     }
 
     public void backToUsageStatistic(View view) {
-        super.onBackPressed();
+        Intent intent = new Intent(this, UsageStatistic.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     public void backToMain(View view) {
