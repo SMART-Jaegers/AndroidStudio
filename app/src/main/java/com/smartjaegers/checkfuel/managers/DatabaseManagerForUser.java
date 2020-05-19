@@ -15,15 +15,17 @@ import com.google.firebase.database.ValueEventListener;
 public class DatabaseManagerForUser {
     private final static String TAG = "MYTAG------------------";
     private static DatabaseReference CHECK_FUEL_REFERENCE = FirebaseDatabase.getInstance().getReference();
-    private static FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
     private static User databaseUser;
 
     public static void writeUser(String email, String userName, String password) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         User databaseUser = new User(email, userName, password);
         CHECK_FUEL_REFERENCE.child(user.getUid()).child("User").setValue(databaseUser);
     }
 
     public static void readUser(OnGetResult listener) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         listener.onStart();
         ValueEventListener RefillListener = new ValueEventListener() {
             @Override

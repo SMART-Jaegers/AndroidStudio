@@ -28,9 +28,6 @@ public class UsageStatistic extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usage_statistic);
-
-
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -38,8 +35,8 @@ public class UsageStatistic extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         nowSorting = getIntent().getStringExtra("nowSorting");
-        if (nowSorting==null){
-            nowSorting="date_new_old";
+        if (nowSorting == null) {
+            nowSorting = "date_new_old";
         }
 
         List<Refill> refills = DatabaseManagerForRefill.getRefills();
@@ -61,16 +58,7 @@ public class UsageStatistic extends AppCompatActivity {
     }
 
     public void backToMain(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-    }
-
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
+        finish();
     }
 
 }
