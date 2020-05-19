@@ -24,8 +24,8 @@ public class SortBy extends AppCompatActivity implements View.OnClickListener {
         dateOldNewLayout = findViewById(R.id.date_old_new);
         volumeDescendingLayout = findViewById(R.id.volume_descending);
         volumeAscendingLayout = findViewById(R.id.volume_ascending);
-        efficiencyAscendingLayout = findViewById(R.id.efficiency_descending);
-        efficiencyDescendingLayout = findViewById(R.id.efficiency_ascending);
+        efficiencyAscendingLayout = findViewById(R.id.efficiency_ascending);
+        efficiencyDescendingLayout = findViewById(R.id.efficiency_descending);
 
         dateNewOldLayout.setOnClickListener(this);
         dateOldNewLayout.setOnClickListener(this);

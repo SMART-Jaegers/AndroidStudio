@@ -92,18 +92,30 @@
             density6max="800"
             density6min="700" />
     </UPG>
-    <Wog>
+    <Wog
+        petrol1="DF Mustang"
+        petrol2="DF+ Mustang"
+        petrol3="95 Mustang"
+        petrol4="92 Mustang"
+        petrol5="95 Euro 5"
+        petrol6="100 Mustang"
+        petrol7="Gas">
         <density
-            density1max="000"
-            density1min="000"
-            density2max="000"
-            density2min="000"
-            density3max="000"
-            density3min="000"
-            density4max="000"
-            density4min="000"
-            density5max="000"
-            density5min="000" />
+            density1max="800"
+            density1min="700"
+            density2max="800"
+            density2min="700"
+            density3max="800"
+            density3min="700"
+            density4max="800"
+            density4min="700"
+            density5max="800"
+            density5min="700"
+            density6max="800"
+            density6min="700"
+            density7max="800"
+            density7min="700" />
+
     </Wog>
 
 </gasStations>

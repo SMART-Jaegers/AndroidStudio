@@ -52,6 +52,25 @@ public class ItemStatistic extends Refill implements Parcelable {
         }
     };
 
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int flags) {
+        parcel.writeDouble(getVolumeFillReal());
+        parcel.writeDouble(getVolumeFillExpected());
+        parcel.writeDouble(getDensity());
+        parcel.writeString(getNameStation());
+        parcel.writeString(getTypeFuel());
+        parcel.writeString(getDate());
+        parcel.writeDouble(getDistance());
+        parcel.writeDouble(getVolume());
+        parcel.writeString(getTimeDriving());
+    }
+
     public double getVolume() {
         return volume;
     }
@@ -76,21 +95,4 @@ public class ItemStatistic extends Refill implements Parcelable {
         this.distance = distance;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int flags) {
-        parcel.writeDouble(getVolumeFillReal());
-        parcel.writeDouble(getVolumeFillExpected());
-        parcel.writeDouble(getDensity());
-        parcel.writeString(getNameStation());
-        parcel.writeString(getTypeFuel());
-        parcel.writeString(getDate());
-        parcel.writeDouble(getDistance());
-        parcel.writeDouble(getVolume());
-        parcel.writeString(getTimeDriving());
-    }
 }

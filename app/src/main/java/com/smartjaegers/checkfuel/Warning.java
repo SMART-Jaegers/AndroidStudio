@@ -1,10 +1,9 @@
-package com.SmartJeagers.CheckFuel;
+package com.smartjaegers.checkfuel;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.checkfuel.something.R;
 
 public class Warning extends AppCompatActivity {
 

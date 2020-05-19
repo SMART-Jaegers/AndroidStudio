@@ -50,6 +50,10 @@ public class DatabaseManagerForDayOfUse {
     }
 
     public static List<DayOfUse> getDaysOfUse() {
+        for (DayOfUse day : daysOfUse) {
+            Log.i(TAG, day.getDate());
+
+        }
         return daysOfUse;
     }
 }
