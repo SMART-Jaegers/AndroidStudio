@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TestCarWithYourFuel">
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="262dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/minimum_weight"
+        android:textColor="#878787"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageView19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageView19"
+        app:layout_constraintTop_toTopOf="@id/imageView19"
+        app:layout_constraintVertical_bias="0.514" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="262dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/your_speed_should"
+        android:textColor="#878787"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageView18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageView18"
+        app:layout_constraintTop_toTopOf="@id/imageView18"
+        app:layout_constraintVertical_bias="0.514" />
+
+    <LinearLayout
+        android:id="@+id/headers"
+        android:layout_width="412dp"
+        android:layout_height="71dp"
+        android:background="#9176FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/exitFromUsageStatistic2"
+            android:layout_width="64dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/go_back"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icons8_left_100" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="40dp"
+            android:text="@string/test_fuel_with_your_car"
+            android:textColor="#FFFFFF"
+            android:textSize="23sp"
+            tools:layout_editor_absoluteX="167dp"
+            tools:layout_editor_absoluteY="62dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/instruction"
+        android:textColor="#878787"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headers" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="50dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/_1"
+        android:src="@drawable/purple_fire1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView11" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="50dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/_2"
+        android:src="@drawable/purple_fire2"
+        app:layout_constraintStart_toStartOf="@id/imageView13"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="50dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/_3"
+        android:src="@drawable/purple_fire3"
+        app:layout_constraintStart_toStartOf="@id/imageView15"
+        app:layout_constraintTop_toBottomOf="@id/imageView15" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="50dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/_4"
+        android:src="@drawable/purple_fire4"
+        app:layout_constraintStart_toStartOf="@id/imageView17"
+        app:layout_constraintTop_toBottomOf="@id/imageView17" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="50dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/_5"
+        android:src="@drawable/purple_fire5"
+        app:layout_constraintStart_toStartOf="@id/imageView18"
+        app:layout_constraintTop_toBottomOf="@id/imageView18" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="262dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/find_a_smooth_strech"
+        android:textColor="#878787"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageView13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageView13"
+        app:layout_constraintTop_toTopOf="@id/imageView13"
+        app:layout_constraintVertical_bias="0.514" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="262dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/go_the_same_way_back"
+        android:textColor="#878787"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageView17"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageView17"
+        app:layout_constraintTop_toTopOf="@id/imageView17"
+        app:layout_constraintVertical_bias="0.514" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="262dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/drive_at_least_1_km"
+        android:textColor="#878787"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageView15"
+        app:layout_constraintTop_toTopOf="@id/imageView15"
+        app:layout_constraintVertical_bias="0.514" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="126dp"
+        android:layout_height="36dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/go_home"
+        android:fontFamily="sans-serif-light"
+        android:text="Start"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView19"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="126dp"
+        android:layout_height="36dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:background="@drawable/later"
+        android:fontFamily="sans-serif-light"
+        android:text="Later"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/button"
+        app:layout_constraintTop_toTopOf="@id/button"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="188dp"
+        android:layout_height="46dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/username"
+        android:fontFamily="sans-serif-light"
+        android:text="Look for places"
+        android:textColor="#9176FF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/button2"
+        app:layout_constraintStart_toStartOf="@id/button"
+        app:layout_constraintTop_toBottomOf="@id/button"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

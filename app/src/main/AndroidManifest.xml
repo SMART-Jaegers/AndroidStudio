@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.smartjaegers.checkfuel" >
+    package="com.smartjaegers.checkfuel">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,9 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        tools:targetApi="n" >
-        <activity android:name=".Test2" >
-        </activity>
+        tools:targetApi="n">
+        <activity android:name=".testRunning"></activity>
+        <activity android:name=".TestCarWithYourFuel" />
+        <activity android:name=".Test2" />
         <activity
             android:name=".UserProfile"
             android:screenOrientation="locked" />
@@ -67,7 +68,7 @@
             android:screenOrientation="locked" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="locked" >
+            android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -163,4 +163,25 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="home_second">Home Second</string>
+    <string name="title_activity_test_fuel_with_your_car">TestFuelWithYourCar</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="minimum_weight">Minimum weight</string>
+    <string name="your_speed_should">Your speed should be at least 70km/h</string>
+    <string name="instruction">Instruction</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_3">3</string>
+    <string name="_2">2</string>
+    <string name="_1">1</string>
+    <string name="find_a_smooth_strech">Find a smooth strech of road where you can drive without sudden changes in speed</string>
+    <string name="go_the_same_way_back">Go the same way back</string>
+    <string name="drive_at_least_1_km">Drive at least 1 km</string>
+    <string name="text_for_replace">You\'re just started testing fuel with your car</string>
 </resources>
