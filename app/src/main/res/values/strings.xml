@@ -184,4 +184,7 @@
     <string name="go_the_same_way_back">Go the same way back</string>
     <string name="drive_at_least_1_km">Drive at least 1 km</string>
     <string name="text_for_replace">You\'re just started testing fuel with your car</string>
+    <string name="device_1">Device 1</string>
+    <string name="available_devices">Available devices</string>
+    <string name="turn_on_bluetooth">Turn on bluetooth</string>
 </resources>
