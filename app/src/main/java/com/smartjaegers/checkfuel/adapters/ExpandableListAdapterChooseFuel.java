@@ -79,18 +79,11 @@ public class ExpandableListAdapterChooseFuel extends BaseExpandableListAdapter {
         }
         TextView childView = convertView.findViewById(R.id.checkedTextView);
         childView.setText(childText);
-
-        childView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                childView.setBackgroundResource(R.color.colorPurpleWhite);
-            }
-        });
         return convertView;
     }
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
-        return false;
+        return true;
     }
 }

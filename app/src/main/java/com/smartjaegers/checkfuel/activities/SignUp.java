@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.smartjaegers.checkfuel.managers.AuthenticationManager;
 import com.smartjaegers.checkfuel.R;
+import com.smartjaegers.checkfuel.models.OnGetResult;
 
 
 public class SignUp extends AppCompatActivity {
@@ -45,10 +47,29 @@ public class SignUp extends AppCompatActivity {
         }
 
         AuthenticationManager authentication = new AuthenticationManager();
-        authentication.createUser(userName, email, password);
+        authentication.createUser(userName, email, password, new OnGetResult() {
 
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            @Override
+            public void onSuccess() {
+                Log.i("-----Database--------", "SuccessCreatingUser");
+                Intent intent = new Intent(SignUp.this, MainActivity.class);
+                finish();
+                startActivity(intent);
+            }
+
+            @Override
+            public void onStart() {
+                Log.i("-----Database--------", "StartCreatingUser");
+            }
+
+            @Override
+            public void onFailure() {
+                Log.i("-----Database--------", "FailureCreatingUser");
+
+            }
+        });
+
+        Intent intent = new Intent(this, Loading.class);
         startActivity(intent);
     }
 

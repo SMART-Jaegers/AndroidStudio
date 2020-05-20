@@ -1,9 +1,13 @@
 package com.smartjaegers.checkfuel.activities;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.ListAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ChooseFilters extends AppCompatActivity implements ExpandableListView.OnChildClickListener {
+public class ChooseFilters extends AppCompatActivity {
 
     private ExpandableListView listView;
     private ExpandableListAdapter listAdapter;
@@ -32,7 +36,26 @@ public class ChooseFilters extends AppCompatActivity implements ExpandableListVi
         listView = findViewById(R.id.filters_list);
         listAdapter = new ExpandableListAdapterChooseFuel(this, listHeader, listItem);
         listView.setAdapter(listAdapter);
-        listView.setOnChildClickListener(this);
+//        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+//            @Override
+//            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+//                final String selected = (String) listAdapter.getChild(groupPosition, childPosition);
+//
+//                switch (selected) {
+//                    case "Okko":
+//                        TextView textView = v.findViewById(R.id.checkedTextView);
+//                        textView.setBackgroundColor(getResources().getColor(R.color.colorPurpleWhite));
+//                        break;
+//                    case "Wog":
+//                        v.setBackgroundColor(getResources().getColor(R.color.colorPurpleWhite));
+//                        break;
+//                }
+////                parent.getChildAt(childPosition).setBackgroundColor(getResources().getColor(R.color.colorPurpleWhite));
+////                paent.getSelectedView().setBackgroundColor(getResources().getColor(R.color.colorPurpleWhite));
+//                //display it or do something with it
+//                return false;
+//            }
+//        });
 
     }
 
@@ -74,9 +97,4 @@ public class ChooseFilters extends AppCompatActivity implements ExpandableListVi
 
     }
 
-    @Override
-    public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-
-        return false;
-    }
 }

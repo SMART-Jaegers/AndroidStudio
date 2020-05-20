@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.smartjaegers.checkfuel.R;
 
-public class testRunning extends AppCompatActivity {
+public class TestRunning extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

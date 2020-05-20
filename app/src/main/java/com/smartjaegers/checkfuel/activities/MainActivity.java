@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -33,23 +34,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.i("-----MainActivity-----", "Start");
+
         authentication = new AuthenticationManager();
 
-
-        Log.i("-----MainActivity-----", "Create");
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_wiew);
+        Menu menu = navigationView.getMenu();
+        MenuItem logoutItem = menu.findItem(R.id.logout);
 
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+
         if (authentication.entryToDatabase()) {
+
+            findViewById(R.id.usageStatistic).setBackgroundResource(R.color.colorPurple);
 
             DatabaseManagerForUser.readUser(new OnGetResult() {
                 @Override
@@ -104,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     intent.setClass(this, Loading.class);
                     readFromDB();
                 } else {
-                    Toast.makeText(this, "You aren't log in", Toast.LENGTH_SHORT).show();
+                    intent.setClass(this, SignUp.class);
                     return;
                 }
                 break;
@@ -163,7 +165,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.logout:
                 authentication.signOut();
+                drawerLayout.closeDrawer(GravityCompat.START);
                 break;
+            case R.id.warning:
+                Intent intent = new Intent(this, Warning.class);
+                startActivity(intent);
+                drawerLayout.closeDrawer(GravityCompat.START);
+                break;
+
         }
         return true;
     }

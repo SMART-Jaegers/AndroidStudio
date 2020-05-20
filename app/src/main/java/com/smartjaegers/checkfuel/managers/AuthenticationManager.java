@@ -10,6 +10,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.smartjaegers.checkfuel.models.OnGetResult;
 
 public class AuthenticationManager extends Activity {
     private final static String TAG = "MYTAG------------------";
@@ -31,32 +32,37 @@ public class AuthenticationManager extends Activity {
         return true;
     }
 
-    public void logIn(String email, String password) {
+    public void logIn(String email, String password, OnGetResult listener) {
+        listener.onStart();
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "logInWithEmail:success");
+                            listener.onSuccess();
                         } else {
                             Log.w(TAG, "logInWithEmail:failure", task.getException());
+                            listener.onFailure();
                         }
                     }
                 });
     }
 
-    public void createUser(final String userName, final String email, final String password) {
+    public void createUser(final String userName, final String email, final String password, OnGetResult listener) {
+        listener.onStart();
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+
                         if (task.isSuccessful()) {
-
                             DatabaseManagerForUser.writeUser(email, userName, password);
-
                             Log.d(TAG, "createUserWithEmail:success");
+                            listener.onSuccess();
                         } else {
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            listener.onFailure();
                         }
                     }
                 });
