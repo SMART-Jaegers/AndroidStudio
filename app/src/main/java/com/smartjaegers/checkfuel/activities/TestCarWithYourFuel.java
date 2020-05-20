@@ -1,4 +1,4 @@
-package com.smartjaegers.checkfuel;
+package com.smartjaegers.checkfuel.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,17 +6,11 @@ import android.os.Bundle;
 
 import com.smartjaegers.checkfuel.R;
 
-public class Loading extends AppCompatActivity {
+public class TestCarWithYourFuel extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loading);
-    }
-
-    @Override
-    protected void onStop() {
-        finish();
-        super.onStop();
+        setContentView(R.layout.activity_test_car_with_your_fuel);
     }
 }

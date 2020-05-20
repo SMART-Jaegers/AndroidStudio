@@ -1,4 +1,4 @@
-package com.smartjaegers.checkfuel;
+package com.smartjaegers.checkfuel.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,12 +8,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.smartjaegers.checkfuel.R;
 import com.smartjaegers.checkfuel.models.OnGetResult;
 import com.smartjaegers.checkfuel.models.User;
 import com.smartjaegers.checkfuel.managers.DatabaseManagerForDayOfUse;

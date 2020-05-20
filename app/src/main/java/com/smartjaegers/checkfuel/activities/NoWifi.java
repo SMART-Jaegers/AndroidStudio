@@ -1,4 +1,4 @@
-package com.smartjaegers.checkfuel;
+package com.smartjaegers.checkfuel.activities;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
@@ -12,14 +12,15 @@ import android.view.ViewGroup;
 
 import com.smartjaegers.checkfuel.R;
 
-public class NoBluetooth extends DialogFragment implements View.OnClickListener {
+
+public class NoWifi extends DialogFragment implements View.OnClickListener {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.activity_no_bluetooth, null);
+        View view = inflater.inflate(R.layout.activity_no_wifi, null);
 
-        view.findViewById(R.id.turnOnBluetooth).setOnClickListener(this);
+        view.findViewById(R.id.turnOnWifi).setOnClickListener(this);
         view.findViewById(R.id.ignore).setOnClickListener(this);
         return view;
     }

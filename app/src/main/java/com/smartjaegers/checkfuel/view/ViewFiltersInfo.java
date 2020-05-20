@@ -1,4 +1,4 @@
-package com.smartjaegers.checkfuel.models;
+package com.smartjaegers.checkfuel.view;
 
 import android.content.Context;
 import android.view.LayoutInflater;

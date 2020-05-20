@@ -1,8 +1,10 @@
-package com.smartjaegers.checkfuel;
+package com.smartjaegers.checkfuel.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.smartjaegers.checkfuel.R;
 
 public class testRunning extends AppCompatActivity {
 

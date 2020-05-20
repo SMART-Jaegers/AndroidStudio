@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#9176FF"
     android:orientation="vertical"
-    tools:context="com.smartjaegers.checkfuel.ChooseGasStation">
+    tools:context="com.smartjaegers.checkfuel.activities.ChooseGasStation">
 
     <RelativeLayout
         android:id="@+id/w"

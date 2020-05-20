@@ -2,6 +2,7 @@ package com.smartjaegers.checkfuel.managers;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 
 import com.smartjaegers.checkfuel.R;
 
@@ -61,5 +62,35 @@ public class TextReader {
         }
         return list;
     }
+
+    public ArrayList<String> getStationName() {
+        ArrayList<String> list = new ArrayList<>();
+        try {
+            XmlPullParser parser = context.getResources().getXml(R.xml.check_fuel);
+
+            while (parser.getEventType() != XmlPullParser.END_DOCUMENT) {
+                if (parser.getEventType() == XmlPullParser.START_TAG) {
+                    if (parser.getName().equals("density")) {
+                        parser.next();
+                    } else {
+                        if (parser.getName().equals("gasStations")) {
+
+                        } else {
+                            list.add(parser.getName());
+                        }
+                    }
+                }
+                parser.next();
+            }
+        } catch (Throwable t) {
+            Log.i(TAG, "eror");
+        }
+        for (int i = 0; i < list.size(); i++) {
+            Log.i(TAG, list.get(i));
+        }
+
+        return list;
+    }
+
 
 }

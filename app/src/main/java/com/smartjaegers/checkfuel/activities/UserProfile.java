@@ -1,4 +1,4 @@
-package com.smartjaegers.checkfuel;
+package com.smartjaegers.checkfuel.activities;
 
 import android.os.Bundle;
 

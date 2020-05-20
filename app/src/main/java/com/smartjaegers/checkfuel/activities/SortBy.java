@@ -1,4 +1,4 @@
-package com.smartjaegers.checkfuel;
+package com.smartjaegers.checkfuel.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.smartjaegers.checkfuel.R;
 
 public class SortBy extends AppCompatActivity implements View.OnClickListener {
 
