@@ -16,10 +16,8 @@ public class ItemStatisticManager {
 
     private static final SimpleDateFormat pattern = new SimpleDateFormat("yyyy-MM-dd");
 
-    private static List<ItemStatistic> createStatisticItem(List<Refill> refills, List<DayOfUse> daysOfUse) {
+    public static List<ItemStatistic> createStatisticItem(List<Refill> refills, List<DayOfUse> daysOfUse) {
         List<ItemStatistic> itemStatisticList = new LinkedList<>();
-        Collections.reverse(refills);
-
 
         try {
             for (int position = 0; position < refills.size(); position++) {

@@ -1,4 +1,4 @@
-package com.smartjaegers.checkfuel.models;
+package com.smartjaegers.checkfuel.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +9,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.smartjaegers.checkfuel.GasStationInfo;
+import com.smartjaegers.checkfuel.models.ItemStatistic;
+import com.smartjaegers.checkfuel.activities.GasStationInfo;
 import com.smartjaegers.checkfuel.R;
 import com.smartjaegers.checkfuel.managers.StationManager;
 

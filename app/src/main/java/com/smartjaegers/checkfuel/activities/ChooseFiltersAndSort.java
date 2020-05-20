@@ -1,4 +1,4 @@
-package com.smartjaegers.checkfuel;
+package com.smartjaegers.checkfuel.activities;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -18,6 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.DialogFragment;
 
+import com.smartjaegers.checkfuel.R;
 import com.smartjaegers.checkfuel.adapters.FiltersAdapter;
 
 import java.util.ArrayList;
@@ -75,7 +76,7 @@ public class ChooseFiltersAndSort extends DialogFragment implements View.OnClick
         Intent intent = new Intent();
         switch (v.getId()) {
             case R.id.choose_filter:
-                intent.setClass(getActivity(), MainActivity.class);
+                intent.setClass(getActivity(), ChooseFilters.class);
 
                 startActivity(intent);
                 dismiss();

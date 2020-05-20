@@ -1,4 +1,4 @@
-package com.smartjaegers.checkfuel;
+package com.smartjaegers.checkfuel.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.smartjaegers.checkfuel.R;
 import com.smartjaegers.checkfuel.managers.AuthenticationManager;
 
 public class LogIn extends AppCompatActivity {

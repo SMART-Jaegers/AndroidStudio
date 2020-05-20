@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#F7F5FE"
     android:orientation="vertical"
-    tools:context="com.smartjaegers.checkfuel.VolumeCompareGood">
+    tools:context="com.smartjaegers.checkfuel.activities.VolumeCompareGood">
 
     <RelativeLayout
         android:layout_width="match_parent"

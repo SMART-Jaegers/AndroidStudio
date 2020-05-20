@@ -17,57 +17,57 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
-        <activity android:name=".testRunning"></activity>
-        <activity android:name=".TestCarWithYourFuel" />
-        <activity android:name=".Test2" />
+        <activity android:name=".activities.testRunning"></activity>
+        <activity android:name=".activities.TestCarWithYourFuel" />
+        <activity android:name=".activities.Test2" />
         <activity
-            android:name=".UserProfile"
+            android:name=".activities.UserProfile"
             android:screenOrientation="locked" />
         <activity
-            android:name=".SignUp"
+            android:name=".activities.SignUp"
             android:screenOrientation="locked" />
         <activity
-            android:name=".LogIn"
+            android:name=".activities.LogIn"
             android:screenOrientation="locked" />
         <activity
-            android:name=".NoBluetooth"
+            android:name=".activities.NoBluetooth"
             android:screenOrientation="locked" />
         <activity
-            android:name=".NoWifi"
+            android:name=".activities.NoWifi"
             android:screenOrientation="locked" />
         <activity
-            android:name=".ChooseFuelType"
+            android:name=".activities.ChooseFuelType"
             android:screenOrientation="locked" />
         <activity
-            android:name=".Loading"
+            android:name=".activities.Loading"
             android:screenOrientation="locked" />
         <activity
-            android:name=".VolumeCompareGood"
+            android:name=".activities.VolumeCompareGood"
             android:screenOrientation="locked" />
         <activity
-            android:name=".UsageStatistic"
+            android:name=".activities.UsageStatistic"
             android:screenOrientation="locked" />
         <activity
-            android:name=".BadFuel"
+            android:name=".activities.BadFuel"
             android:screenOrientation="locked" />
         <activity
-            android:name=".SetVolume"
+            android:name=".activities.SetVolume"
             android:screenOrientation="locked" />
         <activity
-            android:name=".ChooseGasStation"
+            android:name=".activities.ChooseGasStation"
             android:screenOrientation="locked" />
         <activity
-            android:name=".GoodFuel"
+            android:name=".activities.GoodFuel"
             android:screenOrientation="locked" />
         <activity
-            android:name=".VolumeCompareBad"
+            android:name=".activities.VolumeCompareBad"
             android:screenOrientation="locked" />
         <activity android:name=".managers.AuthenticationManager" />
         <activity
-            android:name=".GasStationInfo"
+            android:name=".activities.GasStationInfo"
             android:screenOrientation="locked" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -76,8 +76,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SortBy"
+            android:name=".activities.SortBy"
             android:screenOrientation="locked" />
+        <activity android:name=".activities.ChooseFilters" />
 
         <meta-data
             android:name="preloaded_fonts"

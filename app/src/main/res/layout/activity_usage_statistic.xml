@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical"
-    tools:context="com.smartjaegers.checkfuel.UsageStatistic">
+    tools:context="com.smartjaegers.checkfuel.activities.UsageStatistic">
 
     <RelativeLayout
         android:layout_width="match_parent"

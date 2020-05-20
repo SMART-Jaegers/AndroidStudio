@@ -44,7 +44,6 @@ public class DatabaseManagerForRefill {
                 }
                 Collections.reverse(refills);
                 listener.onSuccess();
-
             }
 
             @Override

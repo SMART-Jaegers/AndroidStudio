@@ -1,6 +1,5 @@
-package com.smartjaegers.checkfuel;
+package com.smartjaegers.checkfuel.activities;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.smartjaegers.checkfuel.R;
 import com.smartjaegers.checkfuel.models.DayOfUse;
 import com.smartjaegers.checkfuel.models.Refill;
 import com.smartjaegers.checkfuel.managers.DatabaseManagerForDayOfUse;
@@ -61,4 +61,9 @@ public class UsageStatistic extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
 }
