@@ -16,7 +16,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.Switch;
@@ -149,7 +148,7 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    public void btnDiscover(View view) {
+    public void discover(View view) {
         Log.d(TAG, "btnDiscover: Looking for unpaired devices");
         if (bluetoothAdapter.isDiscovering()) {
             bluetoothAdapter.cancelDiscovery();
@@ -197,4 +196,5 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
             startConnection();
         }
     }
+
 }
