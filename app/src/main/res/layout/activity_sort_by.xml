@@ -14,12 +14,13 @@
 
 
         <ImageView
-            android:id="@+id/exitFromSortBy"
+            android:id="@+id/exit"
             android:layout_width="46dp"
             android:layout_height="46dp"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="10dp"
             android:contentDescription="@string/go_home"
+            android:onClick="backToStatistic"
             android:scaleType="centerCrop"
             app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 

@@ -2,6 +2,7 @@ package com.smartjaegers.checkfuel.activities;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -15,6 +16,7 @@ import com.smartjaegers.checkfuel.managers.DatabaseManagerForRefill;
 import com.smartjaegers.checkfuel.managers.HistoryManager;
 import com.smartjaegers.checkfuel.managers.WarningManager;
 import com.smartjaegers.checkfuel.models.DayOfUse;
+import com.smartjaegers.checkfuel.models.Problem;
 import com.smartjaegers.checkfuel.models.Refill;
 
 import java.util.LinkedList;
@@ -35,16 +37,19 @@ public class Warning extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        List<Refill> refills = new LinkedList<>();
-        refills.add(new Refill(0, 0, 0, "0", "0", "0"));
-        List<DayOfUse> daysOfUse = new LinkedList<>();
-        daysOfUse.add(new DayOfUse(0, 0, "0"));
 
-        if (refills.size() == 0) {
-            Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
+        List<Problem> problems = new LinkedList<>();
+//        problems.add(new Problem(12));
+
+        if (problems.size()==0){
+            Toast.makeText(this, "No problems was found", Toast.LENGTH_SHORT).show();
         }
 
         recyclerView = findViewById(R.id.warningView);
-        WarningManager.setConfig(recyclerView, Warning.this, refills, daysOfUse, "day_new_old");
+        WarningManager.setConfig(recyclerView, Warning.this, problems, "day_new_old");
+    }
+
+    public void backToMain(View view) {
+        finish();
     }
 }

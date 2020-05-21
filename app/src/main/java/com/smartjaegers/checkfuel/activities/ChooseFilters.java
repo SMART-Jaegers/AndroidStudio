@@ -97,4 +97,8 @@ public class ChooseFilters extends AppCompatActivity {
 
     }
 
+    public void backToStatistic(View view) {
+        super.onBackPressed();
+    }
+
 }

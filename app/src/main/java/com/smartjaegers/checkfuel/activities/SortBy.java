@@ -95,5 +95,10 @@ public class SortBy extends AppCompatActivity implements View.OnClickListener {
             default:
                 break;
         }
+
+    }
+
+    public void backToStatistic(View view) {
+        super.onBackPressed();
     }
 }

@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ import com.google.android.material.navigation.NavigationView;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private AuthenticationManager authentication;
@@ -34,6 +36,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        findViewById(R.id.refuling).setOnClickListener(this);
+        findViewById(R.id.currentUse).setOnClickListener(this);
+        findViewById(R.id.usageStatistic).setOnClickListener(this);
+        findViewById(R.id.quality).setOnClickListener(this);
     }
 
     @Override
@@ -41,52 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onStart();
 
         authentication = new AuthenticationManager();
-
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_wiew);
-        Menu menu = navigationView.getMenu();
-        MenuItem logoutItem = menu.findItem(R.id.logout);
-
-        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-
-        if (authentication.entryToDatabase()) {
-
-            findViewById(R.id.usageStatistic).setBackgroundResource(R.color.colorPurple);
-
-            DatabaseManagerForUser.readUser(new OnGetResult() {
-                @Override
-                public void onSuccess() {
-                    Log.i("-----Database--------", "SuccessReadingRefill");
-                    drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-                    User user = DatabaseManagerForUser.getUser();
-                    View headerView = navigationView.getHeaderView(0);
-                    TextView title = headerView.findViewById(R.id.userName);
-                    TextView subTitle = headerView.findViewById(R.id.userEmail);
-                    title.setText(user.getUserName());
-                    subTitle.setText(user.getEmail());
-                }
-
-                @Override
-                public void onStart() {
-                    Log.i("-----Database--------", "StartReadingRefill");
-                }
-
-                @Override
-                public void onFailure() {
-                    Log.i("-----Database--------", "FailureReadingRefill");
-                }
-            });
-
-
-        }
-        navigationView.bringToFront();
-        navigationView.setNavigationItemSelectedListener(this);
-
-        findViewById(R.id.refuling).setOnClickListener(this);
-        findViewById(R.id.currentUse).setOnClickListener(this);
-        findViewById(R.id.usageStatistic).setOnClickListener(this);
-        findViewById(R.id.quality).setOnClickListener(this);
-
+        setDrawerLayout();
     }
 
 
@@ -107,7 +69,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     readFromDB();
                 } else {
                     intent.setClass(this, SignUp.class);
-                    return;
                 }
                 break;
             case R.id.quality:
@@ -158,6 +119,53 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void setDrawerLayout() {
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_wiew);
+        Menu menu = navigationView.getMenu();
+        MenuItem logoutItem = menu.findItem(R.id.logout);
+
+        View headerView = navigationView.getHeaderView(0);
+        TextView title = headerView.findViewById(R.id.userName);
+        TextView subTitle = headerView.findViewById(R.id.userEmail);
+
+        if (authentication.entryToDatabase()) {
+
+            findViewById(R.id.usageStatistic).setBackgroundResource(R.color.colorPurple);
+
+            DatabaseManagerForUser.readUser(new OnGetResult() {
+                @Override
+                public void onSuccess() {
+                    Log.i("-----Database--------", "SuccessReadingRefill");
+                    User user = DatabaseManagerForUser.getUser();
+                    title.setText(user.getUserName());
+                    subTitle.setText(user.getEmail());
+                }
+
+                @Override
+                public void onStart() {
+                    Log.i("-----Database--------", "StartReadingRefill");
+                }
+
+                @Override
+                public void onFailure() {
+                    Log.i("-----Database--------", "FailureReadingRefill");
+                    Toast.makeText(MainActivity.this, "Failed read from database", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } else {
+            Button signUp = headerView.findViewById(R.id.signUp);
+            signUp.setVisibility(View.VISIBLE);
+            signUp.setOnClickListener(v -> {
+                Intent intent = new Intent(MainActivity.this, SignUp.class);
+                startActivity(intent);
+            });
+
+        }
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override

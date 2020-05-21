@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.smartjaegers.checkfuel.adapters.HistoryAdapter;
 import com.smartjaegers.checkfuel.adapters.WarningAdapter;
 import com.smartjaegers.checkfuel.models.DayOfUse;
+import com.smartjaegers.checkfuel.models.Problem;
 import com.smartjaegers.checkfuel.models.Refill;
 
 import java.util.List;
@@ -17,12 +18,10 @@ import java.util.List;
 public class WarningManager {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public static void setConfig(RecyclerView recyclerView, Context context, List<Refill> refills, List<DayOfUse> daysOfUse, String sortBy) {
+    public static void setConfig(RecyclerView recyclerView, Context context, List<Problem> problems, String sortBy) {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
-
-        WarningAdapter warningAdapter = new WarningAdapter(refills, daysOfUse, context);
-        recyclerView.setAdapter(warningAdapter);
+        recyclerView.setAdapter(new WarningAdapter(problems, context));
     }
 
 }
