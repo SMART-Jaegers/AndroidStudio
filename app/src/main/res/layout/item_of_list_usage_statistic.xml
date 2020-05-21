@@ -39,8 +39,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textKilometer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@id/goCurrentUse"
-        app:layout_constraintStart_toEndOf="@id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textLiter" />
+        app:layout_constraintStart_toEndOf="@id/imageView" />
 
     <TextView
         android:id="@+id/textKilometer"
@@ -107,8 +106,7 @@
         android:background="#5C5B5B"
         app:layout_constraintBottom_toBottomOf="@id/textDate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLiter" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView29"

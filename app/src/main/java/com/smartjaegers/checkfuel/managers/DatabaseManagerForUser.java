@@ -21,6 +21,7 @@ public class DatabaseManagerForUser {
     public static void writeUser(String email, String userName, String password) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         User databaseUser = new User(email, userName, password);
+        assert user != null;
         CHECK_FUEL_REFERENCE.child(user.getUid()).child("User").setValue(databaseUser);
     }
 
@@ -41,6 +42,7 @@ public class DatabaseManagerForUser {
             }
         };
 
+        assert user != null;
         CHECK_FUEL_REFERENCE.child(user.getUid()).child("User").addValueEventListener(RefillListener);
         Log.i(TAG, "loadPost:Ok");
     }

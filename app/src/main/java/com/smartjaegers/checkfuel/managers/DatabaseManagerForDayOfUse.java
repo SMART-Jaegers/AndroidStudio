@@ -26,7 +26,7 @@ public class DatabaseManagerForDayOfUse {
         CHECK_FUEL_REFERENCE.child(user.getUid()).child("DataOfUse").push().setValue(dayOfUse);
     }
 
-    public static boolean readDayOfUse() {
+    public static void readDayOfUse() {
         ValueEventListener RefillListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -46,7 +46,6 @@ public class DatabaseManagerForDayOfUse {
 
         CHECK_FUEL_REFERENCE.child(user.getUid()).child("DataOfUse").addValueEventListener(RefillListener);
         Log.i(TAG, "loadPost:Ok");
-        return true;
     }
 
     public static List<DayOfUse> getDaysOfUse() {

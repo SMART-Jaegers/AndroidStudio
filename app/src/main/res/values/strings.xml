@@ -187,4 +187,8 @@
     <string name="device_1">Device 1</string>
     <string name="available_devices">Available devices</string>
     <string name="turn_on_bluetooth">Turn on bluetooth</string>
+    <string name="filters">Filters</string>
+    <string name="exit">Exit</string>
+    <string name="successfully_saved">Your data is successfully saved</string>
+    <string name="good">Good</string>
 </resources>

@@ -32,7 +32,7 @@ public class FiltersAdapter extends ArrayAdapter<String> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.item_of_choose_filter, parent, false);
+        View rowView = inflater.inflate(R.layout.item_of_choose_filter, null);
         TextView filterNameView = rowView.findViewById(R.id.filter_name);
         TextView filterDescriptionView = rowView.findViewById(R.id.filter_description);
 

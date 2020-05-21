@@ -8,18 +8,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.smartjaegers.checkfuel.managers.ItemStatisticManager;
-import com.smartjaegers.checkfuel.models.DayOfUse;
-import com.smartjaegers.checkfuel.models.ItemStatistic;
 import com.smartjaegers.checkfuel.models.Problem;
-import com.smartjaegers.checkfuel.models.Refill;
 import com.smartjaegers.checkfuel.view.ViewOfWarningItems;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class WarningAdapter extends RecyclerView.Adapter<ViewOfWarningItems> {
-    private static final SimpleDateFormat pattern = new SimpleDateFormat("yyyy-MM-dd");
     private List<Problem> warningList;
     private Context context;
 

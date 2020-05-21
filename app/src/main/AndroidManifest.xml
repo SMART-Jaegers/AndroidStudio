@@ -23,15 +23,9 @@
         <activity
             android:name=".activities.TestCarWithYourFuel"
             android:screenOrientation="locked" />
-        <activity android:name=".add_device_activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".activities.testRunning" />
-        <activity android:name=".activities.TestCarWithYourFuel" />
+        <activity
+            android:name=".activities.AddDeviceActivity"
+            android:screenOrientation="locked" />
         <activity
             android:name=".activities.UserProfile"
             android:screenOrientation="locked" />
@@ -81,6 +75,11 @@
         <activity
             android:name=".activities.MainActivity"
             android:screenOrientation="locked">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".activities.SortBy"

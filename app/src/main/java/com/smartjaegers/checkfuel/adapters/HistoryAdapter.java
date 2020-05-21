@@ -16,11 +16,9 @@ import com.smartjaegers.checkfuel.view.ViewOfItemStatistic;
 import com.smartjaegers.checkfuel.models.Refill;
 import com.smartjaegers.checkfuel.models.SortType;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class HistoryAdapter extends RecyclerView.Adapter<ViewOfItemStatistic> {
-    private static final SimpleDateFormat pattern = new SimpleDateFormat("yyyy-MM-dd");
     private List<ItemStatistic> itemStatisticList;
     private Context context;
 

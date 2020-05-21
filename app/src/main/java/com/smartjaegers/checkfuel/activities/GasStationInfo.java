@@ -37,12 +37,12 @@ public class GasStationInfo extends Activity {
         stationImage.setImageResource(StationManager.findStationImage(itemStatistic.getNameStation()));
         stationNameText.setText(itemStatistic.getNameStation());
         fuelTypeText.setText(itemStatistic.getTypeFuel());
-        stationDistance.setText(String.valueOf(String.format("%s km", itemStatistic.getDistance())));
-        stationVolume.setText(String.valueOf(String.format("%s L", itemStatistic.getVolume())));
+        stationDistance.setText(String.format("%s km", itemStatistic.getDistance()));
+        stationVolume.setText(String.format("%s L", itemStatistic.getVolume()));
         stationTimeDriving.setText(String.format("%s days", itemStatistic.getTimeDriving()));
         dateText.setText(itemStatistic.getDate());
         volumeComparisonText.setText(String.format("%sL/%sL", itemStatistic.getVolumeFillReal(), itemStatistic.getVolumeFillExpected()));
-        densityText.setText(String.valueOf(String.format("%s kg/m3", itemStatistic.getDistance())));
+        densityText.setText(String.format("%s kg/m3", itemStatistic.getDistance()));
     }
 
     public void backToUsageStatistic(View view) {

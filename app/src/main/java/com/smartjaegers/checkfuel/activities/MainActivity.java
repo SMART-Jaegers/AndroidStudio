@@ -8,10 +8,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import java.text.SimpleDateFormat;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +29,6 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
     private AuthenticationManager authentication;
 
     @Override
@@ -46,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onStart() {
         super.onStart();
-
         authentication = new AuthenticationManager();
         setDrawerLayout();
     }
@@ -123,9 +121,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void setDrawerLayout() {
         drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_wiew);
-        Menu menu = navigationView.getMenu();
-        MenuItem logoutItem = menu.findItem(R.id.logout);
+        NavigationView navigationView = findViewById(R.id.nav_wiew);
 
         View headerView = navigationView.getHeaderView(0);
         TextView title = headerView.findViewById(R.id.userName);
