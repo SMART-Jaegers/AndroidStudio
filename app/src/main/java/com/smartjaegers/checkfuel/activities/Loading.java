@@ -16,6 +16,7 @@ public class Loading extends AppCompatActivity {
 
     @Override
     protected void onStop() {
+        finish();
         super.onStop();
     }
 }
