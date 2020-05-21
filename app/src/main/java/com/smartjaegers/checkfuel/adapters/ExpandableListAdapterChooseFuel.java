@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.smartjaegers.checkfuel.R;
@@ -55,7 +56,7 @@ public class ExpandableListAdapterChooseFuel extends BaseExpandableListAdapter {
 
     @Override
     public boolean hasStableIds() {
-        return false;
+        return true;
     }
 
     @Override
@@ -63,6 +64,7 @@ public class ExpandableListAdapterChooseFuel extends BaseExpandableListAdapter {
         String headerTitle = (String) getGroup(groupPosition);
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            assert inflater != null;
             convertView = inflater.inflate(R.layout.list_group_for_choose_filters, null);
         }
         TextView headerView = convertView.findViewById(R.id.choose_sort_list_header);
@@ -73,24 +75,41 @@ public class ExpandableListAdapterChooseFuel extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         final String childText = (String) getChild(groupPosition, childPosition);
+        View grid = convertView;
+        ChildViewHolder childViewHolder = new ChildViewHolder();
+
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            assert inflater != null;
             convertView = inflater.inflate(R.layout.list_item_for_choose_filters, null);
-        }
-        TextView childView = convertView.findViewById(R.id.checkedTextView);
-        childView.setText(childText);
 
-        childView.setOnClickListener(new View.OnClickListener() {
+            childViewHolder.mChildText = convertView.findViewById(R.id.checkedTextView);
+            convertView.setTag(R.layout.list_item_for_choose_filters, childViewHolder);
+        } else {
+            childViewHolder = (ChildViewHolder) convertView.getTag(R.layout.list_item_for_choose_filters);
+        }
+
+        childViewHolder.mChildText.setText(childText);
+
+        childViewHolder.mChildText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                childView.setBackgroundResource(R.color.colorPurpleWhite);
+
+                v.setBackgroundColor(context.getResources().getColor(R.color.colorPurpleWhite));
             }
         });
+
         return convertView;
     }
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
-        return false;
+        return true;
+    }
+
+    public static final class ChildViewHolder {
+
+        TextView mChildText;
+        CheckBox mCheckBox;
     }
 }

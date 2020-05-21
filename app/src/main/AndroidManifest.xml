@@ -17,10 +17,16 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
-        <activity android:name=".activities.AddDeviceActivity"/>
-        <activity android:name=".activities.testRunning" />
-        <activity android:name=".activities.TestCarWithYourFuel" />
-        <activity android:name=".activities.Test2" />
+        <activity
+            android:name=".activities.TestRunning"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.TestCarWithYourFuel"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.AddDeviceActivity"
+            android:screenOrientation="locked" />
+
         <activity
             android:name=".activities.UserProfile"
             android:screenOrientation="locked" />
@@ -78,7 +84,12 @@
         <activity
             android:name=".activities.SortBy"
             android:screenOrientation="locked" />
-        <activity android:name=".activities.ChooseFilters" />
+        <activity
+            android:name=".activities.ChooseFilters"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".activities.Warning"
+            android:screenOrientation="locked" />
 
         <meta-data
             android:name="preloaded_fonts"

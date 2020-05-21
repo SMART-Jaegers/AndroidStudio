@@ -21,7 +21,6 @@ import java.util.List;
 
 public class UsageStatistic extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
     private String nowSorting;
 
 
@@ -47,7 +46,7 @@ public class UsageStatistic extends AppCompatActivity {
             Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
         }
 
-        recyclerView = findViewById(R.id.statisticView);
+        RecyclerView recyclerView = findViewById(R.id.statisticView);
         HistoryManager.setConfig(recyclerView, UsageStatistic.this, refills, daysOfUse, nowSorting);
     }
 
@@ -61,9 +60,4 @@ public class UsageStatistic extends AppCompatActivity {
         finish();
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        finish();
-    }
 }

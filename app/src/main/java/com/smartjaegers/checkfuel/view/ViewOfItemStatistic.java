@@ -9,10 +9,10 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.smartjaegers.checkfuel.models.ItemStatistic;
-import com.smartjaegers.checkfuel.activities.GasStationInfo;
 import com.smartjaegers.checkfuel.R;
+import com.smartjaegers.checkfuel.activities.GasStationInfo;
 import com.smartjaegers.checkfuel.managers.StationManager;
+import com.smartjaegers.checkfuel.models.ItemStatistic;
 
 import java.text.DecimalFormat;
 

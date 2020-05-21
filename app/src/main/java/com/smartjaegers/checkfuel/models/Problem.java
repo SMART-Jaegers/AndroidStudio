@@ -1,7 +1,7 @@
 package com.smartjaegers.checkfuel.models;
 
 public class Problem {
-    private int problemId;
+    private Integer problemId;
 
     public Problem() {
     }
@@ -10,7 +10,7 @@ public class Problem {
         this.problemId = problemId;
     }
 
-    public int getProblemId() {
+    public Integer getProblemId() {
         return problemId;
     }
 

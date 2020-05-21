@@ -7,14 +7,14 @@ import com.smartjaegers.checkfuel.models.Refill;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 public class ItemStatisticManager {
 
-    private static final SimpleDateFormat pattern = new SimpleDateFormat("yyyy-MM-dd");
+    private static final SimpleDateFormat pattern = new SimpleDateFormat("yyyy-MM-dd", Locale.ROOT);
 
     public static List<ItemStatistic> createStatisticItem(List<Refill> refills, List<DayOfUse> daysOfUse) {
         List<ItemStatistic> itemStatisticList = new LinkedList<>();
@@ -23,10 +23,12 @@ public class ItemStatisticManager {
             for (int position = 0; position < refills.size(); position++) {
                 Date dateOfRefill = pattern.parse(refills.get(position).getDate());
                 Date currentDate = Calendar.getInstance().getTime();
+                assert dateOfRefill != null;
                 String timeDriving = String.valueOf((currentDate.getTime() - dateOfRefill.getTime()) / (24 * 60 * 60 * 1000));
                 Date dateNextRefill = null;
                 if (position != 0) {
                     dateNextRefill = pattern.parse(refills.get(position - 1).getDate());
+                    assert dateNextRefill != null;
                     timeDriving = String.valueOf((dateNextRefill.getTime() - dateOfRefill.getTime()) / (24 * 60 * 60 * 1000));
                 }
 
@@ -47,9 +49,7 @@ public class ItemStatisticManager {
         double distance = 0;
         try {
             for (DayOfUse dayOfUse : daysOfUse) {
-                Date date = null;
-
-                date = pattern.parse(dayOfUse.getDate());
+                Date date = pattern.parse(dayOfUse.getDate());
                 assert date != null;
                 if (nextRefillDate == null) {
                     if ((date.after(refillDate) || date.equals(refillDate))) {
@@ -72,9 +72,7 @@ public class ItemStatisticManager {
         double volume = 0;
         try {
             for (DayOfUse dayOfUse : daysOfUse) {
-                Date date = null;
-
-                date = pattern.parse(dayOfUse.getDate());
+                Date date = pattern.parse(dayOfUse.getDate());
                 assert date != null;
                 if (nextRefillDate == null) {
                     if ((date.after(refillDate) || date.equals(refillDate))) {

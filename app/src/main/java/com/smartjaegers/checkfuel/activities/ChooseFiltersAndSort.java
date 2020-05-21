@@ -1,5 +1,6 @@
 package com.smartjaegers.checkfuel.activities;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,11 +27,12 @@ import java.util.List;
 
 
 public class ChooseFiltersAndSort extends DialogFragment implements View.OnClickListener {
-    public ChooseFiltersAndSort(String nowSorting) {
-        this.nowSorting = nowSorting;
-    }
 
     private String nowSorting;
+
+    ChooseFiltersAndSort(String nowSorting) {
+        this.nowSorting = nowSorting;
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,7 +40,6 @@ public class ChooseFiltersAndSort extends DialogFragment implements View.OnClick
 
         View view = inflater.inflate(R.layout.choose_filter_and_sort, null);
         setPosition();
-
 
         List<String> filterNames = new ArrayList<>();
         filterNames.add("Gas station");

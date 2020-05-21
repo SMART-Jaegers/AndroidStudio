@@ -183,8 +183,15 @@
     <string name="find_a_smooth_strech">Find a smooth strech of road where you can drive without sudden changes in speed</string>
     <string name="go_the_same_way_back">Go the same way back</string>
     <string name="drive_at_least_1_km">Drive at least 1 km</string>
-    <string name="text_for_replace">You\'re just started testing fuel with your car</string>
+    <string name="info_test_running_first">You\'re just started testing fuel with your car</string>
+    <string name="info_test_running_second">You\'re just traveled more then 1 km\n You can drive back</string>
+    <string name="info_test_running_third">You\'re just started driving back</string>
     <string name="device_1">Device 1</string>
     <string name="available_devices">Available devices</string>
     <string name="turn_on_bluetooth">Turn on bluetooth</string>
+    <string name="filters">Filters</string>
+    <string name="exit">Exit</string>
+    <string name="successfully_saved">Your data is successfully saved</string>
+    <string name="good">Good</string>
+
 </resources>

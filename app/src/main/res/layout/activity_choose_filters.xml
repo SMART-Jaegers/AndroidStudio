@@ -3,20 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headers"
         android:layout_width="match_parent"
         android:layout_height="78dp"
-        android:background="#9176FF">
+        android:background="#9176FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:text="Filters"
+            android:text="@string/filters"
             android:textColor="#FFFFFF"
             android:textSize="29sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -28,10 +32,12 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="20dp"
+            android:onClick="backToStatistic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="@string/exit" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ExpandableListView
@@ -51,7 +57,6 @@
         android:layout_width="143dp"
         android:layout_height="41dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="45dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/go_home"
         android:fontFamily="sans-serif-light"
@@ -59,6 +64,7 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button7"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="HardcodedText" />
 
@@ -67,7 +73,6 @@
         android:layout_width="143dp"
         android:layout_height="41dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="45dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/username"
         android:fontFamily="sans-serif-light"
@@ -76,5 +81,6 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button6"
         tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
