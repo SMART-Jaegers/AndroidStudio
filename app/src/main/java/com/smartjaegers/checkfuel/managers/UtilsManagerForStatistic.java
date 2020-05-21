@@ -13,9 +13,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class UtilsManagerForStatistic {
-    private static final SimpleDateFormat pattern = new SimpleDateFormat("yyyy-MM-dd");
+    private static final SimpleDateFormat pattern = new SimpleDateFormat("yyyy-MM-dd", Locale.ROOT);
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public static void sortByVolume(List<ItemStatistic> itemStatisticList, SortType sortType) {

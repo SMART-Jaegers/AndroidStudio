@@ -8,8 +8,6 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.smartjaegers.checkfuel.R;
 
 import java.util.HashMap;
@@ -66,6 +64,7 @@ public class ExpandableListAdapterChooseFuel extends BaseExpandableListAdapter {
         String headerTitle = (String) getGroup(groupPosition);
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            assert inflater != null;
             convertView = inflater.inflate(R.layout.list_group_for_choose_filters, null);
         }
         TextView headerView = convertView.findViewById(R.id.choose_sort_list_header);
@@ -81,6 +80,7 @@ public class ExpandableListAdapterChooseFuel extends BaseExpandableListAdapter {
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            assert inflater != null;
             convertView = inflater.inflate(R.layout.list_item_for_choose_filters, null);
 
             childViewHolder.mChildText = convertView.findViewById(R.id.checkedTextView);
@@ -107,7 +107,7 @@ public class ExpandableListAdapterChooseFuel extends BaseExpandableListAdapter {
         return true;
     }
 
-    public final class ChildViewHolder {
+    public static final class ChildViewHolder {
 
         TextView mChildText;
         CheckBox mCheckBox;

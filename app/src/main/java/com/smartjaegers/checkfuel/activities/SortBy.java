@@ -37,6 +37,7 @@ public class SortBy extends AppCompatActivity implements View.OnClickListener {
         efficiencyDescendingLayout.setOnClickListener(this);
 
         String nowSorting = getIntent().getStringExtra("nowSorting");
+        assert nowSorting != null;
         changeLayoutColor(nowSorting);
     }
 

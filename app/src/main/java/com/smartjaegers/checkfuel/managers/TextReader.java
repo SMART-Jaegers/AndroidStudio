@@ -2,7 +2,6 @@ package com.smartjaegers.checkfuel.managers;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 
 import com.smartjaegers.checkfuel.R;
 
@@ -73,9 +72,7 @@ public class TextReader {
                     if (parser.getName().equals("density")) {
                         parser.next();
                     } else {
-                        if (parser.getName().equals("gasStations")) {
-
-                        } else {
+                        if (!parser.getName().equals("gasStations")) {
                             list.add(parser.getName());
                         }
                     }

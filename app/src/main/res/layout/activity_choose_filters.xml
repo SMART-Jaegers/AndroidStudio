@@ -10,14 +10,17 @@
         android:id="@+id/headers"
         android:layout_width="match_parent"
         android:layout_height="78dp"
-        android:background="#9176FF">
+        android:background="#9176FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:text="Filters"
+            android:text="@string/filters"
             android:textColor="#FFFFFF"
             android:textSize="29sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -33,7 +36,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="@string/exit" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ExpandableListView

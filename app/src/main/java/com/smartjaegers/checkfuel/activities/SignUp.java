@@ -91,6 +91,10 @@ public class SignUp extends AppCompatActivity {
             Toast.makeText(this, "your password isn't correct", Toast.LENGTH_SHORT).show();
             valid = false;
         }
+        if (password.length() < 6) {
+            Toast.makeText(this, " Password should be at least 6 characters ", Toast.LENGTH_SHORT).show();
+            valid = false;
+        }
         return !valid;
     }
 
