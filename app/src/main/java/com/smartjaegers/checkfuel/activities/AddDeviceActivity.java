@@ -1,10 +1,12 @@
-package com.smartjaegers.checkfuel;
+package com.smartjaegers.checkfuel.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class add_device_activity extends AppCompatActivity {
+import com.smartjaegers.checkfuel.R;
+
+public class AddDeviceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

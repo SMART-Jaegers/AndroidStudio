@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
-        <activity android:name=".add_device_activity">
+        <activity android:name=".activities.AddDeviceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
