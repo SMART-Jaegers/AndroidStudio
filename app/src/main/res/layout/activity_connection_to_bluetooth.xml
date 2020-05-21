@@ -12,7 +12,7 @@
     tools:context="com.smartjaegers.checkfuel.activities.NoWifi">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/success_view"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView20"

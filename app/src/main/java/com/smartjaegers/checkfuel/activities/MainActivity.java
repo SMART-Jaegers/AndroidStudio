@@ -11,7 +11,9 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
 import java.text.SimpleDateFormat;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -166,20 +168,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Intent intent = new Intent();
+
         switch (item.getItemId()) {
             case R.id.logout:
                 authentication.signOut();
-                drawerLayout.closeDrawer(GravityCompat.START);
-                break;
+                return true;
             case R.id.warning:
-                Intent intent = new Intent(this, Warning.class);
-                startActivity(intent);
-                drawerLayout.closeDrawer(GravityCompat.START);
+                intent.setClass(this, Warning.class);
                 break;
-
+            case R.id.test:
+                intent.setClass(this, TestCarWithYourFuel.class);
+                break;
         }
+        startActivity(intent);
+        drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
 
 }
