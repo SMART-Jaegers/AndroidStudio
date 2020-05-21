@@ -26,6 +26,7 @@
         <activity
             android:name=".activities.AddDeviceActivity"
             android:screenOrientation="locked" />
+
         <activity
             android:name=".activities.UserProfile"
             android:screenOrientation="locked" />
@@ -77,7 +78,6 @@
             android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -180,6 +180,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.test:
                 intent.setClass(this, TestCarWithYourFuel.class);
                 break;
+            case R.id.addDevice:
+                Intent intent = new Intent(this, AddDeviceActivity.class);
+                startActivity(intent);
         }
         startActivity(intent);
         drawerLayout.closeDrawer(GravityCompat.START);
