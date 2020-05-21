@@ -14,6 +14,7 @@
         android:layout_marginTop="200dp"
         android:background="@drawable/chech_fuel"
         android:fontFamily="sans-serif-light"
+        android:onClick="backToMain"
         android:text="@android:string/cancel"
         android:textColor="#FFFFFF"
         android:textSize="25sp"
@@ -23,27 +24,30 @@
         tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/drive_back"
         android:layout_width="262dp"
         android:layout_height="51dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:background="@drawable/go_home"
+        android:clickable="false"
         android:fontFamily="sans-serif-light"
+        android:onClick="startDrivingBack"
         android:text="Drive back"
         android:textColor="#FFFFFF"
         android:textSize="31sp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView33"
         tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/info_view"
         android:layout_width="313dp"
         android:layout_height="143dp"
         android:layout_marginTop="60dp"
-        android:text="@string/text_for_replace"
+        android:text="@string/info_test_running_first"
         android:textAlignment="center"
         android:textColor="#9176FF"
         android:textDirection="anyRtl"
@@ -62,5 +66,5 @@
         android:textSize="31sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView32" />
+        app:layout_constraintTop_toBottomOf="@id/info_view" />
 </androidx.constraintlayout.widget.ConstraintLayout>
