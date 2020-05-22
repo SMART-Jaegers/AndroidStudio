@@ -182,6 +182,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.addDevice:
                 intent.setClass(this, AddDeviceActivity.class);
+                break;
             default:
                 return true;
         }
