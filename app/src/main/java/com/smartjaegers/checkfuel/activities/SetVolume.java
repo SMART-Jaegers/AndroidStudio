@@ -53,19 +53,19 @@ public class SetVolume extends AppCompatActivity {
             return;
         }
         Log.i("--goToVolumeCompare--", "" + volumeFill);
-        double volumeExpected = Double.parseDouble(numberEditText.getText().toString());
-        if (view.getId() == R.id.btncheckfuel) {
-            Intent intent = new Intent();
+         try {
+            double volumeExpected = Double.parseDouble(numberEditText.getText().toString());
+            if (view.getId() == R.id.btncheckfuel) {
+                Intent intent = new Intent();
 
-            if (volumeFill >= volumeExpected) {
-                intent.setClass(this, VolumeCompareGood.class);
-            } else {
-                intent.setClass(this, VolumeCompareBad.class);
-            }
+               if (volumeFill >= volumeExpected) {
+                    intent.setClass(this, VolumeCompareGood.class);
+                } else {
+                    intent.setClass(this, VolumeCompareBad.class);
 
-            intent.putExtra("expectedVolume", volumeExpected);
-            intent.putExtra("realVolume", volumeFill);
-            startActivity(intent);
+               }}
+        } catch (Exception e) {
+            Toast.makeText(this, "You write wrong number", Toast.LENGTH_SHORT).show();
         }
     }
 

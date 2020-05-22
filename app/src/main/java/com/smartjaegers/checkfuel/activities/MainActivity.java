@@ -182,6 +182,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.addDevice:
                 intent.setClass(this, AddDeviceActivity.class);
+            default:
+                return true;
         }
         startActivity(intent);
         drawerLayout.closeDrawer(GravityCompat.START);
