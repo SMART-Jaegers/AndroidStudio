@@ -95,6 +95,9 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         lvNewDevices.setOnItemClickListener((AdapterView.OnItemClickListener) AddDeviceActivity.this);
 
+        if (bluetoothAdapter.isEnabled()) {
+            switchOnOff.setChecked(true);
+        }
         switchOnOff.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
