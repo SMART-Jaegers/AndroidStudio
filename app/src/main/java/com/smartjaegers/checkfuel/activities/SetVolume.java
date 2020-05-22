@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,20 +26,25 @@ public class SetVolume extends AppCompatActivity {
     }
 
     public void goToVolumeCompare(@NotNull View view) {
-        double volumeFill = 10;                 //TODO (hardcode), take date with bluetooth and create exeption when can't connect
-        double volumeExpected = Double.parseDouble(numberEditText.getText().toString());
-        if (view.getId() == R.id.btncheckfuel) {
-            Intent intent = new Intent();
+        double volumeFill = 10;    //TODO (hardcode), take date with bluetooth and create exeption when can't connect
+        try {
+            double volumeExpected = Double.parseDouble(numberEditText.getText().toString());
 
-            if (volumeFill >= volumeExpected) {
-                intent.setClass(this, VolumeCompareGood.class);
-            } else {
-                intent.setClass(this, VolumeCompareBad.class);
+            if (view.getId() == R.id.btncheckfuel) {
+                Intent intent = new Intent();
+
+                if (volumeFill >= volumeExpected) {
+                    intent.setClass(this, VolumeCompareGood.class);
+                } else {
+                    intent.setClass(this, VolumeCompareBad.class);
+                }
+
+                intent.putExtra("expectedVolume", volumeExpected);
+                intent.putExtra("realVolume", volumeFill);
+                startActivity(intent);
             }
-
-            intent.putExtra("expectedVolume", volumeExpected);
-            intent.putExtra("realVolume", volumeFill);
-            startActivity(intent);
+        } catch (Exception e) {
+            Toast.makeText(this, "You write wrong number", Toast.LENGTH_SHORT).show();
         }
     }
 
