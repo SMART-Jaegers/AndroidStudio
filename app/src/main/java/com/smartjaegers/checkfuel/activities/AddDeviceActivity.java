@@ -2,7 +2,6 @@ package com.smartjaegers.checkfuel.activities;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
@@ -13,23 +12,22 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import com.smartjaegers.checkfuel.R;
 import com.smartjaegers.checkfuel.adapters.DeviceListAdapter;
 import com.smartjaegers.checkfuel.bluetooth.BluetoothConnectionService;
+import com.smartjaegers.checkfuel.models.OnGetResult;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class AddDeviceActivity extends AppCompatActivity implements AdapterView.OnItemClickListener  {
+public class AddDeviceActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private static final String TAG = "MainActivity";
 
@@ -51,7 +49,7 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
 
             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                if(!bluetoothDevices.contains(device)){
+                if (!bluetoothDevices.contains(device)) {
                     bluetoothDevices.add(device);
                 }
                 if (device != null) {
@@ -98,7 +96,12 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
     protected void onDestroy() {
         Log.d(TAG, "onDestroy: called.");
         super.onDestroy();
-        unregisterReceiver(broadcastReceiver1);
+        try {
+            unregisterReceiver(broadcastReceiver1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
@@ -106,16 +109,34 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
      * Remember: the connection will fail and app will crash if you haven't paired first
      */
     public void startConnection() {
-        startBTConnection(bluetoothDevice, MY_UUID_INSECURE);
+        startBTConnection(bluetoothDevice, MY_UUID_INSECURE, new OnGetResult() {
+            @Override
+            public void onSuccess() {
+                startActivity(new Intent(AddDeviceActivity.this, MainActivity.class));
+            }
+
+            @Override
+            public void onStart() {
+                startActivity(new Intent(AddDeviceActivity.this, Loading.class));
+            }
+
+            @Override
+            public void onFailure() {
+
+            }
+        });
+
+
     }
 
     /**
      * Starting chat service method
      */
-    public void startBTConnection(BluetoothDevice bluetoothDevice, UUID uuid) {
+    public void startBTConnection(BluetoothDevice bluetoothDevice, UUID uuid, OnGetResult listener) {
+        listener.onStart();
         Log.d(TAG, "startBTConnection: Initializing RFCOMM Connection");
         bluetoothConnectionService.startClient(bluetoothDevice, uuid);
-        startActivity(new Intent(this, MainActivity.class));
+        listener.onSuccess();
     }
 
     public void enableDisableBT() {
@@ -181,6 +202,12 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
             startConnection();
 
         }
+    }
+
+    public void backToMain(View view) {
+        bluetoothAdapter.cancelDiscovery();
+        finish();
+
     }
 
 }

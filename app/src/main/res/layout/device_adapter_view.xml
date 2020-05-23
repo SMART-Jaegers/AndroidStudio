@@ -6,14 +6,16 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/btDeviceName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btDeviceName"
-        android:textSize="15sp"/>
+        android:textColor="#000000"
+        android:textSize="15sp" />
 
     <TextView
+        android:id="@+id/btDeviceAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btDeviceAddress"
-        android:textSize="15sp"/>
+        android:textColor="#000000"
+        android:textSize="15sp" />
 </LinearLayout>
