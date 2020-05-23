@@ -22,7 +22,7 @@ public class SetVolume extends AppCompatActivity {
     private EditText numberEditText;
 
     private double volumeFill;
-    BroadcastReceiver broadcastReceiver2 = new BroadcastReceiver() {
+    BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("theMessage");
@@ -44,7 +44,7 @@ public class SetVolume extends AppCompatActivity {
 
         numberEditText = findViewById(R.id.editText);
         numberEditText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-        LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver2, new IntentFilter("incomingMessage"));
+        LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver, new IntentFilter("incomingMessage"));
     }
 
     public void goToVolumeCompare(@NotNull View view) {

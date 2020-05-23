@@ -80,7 +80,7 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         lvNewDevices.setOnItemClickListener(AddDeviceActivity.this);
 
-        if (bluetoothAdapter.isEnabled()) {
+        if (bluetoothAdapter != null && bluetoothAdapter.isEnabled()) {
             switchOnOff.setChecked(true);
         }
         switchOnOff.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -113,6 +113,7 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
     public void startBTConnection(BluetoothDevice bluetoothDevice, UUID uuid) {
         Log.d(TAG, "startBTConnection: Initializing RFCOMM Connection");
         bluetoothConnectionService.startClient(bluetoothDevice, uuid);
+        startActivity(new Intent(this, MainActivity.class));
     }
 
     public void enableDisableBT() {

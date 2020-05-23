@@ -29,8 +29,6 @@ public class BluetoothConnectionService {
 
     private Context context;
 
-    private AcceptThread insecureAcceptThread;
-
     private ConnectThread connectThread;
 
     private BluetoothDevice bluetoothDevice;
@@ -45,58 +43,6 @@ public class BluetoothConnectionService {
         this.context = context;
         this.bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         start();
-    }
-
-    /**
-     * This thread runs while listening for incoming connections. It behaves
-     * like server-side client. It runs until a connection is accepted
-     * (or until cancelled).
-     */
-    private class AcceptThread extends Thread {
-        private final BluetoothServerSocket serverSocket;
-
-        public AcceptThread() {
-            BluetoothServerSocket tmp = null;
-
-            // Create a new listening server socket.
-            try {
-                tmp = bluetoothAdapter.listenUsingInsecureRfcommWithServiceRecord(appName, MY_UUID_INSECURE);
-                Log.d(TAG, "AcceptThread: Setting up Server using: " + MY_UUID_INSECURE);
-            } catch (IOException e) {
-                Log.e(TAG, "AcceptThread: IOException: " + e.getMessage());
-            }
-            serverSocket = tmp;
-        }
-
-        public void run() {
-            Log.d(TAG, "run: AcceptThread running");
-            BluetoothSocket socket = null;
-
-            // This is a blocking call and will only return on a
-            // successful connection or an exception.
-            Log.d(TAG, "run: RFCOMM server socket start .......");
-            try {
-                socket = serverSocket.accept();
-                Log.d(TAG, "run: RFCOMM server socket accepted connection.");
-            } catch (IOException e) {
-                Log.e(TAG, "AcceptThread: IOException: " + e.getMessage());
-            }
-
-            // to do
-            if (socket != null) {
-                connected(socket, bluetoothDevice);
-            }
-            Log.i(TAG, "run: END AcceptThread");
-        }
-
-        public void cancel() {
-            Log.d(TAG, "cancel: Canceling AcceptThread");
-            try {
-                serverSocket.close();
-            } catch (IOException e) {
-                Log.e(TAG, "cancel: Close of AcceptThread Server Socket failed. " + e.getMessage());
-            }
-        }
     }
 
     /**
@@ -164,7 +110,7 @@ public class BluetoothConnectionService {
     }
 
     /**
-     * Finally the ConnectedThread which is responsible for maintaining the BTConnection, Sending the data,
+     * ConnectedThread is responsible for maintaining the BTConnection, Sending the data,
      * and receiving incoming data through input/output streams respectively
      */
     private class ConnectedThread extends Thread {
@@ -241,10 +187,6 @@ public class BluetoothConnectionService {
         }
     }
 
-    /**
-     * Start the chat service. Specifically start AcceptThread to begin a
-     * session in listening(server) mode. Called by the Activity onResume()
-     */
     public synchronized void start() {
         Log.d(TAG, "start");
 
@@ -253,16 +195,12 @@ public class BluetoothConnectionService {
             connectThread.cancel();
             connectThread = null;
         }
-        if (insecureAcceptThread == null) {
-            insecureAcceptThread = new AcceptThread();
-            insecureAcceptThread.start();
-        }
     }
 
     public void startClient(BluetoothDevice device, UUID uuid) {
         Log.d(TAG, "startClient: Started");
 
-        //initprogress dialog
+        //init progress dialog
         progressDialog = ProgressDialog.show(context, "Connecting bluetooth", "Please wait...", true);
         connectThread = new ConnectThread(device, uuid);
         connectThread.start();
