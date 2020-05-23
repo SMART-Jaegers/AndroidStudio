@@ -11,9 +11,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.smartjaegers.checkfuel.models.OnGetResult;
 import com.smartjaegers.checkfuel.models.Quality;
-import com.smartjaegers.checkfuel.models.Refill;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,6 +22,7 @@ public class DatabaseManagerForQuality {
     private static DatabaseReference CHECK_FUEL_REFERENCE = FirebaseDatabase.getInstance().getReference();
     private static FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private static List<Quality> qualities = new LinkedList<>();
+    private static String key = null;
 
 
     public static void writeQuality(double rate, int numberOfUse) {
@@ -37,6 +36,7 @@ public class DatabaseManagerForQuality {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 qualities.clear();
+                key = dataSnapshot.getKey();
                 for (DataSnapshot keyNode : dataSnapshot.getChildren()) {
                     Quality quality = keyNode.getValue(Quality.class);
                     qualities.add(quality);
@@ -62,6 +62,10 @@ public class DatabaseManagerForQuality {
         Log.i("-----Refills-----", String.valueOf(qualities.size()));
 
         return qualities;
+    }
+
+    public static String getKey() {
+        return key;
     }
 
 }

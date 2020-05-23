@@ -17,6 +17,7 @@
             android:layout_width="64dp"
             android:layout_height="56dp"
             android:contentDescription="@string/go_back"
+            android:onClick="backToMain"
             android:paddingStart="4dp"
             android:paddingEnd="4dp"
             android:paddingTop="4dp"
@@ -74,6 +75,18 @@
                 android:background="#9176FF" />
 
         </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/gasStationFon"
+            android:layout_width="180dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="240dp"
+            android:contentDescription="@string/how_mach_you_have_fuel"
+            android:foregroundGravity="right"
+            android:paddingTop="16dp"
+            android:paddingBottom="32dp"
+            android:src="@drawable/gas_tank_purple_fon" />
 
         <ImageView
             android:id="@+id/gasStation"
@@ -160,7 +173,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/kmwithThisFuel"
+            android:id="@+id/kmWithThisFuel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="324dp"
