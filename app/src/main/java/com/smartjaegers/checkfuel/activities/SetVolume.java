@@ -30,7 +30,6 @@ public class SetVolume extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("theMessage");
             try {
-                Log.i("----Bluetooth----", text);
                 volumeFill = Double.parseDouble(text);
                 Log.i("------Bluetooth------", "" + volumeFill);
             } catch (Exception e) {
@@ -50,10 +49,26 @@ public class SetVolume extends AppCompatActivity {
         LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver, new IntentFilter("incomingMessage"));
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        try {
+            requestData();
+        }
+        catch (Exception e){
+            Toast.makeText(this, "You're not connected to device", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+
+    }
+
     public void goToVolumeCompare(@NotNull View view) {
-        requestData();
-        if (volumeFill <= 0) {
+        if (volumeFill == 0) {
             Toast.makeText(this, "No connection", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (volumeFill == -10) {
+            Toast.makeText(this, "Connection Failed", Toast.LENGTH_SHORT).show();
             return;
         }
         Log.i("--goToVolumeCompare--", "" + volumeFill);

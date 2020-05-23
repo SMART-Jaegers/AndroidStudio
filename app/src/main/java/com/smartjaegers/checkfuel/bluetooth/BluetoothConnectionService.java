@@ -13,6 +13,8 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.smartjaegers.checkfuel.models.OnGetResult;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -228,7 +230,6 @@ public class BluetoothConnectionService extends Service {
 
     private void connected(BluetoothSocket bluetoothSocket, BluetoothDevice bluetoothDevice) {
         Log.d(TAG, "connected: Starting");
-
         // Start the thread to manage the connection and perform transmissions
         connectedThread = new ConnectedThread(bluetoothSocket);
         connectedThread.start();
