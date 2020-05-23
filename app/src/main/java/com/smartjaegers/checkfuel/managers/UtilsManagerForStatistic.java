@@ -44,7 +44,7 @@ public class UtilsManagerForStatistic {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public static void sortByDistance(List<ItemStatistic> itemStatisticList, SortType sortType) {
-        Comparator<ItemStatistic> distanceComparator = (o1, o2) -> (int) (o1.getDistance() - o2.getDistance()) * 100;
+        Comparator<ItemStatistic> distanceComparator = (o1, o2) -> (int) (o1.getVolume() / o1.getDistance() - o2.getVolume() / o2.getDistance()) * 10000;
         Collections.sort(itemStatisticList, sortType == SortType.ASCENDING ? distanceComparator : distanceComparator.reversed());
     }
 

@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.smartjaegers.checkfuel.R;
+import com.smartjaegers.checkfuel.managers.DatabaseManagerForQuality;
 import com.smartjaegers.checkfuel.models.OnGetResult;
 import com.smartjaegers.checkfuel.models.User;
 import com.smartjaegers.checkfuel.managers.DatabaseManagerForDayOfUse;
@@ -130,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         TextView subTitle = headerView.findViewById(R.id.userEmail);
 
         if (authentication.entryToDatabase()) {
-
+           
             findViewById(R.id.usageStatistic).setBackgroundResource(R.color.colorPurple);
 
             DatabaseManagerForUser.readUser(new OnGetResult() {
@@ -138,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 public void onSuccess() {
                     Log.i("-----Database--------", "SuccessReadingRefill");
                     User user = DatabaseManagerForUser.getUser();
+
                     title.setText(user.getUserName());
                     subTitle.setText(user.getEmail());
                 }
@@ -182,6 +184,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.addDevice:
                 intent.setClass(this, AddDeviceActivity.class);
+                break;
+            default:
+                return true;
         }
         startActivity(intent);
         drawerLayout.closeDrawer(GravityCompat.START);

@@ -37,7 +37,6 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
     private static final UUID MY_UUID_INSECURE =
             UUID.fromString("bdafb6cc-d68a-4b6b-819a-796d30674b9c");
     BluetoothDevice bluetoothDevice;
-    TextView incomingMessages;
     StringBuilder messages;
     public ArrayList<BluetoothDevice> bluetoothDevices = new ArrayList<>();
     public DeviceListAdapter deviceListAdapter;
@@ -63,17 +62,6 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
         }
     };
 
-    BroadcastReceiver broadcastReceiver2 = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String text = intent.getStringExtra("theMessage");
-
-            messages.append(text).append("\n");
-
-            incomingMessages.setText(messages);
-        }
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,19 +70,19 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
         Switch switchOnOff = findViewById(R.id.switch1);
         lvNewDevices = findViewById(R.id.lvNewDevices);
         bluetoothDevices = new ArrayList<>();
-        //incomingMessages = findViewById(R.id.incomingMessage);
         messages = new StringBuilder();
 
-        // receives message via bluetooth
-        LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver2, new IntentFilter("incomingMessage"));
 
         //Broadcasts when bond state changes
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_BOND_STATE_CHANGED);
         //registerReceiver(broadcastReceiver4, filter);
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        lvNewDevices.setOnItemClickListener((AdapterView.OnItemClickListener) AddDeviceActivity.this);
+        lvNewDevices.setOnItemClickListener(AddDeviceActivity.this);
 
+        if (bluetoothAdapter != null && bluetoothAdapter.isEnabled()) {
+            switchOnOff.setChecked(true);
+        }
         switchOnOff.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -109,7 +97,6 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
         Log.d(TAG, "onDestroy: called.");
         super.onDestroy();
         unregisterReceiver(broadcastReceiver1);
-        unregisterReceiver(broadcastReceiver2);
     }
 
     /**
@@ -126,6 +113,7 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
     public void startBTConnection(BluetoothDevice bluetoothDevice, UUID uuid) {
         Log.d(TAG, "startBTConnection: Initializing RFCOMM Connection");
         bluetoothConnectionService.startClient(bluetoothDevice, uuid);
+        startActivity(new Intent(this, MainActivity.class));
     }
 
     public void enableDisableBT() {
