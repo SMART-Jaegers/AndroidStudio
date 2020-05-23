@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -48,10 +49,11 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
             final String action = intent.getAction();
             Log.d(TAG, "onReceive: ACTION_FOUND");
 
-            bluetoothDevices = new ArrayList<>();
             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                bluetoothDevices.add(device);
+                if(!bluetoothDevices.contains(device)){
+                    bluetoothDevices.add(device);
+                }
                 if (device != null) {
                     Log.d(TAG, "onReceive: " + device.getName() + ": " + device.getAddress());
                 }
@@ -122,15 +124,10 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
         } else if (!bluetoothAdapter.isEnabled()) {
             Intent enableBTIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivity(enableBTIntent);
-
-            IntentFilter BTIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
-            registerReceiver(broadcastReceiver1, BTIntent);
         }
         if (bluetoothAdapter.isEnabled()) {
             Log.d(TAG, "enableDisableBT: disabling BT");
             bluetoothAdapter.disable();
-            IntentFilter BTIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
-            registerReceiver(broadcastReceiver1, BTIntent);
         }
 
     }
@@ -180,8 +177,9 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
             Log.d(TAG, "onItemClick: Trying to pair with " + deviceName);
             bluetoothDevices.get(position).createBond();
             bluetoothDevice = bluetoothDevices.get(position);
-            bluetoothConnectionService = new BluetoothConnectionService(AddDeviceActivity.this);
+            bluetoothConnectionService = BluetoothConnectionService.getInstance(AddDeviceActivity.this);
             startConnection();
+
         }
     }
 
