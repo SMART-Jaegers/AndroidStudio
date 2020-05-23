@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.smartjaegers.checkfuel.managers.FilterManagerForStatistic;
 import com.smartjaegers.checkfuel.managers.ItemStatisticManager;
 import com.smartjaegers.checkfuel.managers.UtilsManagerForStatistic;
 import com.smartjaegers.checkfuel.models.DayOfUse;
@@ -69,6 +70,26 @@ public class HistoryAdapter extends RecyclerView.Adapter<ViewOfItemStatistic> {
                 break;
             case "efficiency_descending":
                 UtilsManagerForStatistic.sortByDistance(itemStatisticList, SortType.DESCENDING);
+                break;
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void setFilters(String filter, int filterNumber) {
+        switch (filterNumber) {
+            case 0:
+                itemStatisticList = FilterManagerForStatistic.findByFuelCompany(itemStatisticList, filter);
+                break;
+            case 1:
+                itemStatisticList = FilterManagerForStatistic.findByFuelType(itemStatisticList, filter);
+                break;
+            case 2:
+                itemStatisticList = FilterManagerForStatistic.findByVolume(itemStatisticList,filter);
+                break;
+            case 3:
+                itemStatisticList = FilterManagerForStatistic.findByQuality(itemStatisticList,filter);
+                break;
+            default:
                 break;
         }
 

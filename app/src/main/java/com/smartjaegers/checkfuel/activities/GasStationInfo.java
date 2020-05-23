@@ -2,6 +2,7 @@ package com.smartjaegers.checkfuel.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -42,7 +43,10 @@ public class GasStationInfo extends Activity {
         stationTimeDriving.setText(String.format("%s days", itemStatistic.getTimeDriving()));
         dateText.setText(itemStatistic.getDate());
         volumeComparisonText.setText(String.format("%sL/%sL", itemStatistic.getVolumeFillReal(), itemStatistic.getVolumeFillExpected()));
-        densityText.setText(String.format("%s kg/m3", itemStatistic.getDistance()));
+        if (itemStatistic.getDensity() >= 800 || itemStatistic.getDensity() <= 700) {
+            densityText.setTextColor(Color.RED);
+        }
+        densityText.setText(String.format("%s kg/m3", itemStatistic.getDensity()));
     }
 
     public void backToUsageStatistic(View view) {
