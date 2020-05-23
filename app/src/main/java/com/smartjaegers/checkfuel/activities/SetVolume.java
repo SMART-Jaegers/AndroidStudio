@@ -15,8 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.smartjaegers.checkfuel.R;
+import com.smartjaegers.checkfuel.bluetooth.BluetoothConnectionService;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Set;
 
 public class SetVolume extends AppCompatActivity {
     private EditText numberEditText;
@@ -48,6 +51,7 @@ public class SetVolume extends AppCompatActivity {
     }
 
     public void goToVolumeCompare(@NotNull View view) {
+        requestData();
         if (volumeFill <= 0) {
             Toast.makeText(this, "No connection", Toast.LENGTH_SHORT).show();
             return;
@@ -71,6 +75,11 @@ public class SetVolume extends AppCompatActivity {
 
     public void backToMain(@NotNull View view) {
         finish();
+    }
+
+    public void requestData() {
+        byte[] ACTION_GET_DATA = {1};
+        BluetoothConnectionService.getInstance(SetVolume.this).write(ACTION_GET_DATA);
     }
 
 }

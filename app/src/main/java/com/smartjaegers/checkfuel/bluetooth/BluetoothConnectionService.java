@@ -1,14 +1,16 @@
 package com.smartjaegers.checkfuel.bluetooth;
 
 import android.app.ProgressDialog;
+import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 import android.content.Intent;
+import android.os.IBinder;
 import android.util.Log;
 
+import androidx.annotation.Nullable;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import java.io.IOException;
@@ -17,13 +19,15 @@ import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.util.UUID;
 
-public class BluetoothConnectionService {
+public class BluetoothConnectionService extends Service {
     private static final String TAG = "BTConnectionService";
 
     private static final String appName = "MYAPP";
 
     private static final UUID MY_UUID_INSECURE =
             UUID.fromString("bdafb6cc-d68a-4b6b-819a-796d30674b9c");
+
+    private static BluetoothConnectionService service;
 
     private final BluetoothAdapter bluetoothAdapter;
 
@@ -39,10 +43,25 @@ public class BluetoothConnectionService {
 
     private ConnectedThread connectedThread;
 
+    public static BluetoothConnectionService getInstance(Context context) {
+        if (service == null) {
+            Log.d(TAG, "getInstance: service == null");
+            service = new BluetoothConnectionService(context);
+            return service;
+        }
+        return service;
+    }
+
     public BluetoothConnectionService(Context context) {
         this.context = context;
         this.bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         start();
+    }
+
+    @Nullable
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
     }
 
     /**
