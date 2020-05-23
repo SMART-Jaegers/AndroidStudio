@@ -1,13 +1,9 @@
 package com.smartjaegers.checkfuel.activities;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
-import android.widget.ListAdapter;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,28 +30,9 @@ public class ChooseFilters extends AppCompatActivity {
         initDate();
 
         listView = findViewById(R.id.filters_list);
+
         listAdapter = new ExpandableListAdapterChooseFuel(this, listHeader, listItem);
         listView.setAdapter(listAdapter);
-//        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-//            @Override
-//            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-//                final String selected = (String) listAdapter.getChild(groupPosition, childPosition);
-//
-//                switch (selected) {
-//                    case "Okko":
-//                        TextView textView = v.findViewById(R.id.checkedTextView);
-//                        textView.setBackgroundColor(getResources().getColor(R.color.colorPurpleWhite));
-//                        break;
-//                    case "Wog":
-//                        v.setBackgroundColor(getResources().getColor(R.color.colorPurpleWhite));
-//                        break;
-//                }
-////                parent.getChildAt(childPosition).setBackgroundColor(getResources().getColor(R.color.colorPurpleWhite));
-////                paent.getSelectedView().setBackgroundColor(getResources().getColor(R.color.colorPurpleWhite));
-//                //display it or do something with it
-//                return false;
-//            }
-//        });
 
     }
 
@@ -81,8 +58,8 @@ public class ChooseFilters extends AppCompatActivity {
         fuelTypes.addAll(textReader.getFuelTypes(stations.get(5)));
 
         List<String> volume = new ArrayList<>();
-        volume.add("Good");
-        volume.add("Bad");
+        volume.add("Normal");
+        volume.add("Within normal range");
 
         List<String> density = new ArrayList<>();
         density.add("Good");
@@ -93,7 +70,6 @@ public class ChooseFilters extends AppCompatActivity {
         listItem.put(listHeader.get(1), fuelTypes);
         listItem.put(listHeader.get(2), volume);
         listItem.put(listHeader.get(3), density);
-
 
     }
 

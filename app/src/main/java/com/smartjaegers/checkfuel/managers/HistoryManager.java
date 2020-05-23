@@ -16,12 +16,13 @@ import java.util.List;
 public class HistoryManager {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public static void setConfig(RecyclerView recyclerView, Context context, List<Refill> refills, List<DayOfUse> daysOfUse, String sortBy) {
+    public static void setConfig(RecyclerView recyclerView, Context context, List<Refill> refills, List<DayOfUse> daysOfUse, String sortBy, String filter, int filterNumber) {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         HistoryAdapter historyAdapter = new HistoryAdapter(refills, daysOfUse, context);
         historyAdapter.setSortingBy(sortBy);
+        historyAdapter.setFilters(filter, filterNumber);
         recyclerView.setAdapter(historyAdapter);
     }
 

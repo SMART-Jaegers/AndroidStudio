@@ -1,7 +1,9 @@
 package com.smartjaegers.checkfuel.activities;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,6 +24,8 @@ import java.util.List;
 public class UsageStatistic extends AppCompatActivity {
 
     private String nowSorting;
+    private String nowFilter;
+    private int nowFilterNumber;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,12 @@ public class UsageStatistic extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         nowSorting = getIntent().getStringExtra("nowSorting");
+        nowFilter = getIntent().getStringExtra("Filter");
+        nowFilterNumber = getIntent().getIntExtra("FilterNumber", -1);
+        if (nowFilter == null) {
+            nowFilter = "11";
+        }
+        Log.i("-------Test-----", nowFilter);
         if (nowSorting == null) {
             nowSorting = "date_new_old";
         }
@@ -47,7 +57,7 @@ public class UsageStatistic extends AppCompatActivity {
         }
 
         RecyclerView recyclerView = findViewById(R.id.statisticView);
-        HistoryManager.setConfig(recyclerView, UsageStatistic.this, refills, daysOfUse, nowSorting);
+        HistoryManager.setConfig(recyclerView, UsageStatistic.this, refills, daysOfUse, nowSorting, nowFilter, nowFilterNumber);
     }
 
     public void goToMore(View view) {
@@ -57,7 +67,9 @@ public class UsageStatistic extends AppCompatActivity {
     }
 
     public void backToMain(View view) {
-        finish();
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
 }
