@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         TextView subTitle = headerView.findViewById(R.id.userEmail);
 
         if (authentication.entryToDatabase()) {
-           
+
             findViewById(R.id.usageStatistic).setBackgroundResource(R.color.colorPurple);
 
             DatabaseManagerForUser.readUser(new OnGetResult() {
