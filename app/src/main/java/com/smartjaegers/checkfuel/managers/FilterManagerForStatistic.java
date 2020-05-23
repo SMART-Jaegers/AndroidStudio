@@ -1,11 +1,8 @@
 package com.smartjaegers.checkfuel.managers;
 
 import android.os.Build;
-
 import androidx.annotation.RequiresApi;
-
 import com.smartjaegers.checkfuel.models.ItemStatistic;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
