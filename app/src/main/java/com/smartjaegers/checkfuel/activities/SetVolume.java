@@ -31,7 +31,7 @@ public class SetVolume extends AppCompatActivity {
                 volumeFill = Double.parseDouble(text);
                 Log.i("------Bluetooth------", "" + volumeFill);
             } catch (Exception e) {
-                volumeFill =  -10;
+                volumeFill = -10;
                 e.printStackTrace();
             }
         }
@@ -53,17 +53,22 @@ public class SetVolume extends AppCompatActivity {
             return;
         }
         Log.i("--goToVolumeCompare--", "" + volumeFill);
-         try {
+        try {
             double volumeExpected = Double.parseDouble(numberEditText.getText().toString());
             if (view.getId() == R.id.btncheckfuel) {
                 Intent intent = new Intent();
 
-               if (volumeFill >= volumeExpected) {
+
+                if (volumeFill >= volumeExpected) {
                     intent.setClass(this, VolumeCompareGood.class);
                 } else {
                     intent.setClass(this, VolumeCompareBad.class);
 
-               }}
+                }
+                intent.putExtra("expectedVolume", volumeExpected);
+                intent.putExtra("realVolume", volumeFill);
+                startActivity(intent);
+            }
         } catch (Exception e) {
             Toast.makeText(this, "You write wrong number", Toast.LENGTH_SHORT).show();
         }
