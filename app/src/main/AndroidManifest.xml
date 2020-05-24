@@ -28,7 +28,6 @@
         <activity
             android:name=".activities.AddDeviceActivity"
             android:screenOrientation="locked" />
-
         <activity
             android:name=".activities.UserProfile"
             android:screenOrientation="locked" />
@@ -92,7 +91,6 @@
         <activity
             android:name=".activities.Warning"
             android:screenOrientation="locked" />
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
