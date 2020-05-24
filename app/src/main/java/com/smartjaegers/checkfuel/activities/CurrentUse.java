@@ -40,6 +40,7 @@ public class CurrentUse extends AppCompatActivity {
         textKm.setText(new DecimalFormat("##0.0# Km").format(alreadyKm));
         textLitersPerKm.setText(new DecimalFormat("#0.0# L/Km").format(litersPerKm));
         textKmWithThisFuel.setText(new DecimalFormat("##0 Km").format(prediction));
+        //ШОСЬ
     }
 
     public void backToMain(View v) {
