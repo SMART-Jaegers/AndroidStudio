@@ -1,9 +1,16 @@
 package com.smartjaegers.checkfuel.models;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.util.Log;
+
 import androidx.annotation.RequiresApi;
+
+import com.smartjaegers.checkfuel.managers.AuthenticationManager;
 import com.smartjaegers.checkfuel.managers.DatabaseManagerForQuality;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,6 +27,23 @@ public class DataBluetooth {
     private double currentVolumeInLiters;
     private double currentFuelQuality;
 
+    public BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            byte[] data = intent.getByteArrayExtra("theMessage");
+            try {
+                speedInKmPerHour = data[0];
+                revolutionPerMinute = data[1];
+                fuelFlowRate = data[2];
+                currentVolumeInPercent = data[3];
+                currentVolumeInLiters = data[4];
+                Log.d("---DataBluetooth: ", "broadcastReceiver: onReceive: "+ speedInKmPerHour);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     public double calculateQuality() {
         currentFuelQuality = 1 / calculateAverageOfInvertedQuality();
@@ -29,7 +53,7 @@ public class DataBluetooth {
     @RequiresApi(api = Build.VERSION_CODES.N)
     private double calculateAverageOfInvertedQuality() {
         LinkedList<Double> listToCalculate = addInverseQualityToList();
-        return listToCalculate.stream().reduce(0.0, Double::sum)/listToCalculate.size();
+        return listToCalculate.stream().reduce(0.0, Double::sum) / listToCalculate.size();
     }
 
     private LinkedList<Double> addInverseQualityToList() {
@@ -51,41 +75,46 @@ public class DataBluetooth {
 //*********************************************
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public double calculatePredictionOnKm(){
-        return /*currentVolumeInLiters*/10.0*calculateCoefficient()/1.0/*fuelFlowRate*/;
+    public double calculatePredictionOnKm() {
+        return /*currentVolumeInLiters*/10.0 * calculateCoefficient() / 1.0/*fuelFlowRate*/;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    private double calculateCoefficient(){
-        return calculateQuality()/calculateAverageTopQuality();
+    private double calculateCoefficient() {
+        return calculateQuality() / calculateAverageTopQuality();
     }
 
-    private double calculateAverageTopQuality(){
-        double allSum=0;
-        double allNumber=0;
-        DatabaseManagerForQuality.readQuality(new OnGetResult() {
-            @Override
-            public void onSuccess() {
-                listOfTop = DatabaseManagerForQuality.getQualities();
-                Log.i("---Quality---", "success reading quality");
+    private double calculateAverageTopQuality() {
+        double allSum = 0;
+        double allNumber = 0;
+        AuthenticationManager authenticationManager = new AuthenticationManager();
+        if (authenticationManager.entryToDatabase()) {
+            DatabaseManagerForQuality.readQuality(new OnGetResult() {
+                @Override
+                public void onSuccess() {
+                    listOfTop = DatabaseManagerForQuality.getQualities();
+                    Log.i("---Quality---", "success reading quality");
+                }
+
+                @Override
+                public void onStart() {
+                    Log.i("---Quality---", "start reading quality");
+                }
+
+                @Override
+                public void onFailure() {
+                    Log.i("---Quality---", "fail reading quality");
+                }
+            });
+
+            for (int count = 0; count < listOfTop.size(); count++) {
+                allSum += listOfTop.get(count).getRate() * listOfTop.get(count).getNumberOfUse();
+                allNumber += listOfTop.get(count).getNumberOfUse();
             }
 
-            @Override
-            public void onStart() {
-                Log.i("---Quality---", "start reading quality");
-            }
-
-            @Override
-            public void onFailure() {
-                Log.i("---Quality---", "fail reading quality");
-            }
-        });
-
-        for (int count=0; count<listOfTop.size(); count++){
-            allSum += listOfTop.get(count).getRate()*listOfTop.get(count).getNumberOfUse();
-            allNumber += listOfTop.get(count).getNumberOfUse();
+            return allSum / allNumber;
         }
-        return allSum/allNumber;
+        return 1;
     }
 
 }
