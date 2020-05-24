@@ -28,9 +28,10 @@ public class SetVolume extends AppCompatActivity {
     BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            String text = intent.getStringExtra("theMessage");
+            String data = intent.getStringExtra("theMessage");
+            //String text = intent.getStringExtra("theMessage");
             try {
-                volumeFill = Double.parseDouble(text);
+                volumeFill = Double.parseDouble(data);
                 Log.i("------Bluetooth------", "" + volumeFill);
             } catch (Exception e) {
                 volumeFill = -10;
@@ -46,7 +47,7 @@ public class SetVolume extends AppCompatActivity {
 
         numberEditText = findViewById(R.id.editText);
         numberEditText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-        LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver, new IntentFilter("incomingMessage"));
+        LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver, new IntentFilter("bluetoothData"));
     }
 
     @Override

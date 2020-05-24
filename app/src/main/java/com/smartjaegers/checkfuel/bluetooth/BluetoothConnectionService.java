@@ -13,6 +13,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.smartjaegers.checkfuel.activities.MainActivity;
 import com.smartjaegers.checkfuel.models.OnGetResult;
 
 import java.io.IOException;
@@ -141,7 +142,7 @@ public class BluetoothConnectionService extends Service {
 
         ConnectedThread(BluetoothSocket socket) {
             Log.d(TAG, "ConnectedThread: Starting");
-            
+
             this.socket = socket;
             InputStream tmpIn = null;
             OutputStream tmpOut = null;
@@ -170,13 +171,13 @@ public class BluetoothConnectionService extends Service {
             int bytes; // bytes returned from read()
 
             // keep listening to the InputStream until an exception occurs
-            while(true) {
+            while (true) {
                 // Read from the InputStream
                 try {
                     bytes = inputStream.read(buffer);
                     String incomingMessage = new String(buffer, 0, bytes);
-                    Log.d(TAG, "InputStream: " + incomingMessage);
-                    Intent incomingMessageIntent = new Intent("incomingMessage");
+                    Log.d(TAG, "InputStream: text: " + incomingMessage);
+                    Intent incomingMessageIntent = new Intent("bluetoothData");
                     incomingMessageIntent.putExtra("theMessage", incomingMessage);
                     LocalBroadcastManager.getInstance(context).sendBroadcast(incomingMessageIntent);
 
@@ -230,6 +231,9 @@ public class BluetoothConnectionService extends Service {
 
     private void connected(BluetoothSocket bluetoothSocket, BluetoothDevice bluetoothDevice) {
         Log.d(TAG, "connected: Starting");
+
+        Intent intent = new Intent(this.context, MainActivity.class);
+        context.startActivity(intent);
         // Start the thread to manage the connection and perform transmissions
         connectedThread = new ConnectedThread(bluetoothSocket);
         connectedThread.start();
@@ -237,6 +241,7 @@ public class BluetoothConnectionService extends Service {
 
     /**
      * Write to the ConnectedThread in an unsynchronized manner
+     *
      * @param out The bytes to write
      * @see ConnectedThread#write(byte[])
      */
