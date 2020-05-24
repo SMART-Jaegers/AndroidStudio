@@ -25,19 +25,6 @@
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/icons8_left_100" />
 
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_alignParentEnd="true"
-            android:foregroundGravity="right"
-            android:paddingStart="4dp"
-            android:paddingTop="8dp"
-            android:paddingEnd="12dp"
-            android:paddingBottom="8dp"
-            android:src="@drawable/white_home"
-            android:contentDescription="@string/go_home" />
-
     </RelativeLayout>
 
     <RelativeLayout

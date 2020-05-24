@@ -1,32 +1,27 @@
 package com.smartjaegers.checkfuel.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
-import java.text.SimpleDateFormat;
-
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 import com.smartjaegers.checkfuel.R;
-import com.smartjaegers.checkfuel.managers.DatabaseManagerForQuality;
-import com.smartjaegers.checkfuel.models.OnGetResult;
-import com.smartjaegers.checkfuel.models.User;
+import com.smartjaegers.checkfuel.managers.AuthenticationManager;
 import com.smartjaegers.checkfuel.managers.DatabaseManagerForDayOfUse;
 import com.smartjaegers.checkfuel.managers.DatabaseManagerForRefill;
 import com.smartjaegers.checkfuel.managers.DatabaseManagerForUser;
-
-import com.smartjaegers.checkfuel.managers.AuthenticationManager;
-import com.google.android.material.navigation.NavigationView;
+import com.smartjaegers.checkfuel.models.OnGetResult;
+import com.smartjaegers.checkfuel.models.User;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -61,8 +56,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent.setClass(this, SetVolume.class);
                 break;
             case R.id.currentUse:
-                intent.setClass(this, MainActivity.class);
-                //TODO Create intent to current use
+                intent.setClass(this, CurrentUse.class);
                 break;
             case R.id.usageStatistic:
                 if (authentication.entryToDatabase()) {
