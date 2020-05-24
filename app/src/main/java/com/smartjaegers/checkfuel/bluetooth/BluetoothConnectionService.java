@@ -175,12 +175,10 @@ public class BluetoothConnectionService extends Service {
                 // Read from the InputStream
                 try {
                     bytes = inputStream.read(buffer);
-                    //String incomingMessage = new String(buffer, 0, bytes);
-                    for (int i = 0; i < bytes; i++) {
-                        Log.d(TAG, "InputStream: " + buffer[i]);
-                    }
+                    String incomingMessage = new String(buffer, 0, bytes);
+                    Log.d(TAG, "InputStream: text: " + incomingMessage);
                     Intent incomingMessageIntent = new Intent("bluetoothData");
-                    incomingMessageIntent.putExtra("theMessage", buffer);
+                    incomingMessageIntent.putExtra("theMessage", incomingMessage);
                     LocalBroadcastManager.getInstance(context).sendBroadcast(incomingMessageIntent);
 
                 } catch (IOException e) {
