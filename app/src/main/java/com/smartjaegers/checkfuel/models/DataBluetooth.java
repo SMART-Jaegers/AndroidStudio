@@ -29,6 +29,8 @@ public class DataBluetooth {
     private double alreadyKm; //з OBD
     private double litersPerKm; //(літриДо - літриПісля)/кілометри з OBD
 
+    private OnGetResult listener;
+
     public BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -37,14 +39,16 @@ public class DataBluetooth {
             try {
                 speedInKmPerHour = Double.parseDouble(data[0]);
                 revolutionPerMinute = Double.parseDouble(data[1]);
-                currentVolumeInPercent = Double.parseDouble(data[3]);
+                currentVolumeInPercent = Double.parseDouble(data[5]);
                 fuelFlowRate = Double.parseDouble(data[7]);
                 litersPerKm = Double.parseDouble(data[8]);
                 alreadyKm = Double.parseDouble(data[9]);
                 currentVolumeInLiters = currentVolumeInPercent * 55;
+                listener.onSuccess();
                 Log.d("---DataBluetooth: ", "broadcastReceiver: onReceive: "+ speedInKmPerHour);
             } catch (Exception e) {
                 e.printStackTrace();
+                listener.onFailure();
             }
         }
     };
@@ -123,6 +127,11 @@ public class DataBluetooth {
             return allSum / allNumber;
         }
         return 1;
+    }
+
+    public void setListener(OnGetResult listener) {
+        this.listener = listener;
+        this.listener.onStart();
     }
 
     public double getCurrentVolumeInLiters() {
