@@ -109,34 +109,18 @@ public class AddDeviceActivity extends AppCompatActivity implements AdapterView.
      * Remember: the connection will fail and app will crash if you haven't paired first
      */
     public void startConnection() {
-        startBTConnection(bluetoothDevice, MY_UUID_INSECURE, new OnGetResult() {
-            @Override
-            public void onSuccess() {
-                startActivity(new Intent(AddDeviceActivity.this, MainActivity.class));
-            }
-
-            @Override
-            public void onStart() {
-                startActivity(new Intent(AddDeviceActivity.this, Loading.class));
-            }
-
-            @Override
-            public void onFailure() {
-
-            }
-        });
-
+        startBTConnection(bluetoothDevice, MY_UUID_INSECURE);
+        Intent intent = new Intent(this, Loading.class);
+        startActivity(intent);
 
     }
 
     /**
      * Starting chat service method
      */
-    public void startBTConnection(BluetoothDevice bluetoothDevice, UUID uuid, OnGetResult listener) {
-        listener.onStart();
+    public void startBTConnection(BluetoothDevice bluetoothDevice, UUID uuid) {
         Log.d(TAG, "startBTConnection: Initializing RFCOMM Connection");
         bluetoothConnectionService.startClient(bluetoothDevice, uuid);
-        listener.onSuccess();
     }
 
     public void enableDisableBT() {
