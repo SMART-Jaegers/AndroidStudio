@@ -27,6 +27,10 @@ public class DataBluetooth {
     private double currentVolumeInLiters;
     private double currentFuelQuality;
 
+    private double liter; //з OBD
+    private double alreadyKm; //з OBD
+    private double litersPerKm; //(літриДо - літриПісля)/кілометри з OBD
+
     public BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -37,7 +41,7 @@ public class DataBluetooth {
                 fuelFlowRate = data[2];
                 currentVolumeInPercent = data[3];
                 currentVolumeInLiters = data[4];
-                Log.d("---DataBluetooth: ", "broadcastReceiver: onReceive: "+ speedInKmPerHour);
+                Log.d("---DataBluetooth: ", "broadcastReceiver: onReceive: " + speedInKmPerHour);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -120,4 +124,27 @@ public class DataBluetooth {
         return 1;
     }
 
+    public double getLiter() {
+        return liter;
+    }
+
+    public void setLiter(double liter) {
+        this.liter = liter;
+    }
+
+    public double getAlreadyKm() {
+        return alreadyKm;
+    }
+
+    public void setAlreadyKm(double alreadyKm) {
+        this.alreadyKm = alreadyKm;
+    }
+
+    public double getLitersPerKm() {
+        return litersPerKm;
+    }
+
+    public void setLitersPerKm(double litersPerKm) {
+        this.litersPerKm = litersPerKm;
+    }
 }
