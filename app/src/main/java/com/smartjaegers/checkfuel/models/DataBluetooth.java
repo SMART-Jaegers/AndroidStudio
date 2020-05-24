@@ -26,21 +26,22 @@ public class DataBluetooth {
     private double currentVolumeInPercent; // З цього перетворювати у літри, знаючи машину
     private double currentVolumeInLiters;
     private double currentFuelQuality;
-
-    private double liter; //з OBD
     private double alreadyKm; //з OBD
     private double litersPerKm; //(літриДо - літриПісля)/кілометри з OBD
 
     public BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            byte[] data = intent.getByteArrayExtra("theMessage");
+            String message = intent.getStringExtra("theMessage");
+            String[] data = message.split(" ");
             try {
-                speedInKmPerHour = data[0];
-                revolutionPerMinute = data[1];
-                fuelFlowRate = data[2];
-                currentVolumeInPercent = data[3];
-                currentVolumeInLiters = data[4];
+                speedInKmPerHour = Double.parseDouble(data[0]);
+                revolutionPerMinute = Double.parseDouble(data[1]);
+                currentVolumeInPercent = Double.parseDouble(data[3]);
+                fuelFlowRate = Double.parseDouble(data[7]);
+                litersPerKm = Double.parseDouble(data[8]);
+                alreadyKm = Double.parseDouble(data[9]);
+                currentVolumeInLiters = currentVolumeInPercent * 55;
                 Log.d("---DataBluetooth: ", "broadcastReceiver: onReceive: "+ speedInKmPerHour);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -124,12 +125,12 @@ public class DataBluetooth {
         return 1;
     }
 
-    public double getLiter() {
-        return liter;
+    public double getCurrentVolumeInLiters() {
+        return currentVolumeInLiters;
     }
 
-    public void setLiter(double liter) {
-        this.liter = liter;
+    public void setCurrentVolumeInLiters(double currentVolumeInLiters) {
+        this.currentVolumeInLiters = currentVolumeInLiters;
     }
 
     public double getAlreadyKm() {

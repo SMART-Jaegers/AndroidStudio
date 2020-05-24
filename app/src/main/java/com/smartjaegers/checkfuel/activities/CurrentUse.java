@@ -36,7 +36,7 @@ public class CurrentUse extends AppCompatActivity {
 
         LocalBroadcastManager.getInstance(this).registerReceiver(dataBluetooth.broadcastReceiver, new IntentFilter("bluetoothData"));
         requestData();
-        double liter = dataBluetooth.getLiter(); //з OBD
+        double liter = dataBluetooth.getCurrentVolumeInLiters(); //з OBD
         double alreadyKm = dataBluetooth.getAlreadyKm(); //з OBD
         double litersPerKm = dataBluetooth.getLitersPerKm(); //(літриДо - літриПісля)/кілометри з OBD
         double prediction = dataBluetooth.calculatePredictionOnKm(); //з DataBluetooth, зараз там все закомічено

@@ -181,7 +181,7 @@ public class BluetoothConnectionService extends Service {
                         Log.d(TAG, "InputStream: " + buffer[i]);
                     }
                     Intent incomingMessageIntent = new Intent("bluetoothData");
-                    incomingMessageIntent.putExtra("theMessage", buffer);
+                    incomingMessageIntent.putExtra("theMessage", incomingMessage);
                     LocalBroadcastManager.getInstance(context).sendBroadcast(incomingMessageIntent);
 
                 } catch (IOException e) {
