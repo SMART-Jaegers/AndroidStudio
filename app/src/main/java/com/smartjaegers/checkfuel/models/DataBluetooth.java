@@ -20,6 +20,10 @@ public class DataBluetooth {
     private double currentVolumeInLiters;
     private double currentFuelQuality;
 
+    private double liter; //з OBD
+    private double alreadyKm; //з OBD
+    private double litersPerKm; //(літриДо - літриПісля)/кілометри з OBD
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     public double calculateQuality() {
         currentFuelQuality = 1 / calculateAverageOfInvertedQuality();
@@ -91,4 +95,83 @@ public class DataBluetooth {
         return allSum/allNumber;
     }
 
+    public List<Quality> getListOfTop() {
+        return listOfTop;
+    }
+
+    public void setListOfTop(List<Quality> listOfTop) {
+        this.listOfTop = listOfTop;
+    }
+
+    public double getSpeedInKmPerHour() {
+        return speedInKmPerHour;
+    }
+
+    public void setSpeedInKmPerHour(double speedInKmPerHour) {
+        this.speedInKmPerHour = speedInKmPerHour;
+    }
+
+    public double getRevolutionPerMinute() {
+        return revolutionPerMinute;
+    }
+
+    public void setRevolutionPerMinute(double revolutionPerMinute) {
+        this.revolutionPerMinute = revolutionPerMinute;
+    }
+
+    public double getFuelFlowRate() {
+        return fuelFlowRate;
+    }
+
+    public void setFuelFlowRate(double fuelFlowRate) {
+        this.fuelFlowRate = fuelFlowRate;
+    }
+
+    public double getCurrentVolumeInPercent() {
+        return currentVolumeInPercent;
+    }
+
+    public void setCurrentVolumeInPercent(double currentVolumeInPercent) {
+        this.currentVolumeInPercent = currentVolumeInPercent;
+    }
+
+    public double getCurrentVolumeInLiters() {
+        return currentVolumeInLiters;
+    }
+
+    public void setCurrentVolumeInLiters(double currentVolumeInLiters) {
+        this.currentVolumeInLiters = currentVolumeInLiters;
+    }
+
+    public double getCurrentFuelQuality() {
+        return currentFuelQuality;
+    }
+
+    public void setCurrentFuelQuality(double currentFuelQuality) {
+        this.currentFuelQuality = currentFuelQuality;
+    }
+
+    public double getLiter() {
+        return liter;
+    }
+
+    public void setLiter(double liter) {
+        this.liter = liter;
+    }
+
+    public double getAlreadyKm() {
+        return alreadyKm;
+    }
+
+    public void setAlreadyKm(double alreadyKm) {
+        this.alreadyKm = alreadyKm;
+    }
+
+    public double getLitersPerKm() {
+        return litersPerKm;
+    }
+
+    public void setLitersPerKm(double litersPerKm) {
+        this.litersPerKm = litersPerKm;
+    }
 }

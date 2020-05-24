@@ -107,8 +107,9 @@
             android:id="@+id/liter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="220dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="100dp"
+            android:layout_marginEnd="144dp"
             android:text="20.0L"
             android:textColor="#9176FF"
             android:textSize="20sp" />
@@ -117,15 +118,16 @@
             android:id="@+id/km"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="312dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="156dp"
+            android:layout_marginEnd="24dp"
             android:text="7.0 Km"
             android:textColor="#9176FF"
             android:textSize="20sp" />
 
     </RelativeLayout>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -137,7 +139,9 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/maven_pro"
             android:text="@string/the_avarage_consumption_of_your_fuel_is"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/random2"
@@ -147,28 +151,34 @@
             android:layout_marginTop="80dp"
             android:fontFamily="@font/maven_pro"
             android:text="@string/we_assume_that_your_fuel_will_be_enough_for_another"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/litersPerKm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="280dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
             android:text="12.5 L/Km"
             android:textColor="#9176FF"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/random1" />
 
         <TextView
             android:id="@+id/kmWithThisFuel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="304dp"
-            android:layout_marginTop="92dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
             android:text="210 Km"
             android:textColor="#9176FF"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/random2" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

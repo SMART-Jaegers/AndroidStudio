@@ -31,16 +31,10 @@ public class CurrentUse extends AppCompatActivity {
         textLitersPerKm = findViewById(R.id.litersPerKm);
         textKmWithThisFuel = findViewById(R.id.kmWithThisFuel);
 
-        double liter = 0; //з OBD
-        double alreadyKm = 0; //з OBD
-        double litersPerKm = 0; //(літриДо - літриПісля)/кілометри з OBD
-        double prediction = dataBluetooth.calculatePredictionOnKm(); //з DataBluetooth, зараз там все закомічено
-
-        textLiter.setText(new DecimalFormat("##0.0 L").format(liter));
-        textKm.setText(new DecimalFormat("##0.0# Km").format(alreadyKm));
-        textLitersPerKm.setText(new DecimalFormat("#0.0# L/Km").format(litersPerKm));
-        textKmWithThisFuel.setText(new DecimalFormat("##0 Km").format(prediction));
-        //ШОСЬ
+        textLiter.setText(new DecimalFormat("##0.0 L").format(dataBluetooth.getLiter()));
+        textKm.setText(new DecimalFormat("##0.0# Km").format(dataBluetooth.getAlreadyKm()));
+        textLitersPerKm.setText(new DecimalFormat("#0.0# L/Km").format(dataBluetooth.getLitersPerKm()));
+        textKmWithThisFuel.setText(new DecimalFormat("##0 Km").format(dataBluetooth.calculatePredictionOnKm()));
     }
 
     public void backToMain(View v) {
