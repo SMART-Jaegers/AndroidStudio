@@ -11,6 +11,8 @@ import androidx.annotation.RequiresApi;
 import com.smartjaegers.checkfuel.managers.AuthenticationManager;
 import com.smartjaegers.checkfuel.managers.DatabaseManagerForQuality;
 
+import java.nio.ByteBuffer;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -37,6 +39,8 @@ public class DataBluetooth {
                 fuelFlowRate = data[2];
                 currentVolumeInPercent = data[3];
                 currentVolumeInLiters = data[4];
+                Log.d("----------", "onReceive: " + data.length);
+                Log.d("double value:", "onReceive: " + ByteBuffer.wrap(Arrays.copyOfRange(data, 5, 13)).getDouble());
                 Log.d("---DataBluetooth: ", "broadcastReceiver: onReceive: "+ speedInKmPerHour);
             } catch (Exception e) {
                 e.printStackTrace();

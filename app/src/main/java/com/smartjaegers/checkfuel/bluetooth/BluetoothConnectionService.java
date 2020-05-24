@@ -174,7 +174,8 @@ public class BluetoothConnectionService extends Service {
                 // Read from the InputStream
                 try {
                     bytes = inputStream.read(buffer);
-                    //String incomingMessage = new String(buffer, 0, bytes);
+                    String incomingMessage = new String(buffer, 0, bytes);
+                    Log.d(TAG, "InputStream: text: " + incomingMessage);
                     for (int i = 0; i < bytes; i++) {
                         Log.d(TAG, "InputStream: " + buffer[i]);
                     }
