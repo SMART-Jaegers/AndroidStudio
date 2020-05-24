@@ -29,7 +29,10 @@ public class DataBluetooth {
     @RequiresApi(api = Build.VERSION_CODES.N)
     private double calculateAverageOfInvertedQuality() {
         LinkedList<Double> listToCalculate = addInverseQualityToList();
-        return listToCalculate.stream().reduce(0.0, Double::sum)/listToCalculate.size();
+        if (listToCalculate.size() != 0) {
+            return listToCalculate.stream().reduce(0.0, Double::sum) / listToCalculate.size();
+        }
+        return 1;
     }
 
     private LinkedList<Double> addInverseQualityToList() {
