@@ -36,9 +36,9 @@ public class CurrentUse extends AppCompatActivity {
 
         LocalBroadcastManager.getInstance(this).registerReceiver(dataBluetooth.broadcastReceiver, new IntentFilter("bluetoothData"));
         requestData();
-        double liter = 0; //з OBD
-        double alreadyKm = 0; //з OBD
-        double litersPerKm = 0; //(літриДо - літриПісля)/кілометри з OBD
+        double liter = dataBluetooth.getLiter(); //з OBD
+        double alreadyKm = dataBluetooth.getAlreadyKm(); //з OBD
+        double litersPerKm = dataBluetooth.getLitersPerKm(); //(літриДо - літриПісля)/кілометри з OBD
         double prediction = dataBluetooth.calculatePredictionOnKm(); //з DataBluetooth, зараз там все закомічено
 
         textLiter.setText(new DecimalFormat("##0.0 L").format(liter));
@@ -51,6 +51,7 @@ public class CurrentUse extends AppCompatActivity {
     public void backToMain(View v) {
         finish();
     }
+
     public void requestData() {
         byte[] ACTION_GET_DATA = {2};
         BluetoothConnectionService.getInstance(CurrentUse.this).write(ACTION_GET_DATA);

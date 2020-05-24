@@ -11,8 +11,6 @@ import androidx.annotation.RequiresApi;
 import com.smartjaegers.checkfuel.managers.AuthenticationManager;
 import com.smartjaegers.checkfuel.managers.DatabaseManagerForQuality;
 
-import java.nio.ByteBuffer;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -29,6 +27,10 @@ public class DataBluetooth {
     private double currentVolumeInLiters;
     private double currentFuelQuality;
 
+    private double liter; //з OBD
+    private double alreadyKm; //з OBD
+    private double litersPerKm; //(літриДо - літриПісля)/кілометри з OBD
+
     public BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -39,8 +41,6 @@ public class DataBluetooth {
                 fuelFlowRate = data[2];
                 currentVolumeInPercent = data[3];
                 currentVolumeInLiters = data[4];
-                Log.d("----------", "onReceive: " + data.length);
-                Log.d("double value:", "onReceive: " + ByteBuffer.wrap(Arrays.copyOfRange(data, 5, 13)).getDouble());
                 Log.d("---DataBluetooth: ", "broadcastReceiver: onReceive: "+ speedInKmPerHour);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -124,4 +124,27 @@ public class DataBluetooth {
         return 1;
     }
 
+    public double getLiter() {
+        return liter;
+    }
+
+    public void setLiter(double liter) {
+        this.liter = liter;
+    }
+
+    public double getAlreadyKm() {
+        return alreadyKm;
+    }
+
+    public void setAlreadyKm(double alreadyKm) {
+        this.alreadyKm = alreadyKm;
+    }
+
+    public double getLitersPerKm() {
+        return litersPerKm;
+    }
+
+    public void setLitersPerKm(double litersPerKm) {
+        this.litersPerKm = litersPerKm;
+    }
 }
