@@ -45,7 +45,7 @@ public class CurrentUse extends AppCompatActivity {
                 double liter = dataBluetooth.getCurrentVolumeInLiters(); //з OBD
                 double alreadyKm = dataBluetooth.getAlreadyKm(); //з OBD
                 double litersPerKm = dataBluetooth.getLitersPerKm(); //(літриДо - літриПісля)/кілометри з OBD
-                double prediction = dataBluetooth.calculatePredictionOnKm(); //з DataBluetooth, зараз там все закомічено
+                double prediction = dataBluetooth.calculatePredictionOnKm();
 
                 textLiter.setText(new DecimalFormat("##0.0 L").format(liter));
                 textKm.setText(new DecimalFormat("##0.0# Km").format(alreadyKm));
