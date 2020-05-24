@@ -107,9 +107,9 @@
             android:id="@+id/liter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="240dp"
+            android:layout_marginStart="220dp"
             android:layout_marginTop="100dp"
-            android:text="20L"
+            android:text="20.0L"
             android:textColor="#9176FF"
             android:textSize="20sp" />
 
@@ -117,9 +117,9 @@
             android:id="@+id/km"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="340dp"
+            android:layout_marginStart="312dp"
             android:layout_marginTop="156dp"
-            android:text="7km"
+            android:text="7.0 Km"
             android:textColor="#9176FF"
             android:textSize="20sp" />
 
@@ -153,7 +153,7 @@
             android:id="@+id/litersPerKm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="300dp"
+            android:layout_marginStart="280dp"
             android:layout_marginTop="32dp"
             android:text="12.5 L/Km"
             android:textColor="#9176FF"
@@ -163,7 +163,7 @@
             android:id="@+id/kmWithThisFuel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="324dp"
+            android:layout_marginStart="304dp"
             android:layout_marginTop="92dp"
             android:text="210 Km"
             android:textColor="#9176FF"
