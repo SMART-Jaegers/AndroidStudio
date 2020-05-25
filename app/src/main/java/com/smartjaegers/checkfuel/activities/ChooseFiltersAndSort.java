@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,8 @@ import androidx.fragment.app.DialogFragment;
 
 import com.smartjaegers.checkfuel.R;
 import com.smartjaegers.checkfuel.adapters.FiltersAdapter;
+import com.smartjaegers.checkfuel.managers.UtilsManagerForStatistic;
+import com.smartjaegers.checkfuel.models.SortType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +44,37 @@ public class ChooseFiltersAndSort extends DialogFragment implements View.OnClick
         View view = inflater.inflate(R.layout.choose_filter_and_sort, null);
         setPosition();
 
+        TextView textName = view.findViewById(R.id.textView13);
+        TextView textSubName = view.findViewById(R.id.textView20);
+
+
+        switch (nowSorting) {
+            case "date_new_old":
+                textName.setText("Date");
+                textSubName.setText("from newest to last");
+                break;
+            case "date_old_new":
+                textName.setText("Date");
+                textSubName.setText("from last to newest");
+                break;
+            case "volume_descending":
+                textName.setText("Volume");
+                textSubName.setText("from biggest to smallest");
+                break;
+            case "volume_ascending":
+                textName.setText("Volume");
+                textSubName.setText("from smallest to biggest");
+                break;
+            case "efficiency_ascending":
+                textName.setText("Efficiency");
+                textSubName.setText("from biggest to smallest");
+                break;
+            case "efficiency_descending":
+                textName.setText("Efficiency");
+                textSubName.setText("from smallest to biggest");
+                break;
+        }
+
         List<String> filterNames = new ArrayList<>();
         filterNames.add("Gas station");
         filterNames.add("Type fuel");
@@ -52,9 +86,9 @@ public class ChooseFiltersAndSort extends DialogFragment implements View.OnClick
         filterDescriptions.add("full");
         filterDescriptions.add("good quality");
 
-        ListView listView = view.findViewById(R.id.existing_filters);
-        FiltersAdapter adapter = new FiltersAdapter(getDialog().getContext(), filterNames, filterDescriptions);
-        listView.setAdapter(adapter);
+//        ListView listView = view.findViewById(R.id.existing_filters);
+//        FiltersAdapter adapter = new FiltersAdapter(getDialog().getContext(), filterNames, filterDescriptions);
+//        listView.setAdapter(adapter);
 
         view.findViewById(R.id.choose_filter).setOnClickListener(this);
         view.findViewById(R.id.choose_sort).setOnClickListener(this);

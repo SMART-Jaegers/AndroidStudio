@@ -42,19 +42,11 @@
                 android:textColor="#B2B2B2"
                 android:textSize="22sp" />
 
-            <ListView
-                android:id="@+id/existing_filters"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imageView5">
-
-            </ListView>
-
             <Button
                 android:id="@+id/remove_filters"
                 android:layout_width="136dp"
                 android:layout_height="29dp"
-                android:layout_below="@id/existing_filters"
+                android:layout_below="@id/textView9"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/turn_on_button"
