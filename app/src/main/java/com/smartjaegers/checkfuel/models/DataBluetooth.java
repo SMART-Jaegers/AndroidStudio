@@ -45,17 +45,13 @@ public class DataBluetooth {
                 alreadyKm = Double.parseDouble(data[9]);
                 currentVolumeInLiters = currentVolumeInPercent * 55;
                 listener.onSuccess();
-                Log.d("---DataBluetooth: ", "broadcastReceiver: onReceive: "+ speedInKmPerHour);
+                Log.d("---DataBluetooth: ", "broadcastReceiver: onReceive: " + speedInKmPerHour);
             } catch (Exception e) {
                 e.printStackTrace();
                 listener.onFailure();
             }
         }
     };
-
-    private double liter; //з OBD
-    private double alreadyKm; //з OBD
-    private double litersPerKm; //(літриДо - літриПісля)/кілометри з OBD
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public double calculateQuality() {
@@ -138,14 +134,6 @@ public class DataBluetooth {
         this.listener.onStart();
     }
 
-    public double getCurrentVolumeInLiters() {
-        return currentVolumeInLiters;
-    }
-
-    public void setCurrentVolumeInLiters(double currentVolumeInLiters) {
-        this.currentVolumeInLiters = currentVolumeInLiters;
-    }
-
     public List<Quality> getListOfTop() {
         return listOfTop;
     }
@@ -200,14 +188,6 @@ public class DataBluetooth {
 
     public void setCurrentFuelQuality(double currentFuelQuality) {
         this.currentFuelQuality = currentFuelQuality;
-    }
-
-    public double getLiter() {
-        return liter;
-    }
-
-    public void setLiter(double liter) {
-        this.liter = liter;
     }
 
     public double getAlreadyKm() {
