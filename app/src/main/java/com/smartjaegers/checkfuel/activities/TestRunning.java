@@ -2,7 +2,6 @@ package com.smartjaegers.checkfuel.activities;
 
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,26 +14,23 @@ import com.smartjaegers.checkfuel.bluetooth.BluetoothConnectionService;
 import com.smartjaegers.checkfuel.models.ConnectionToBluetoothTest;
 import com.smartjaegers.checkfuel.models.OnGetResult;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
-
 public class TestRunning extends AppCompatActivity {
 
-    private static final SimpleDateFormat pattern = new SimpleDateFormat("yyyy-MM-dd", Locale.ROOT);
     private Button button;
     private TextView infoView;
     private ConnectionToBluetoothTest bluetoothTest;
     private long drivingTime;
+    private boolean flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_running);
 
+        flag = true;
         bluetoothTest = new ConnectionToBluetoothTest();
         LocalBroadcastManager.getInstance(this).registerReceiver(bluetoothTest.broadcastReceiver, new IntentFilter("bluetoothData"));
-        getDateCarDrivingForward();
+        getDataFromBluetooth();
 
         button = findViewById(R.id.drive_back);
         infoView = findViewById(R.id.info_view);
@@ -53,6 +49,8 @@ public class TestRunning extends AppCompatActivity {
         button.setVisibility(View.INVISIBLE);
         infoView.setText(R.string.info_test_running_third);
 
+        requestData();
+
     }
 
     private void onSuccessTest() {
@@ -60,38 +58,26 @@ public class TestRunning extends AppCompatActivity {
         new SuccessTest().show(getSupportFragmentManager(), "success test");
     }
 
-    private void getDateCarDrivingForward() {
+    private void getDataFromBluetooth() {
         bluetoothTest.setListener(new OnGetResult() {
             @Override
             public void onSuccess() {
-
-                String drivingTimeFromBluetooth = "25.05.2020";//ConnectBluetooth
-                try {
-                    drivingTime = pattern.parse(drivingTimeFromBluetooth).getTime();
-                    if (drivingTime == 3 * 60 * 1000) {
-                        onDrivingKm();
-                    }
-                    if (drivingTime == 6.6 * 60 * 1000) {
-                        onSuccessTest();
-                    }
-                    if (drivingTime != 7 * 60 * 1000) {
-                        requestData();
-                    }
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                    Log.i("----TestRunning----", "Failure to parse exception");
+                if (flag) {
+                    onDrivingKm();
+                    flag = false;
+                } else {
+                    onSuccessTest();
                 }
-                Log.i("----TestRunning----", "onSuccess");
             }
 
             @Override
             public void onStart() {
-                Log.i("----TestRunning----", "onStart");
+
             }
 
             @Override
             public void onFailure() {
-                Log.i("----TestRunning----", "onFailure");
+
             }
         });
     }
