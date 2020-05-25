@@ -25,8 +25,8 @@ public class DatabaseManagerForQuality {
     private static String key = null;
 
 
-    public static void writeQuality(double rate, int numberOfUse) {
-        Quality quality = new Quality(rate, numberOfUse);
+    public static void writeQuality(double rate, int numberOfUse, String date) {
+        Quality quality = new Quality(rate, numberOfUse, date);
         CHECK_FUEL_REFERENCE.child(user.getUid()).child("Quality").push().setValue(quality);
     }
 

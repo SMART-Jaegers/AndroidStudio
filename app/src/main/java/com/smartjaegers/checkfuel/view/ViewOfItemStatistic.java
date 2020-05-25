@@ -46,7 +46,6 @@ public class ViewOfItemStatistic extends RecyclerView.ViewHolder {
             intent.putExtra("itemStatistic", itemStatistic);
             context.startActivity(intent);
         });
-
     }
 
 }

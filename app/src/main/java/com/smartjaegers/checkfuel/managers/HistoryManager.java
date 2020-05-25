@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.smartjaegers.checkfuel.models.DayOfUse;
+import com.smartjaegers.checkfuel.models.Quality;
 import com.smartjaegers.checkfuel.models.Refill;
 import com.smartjaegers.checkfuel.adapters.HistoryAdapter;
 
@@ -16,11 +17,11 @@ import java.util.List;
 public class HistoryManager {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public static void setConfig(RecyclerView recyclerView, Context context, List<Refill> refills, List<DayOfUse> daysOfUse, String sortBy, String filter, int filterNumber) {
+    public static void setConfig(RecyclerView recyclerView, Context context, List<Refill> refills, List<DayOfUse> daysOfUse, List<Quality> qualities, String sortBy, String filter, int filterNumber) {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-        HistoryAdapter historyAdapter = new HistoryAdapter(refills, daysOfUse, context);
+        HistoryAdapter historyAdapter = new HistoryAdapter(refills, daysOfUse, qualities, context);
         historyAdapter.setSortingBy(sortBy);
         historyAdapter.setFilters(filter, filterNumber);
         recyclerView.setAdapter(historyAdapter);

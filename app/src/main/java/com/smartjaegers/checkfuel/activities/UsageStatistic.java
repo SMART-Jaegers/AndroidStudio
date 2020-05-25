@@ -13,7 +13,9 @@ import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.smartjaegers.checkfuel.R;
+import com.smartjaegers.checkfuel.managers.DatabaseManagerForQuality;
 import com.smartjaegers.checkfuel.models.DayOfUse;
+import com.smartjaegers.checkfuel.models.Quality;
 import com.smartjaegers.checkfuel.models.Refill;
 import com.smartjaegers.checkfuel.managers.DatabaseManagerForDayOfUse;
 import com.smartjaegers.checkfuel.managers.HistoryManager;
@@ -50,6 +52,7 @@ public class UsageStatistic extends AppCompatActivity {
 
         List<Refill> refills = DatabaseManagerForRefill.getRefills();
         List<DayOfUse> daysOfUse = DatabaseManagerForDayOfUse.getDaysOfUse();
+        List<Quality> qualities = DatabaseManagerForQuality.getQualities();
 
 
         if (refills.size() == 0) {
@@ -57,7 +60,7 @@ public class UsageStatistic extends AppCompatActivity {
         }
 
         RecyclerView recyclerView = findViewById(R.id.statisticView);
-        HistoryManager.setConfig(recyclerView, UsageStatistic.this, refills, daysOfUse, nowSorting, nowFilter, nowFilterNumber);
+        HistoryManager.setConfig(recyclerView, UsageStatistic.this, refills, daysOfUse, qualities, nowSorting, nowFilter, nowFilterNumber);
     }
 
     public void goToMore(View view) {

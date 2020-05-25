@@ -144,6 +144,21 @@
         <TextView
 
 
+            android:id="@+id/quality_number"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="330dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/density_bold_text_for_gas_station_info"
+            android:textColor="#32D853"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:fontFamily="@font/maven_pro" />
+
+        <TextView
+
+
             android:id="@+id/time_driving"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
@@ -251,6 +266,20 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="270dp"
             android:text="@string/density"
+            android:textColor="#878787"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:fontFamily="@font/maven_pro" />
+
+        <TextView
+
+
+            android:id="@+id/quality"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="330dp"
+            android:text="@string/quality_score"
             android:textColor="#878787"
             android:textSize="18sp"
             android:textStyle="normal"

@@ -18,6 +18,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.smartjaegers.checkfuel.R;
 import com.smartjaegers.checkfuel.managers.AuthenticationManager;
 import com.smartjaegers.checkfuel.managers.DatabaseManagerForDayOfUse;
+import com.smartjaegers.checkfuel.managers.DatabaseManagerForQuality;
 import com.smartjaegers.checkfuel.managers.DatabaseManagerForRefill;
 import com.smartjaegers.checkfuel.managers.DatabaseManagerForUser;
 import com.smartjaegers.checkfuel.models.OnGetResult;
@@ -75,6 +76,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void readFromDB() {
         DatabaseManagerForDayOfUse.readDayOfUse();
+        DatabaseManagerForQuality.readQuality(new OnGetResult() {
+            @Override
+            public void onSuccess() {
+                Log.i("-----Database--------", "SuccessReadingRefill");
+            }
+
+            @Override
+            public void onStart() {
+                Log.i("-----Database--------", "StartReadingRefill");
+            }
+
+            @Override
+            public void onFailure() {
+                Log.i("-----Database--------", "FailureReadingRefill");
+            }
+        });
         DatabaseManagerForRefill.readRefill(new OnGetResult() {
 
             @Override

@@ -12,6 +12,8 @@ import com.smartjaegers.checkfuel.R;
 import com.smartjaegers.checkfuel.managers.StationManager;
 import com.smartjaegers.checkfuel.models.ItemStatistic;
 
+import java.text.DecimalFormat;
+
 
 public class GasStationInfo extends Activity {
 
@@ -34,7 +36,9 @@ public class GasStationInfo extends Activity {
         TextView dateText = findViewById(R.id.Date);
         TextView volumeComparisonText = findViewById(R.id.volume_expected_vs_real);
         TextView densityText = findViewById(R.id.density);
+        TextView textQuality = findViewById(R.id.quality_number);
 
+        textQuality.setText(String.format("%s", new DecimalFormat().format(itemStatistic.getRate())));
         stationImage.setImageResource(StationManager.findStationImage(itemStatistic.getNameStation()));
         stationNameText.setText(itemStatistic.getNameStation());
         fuelTypeText.setText(itemStatistic.getTypeFuel());

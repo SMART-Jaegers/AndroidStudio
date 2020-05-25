@@ -13,6 +13,7 @@ import com.smartjaegers.checkfuel.managers.ItemStatisticManager;
 import com.smartjaegers.checkfuel.managers.UtilsManagerForStatistic;
 import com.smartjaegers.checkfuel.models.DayOfUse;
 import com.smartjaegers.checkfuel.models.ItemStatistic;
+import com.smartjaegers.checkfuel.models.Quality;
 import com.smartjaegers.checkfuel.view.ViewOfItemStatistic;
 import com.smartjaegers.checkfuel.models.Refill;
 import com.smartjaegers.checkfuel.models.SortType;
@@ -25,8 +26,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<ViewOfItemStatistic> {
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public HistoryAdapter(List<Refill> refills, List<DayOfUse> daysOfUse, Context context) {
-        this.itemStatisticList = ItemStatisticManager.createStatisticItem(refills, daysOfUse);
+    public HistoryAdapter(List<Refill> refills, List<DayOfUse> daysOfUse, List<Quality> qualities, Context context) {
+        this.itemStatisticList = ItemStatisticManager.createStatisticItem(refills, daysOfUse, qualities);
         this.context = context;
     }
 
@@ -84,10 +85,10 @@ public class HistoryAdapter extends RecyclerView.Adapter<ViewOfItemStatistic> {
                 itemStatisticList = FilterManagerForStatistic.findByFuelType(itemStatisticList, filter);
                 break;
             case 2:
-                itemStatisticList = FilterManagerForStatistic.findByVolume(itemStatisticList,filter);
+                itemStatisticList = FilterManagerForStatistic.findByVolume(itemStatisticList, filter);
                 break;
             case 3:
-                itemStatisticList = FilterManagerForStatistic.findByQuality(itemStatisticList,filter);
+                itemStatisticList = FilterManagerForStatistic.findByQuality(itemStatisticList, filter);
                 break;
             default:
                 break;
