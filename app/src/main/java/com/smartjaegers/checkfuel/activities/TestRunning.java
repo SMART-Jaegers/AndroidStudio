@@ -2,6 +2,7 @@ package com.smartjaegers.checkfuel.activities;
 
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ public class TestRunning extends AppCompatActivity {
 
     private Button button;
     private TextView infoView;
+    private TextView loading;
     private ConnectionToBluetoothTest bluetoothTest;
     private long drivingTime;
     private boolean flag;
@@ -34,6 +36,7 @@ public class TestRunning extends AppCompatActivity {
 
         button = findViewById(R.id.drive_back);
         infoView = findViewById(R.id.info_view);
+        loading = findViewById(R.id.loading);
 
         requestData();
     }
@@ -42,26 +45,32 @@ public class TestRunning extends AppCompatActivity {
         button.setVisibility(View.VISIBLE);
         button.setClickable(true);
         infoView.setText(R.string.info_test_running_second);
+        loading.setVisibility(View.INVISIBLE);
     }
 
     public void startDrivingBack(View view) {
         button.setClickable(false);
         button.setVisibility(View.INVISIBLE);
         infoView.setText(R.string.info_test_running_third);
-
+        loading.setVisibility(View.VISIBLE);
         requestData();
 
     }
 
     private void onSuccessTest() {
-
-        new SuccessTest().show(getSupportFragmentManager(), "success test");
+        try {
+            new SuccessTest().show(getSupportFragmentManager(), "success test");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void getDataFromBluetooth() {
         bluetoothTest.setListener(new OnGetResult() {
             @Override
             public void onSuccess() {
+                Log.i("Speed data", "onSuccess: " + bluetoothTest.getListOfSpeed());
+
                 if (flag) {
                     onDrivingKm();
                     flag = false;

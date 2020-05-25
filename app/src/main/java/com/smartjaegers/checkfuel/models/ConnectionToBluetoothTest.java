@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -35,6 +36,12 @@ public class ConnectionToBluetoothTest {
             }
         }
     };
+
+    public ConnectionToBluetoothTest() {
+        this.listOfSpeed = new ArrayList<>();
+        this.listOfRpm = new ArrayList<>();
+        this.listOfFuelFlowRate = new ArrayList<>();
+    }
 
     public void setListener(OnGetResult listener) {
         this.listener = listener;
